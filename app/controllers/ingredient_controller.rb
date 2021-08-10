@@ -26,7 +26,7 @@ class IngredientController < ApplicationController
 
   private
 
-  def review_params
+  def ingredient_params
     params.require(:ingredient).permit(:name, :unit_price, :unit, :category)
   end
 end

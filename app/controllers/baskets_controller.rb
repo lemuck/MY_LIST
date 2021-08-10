@@ -6,7 +6,7 @@ class BasketsController < ApplicationController
   end
 
   def create
-    @basket = Basket.new()
+    @basket = Basket.new(set_basket)
   end
 
   def show

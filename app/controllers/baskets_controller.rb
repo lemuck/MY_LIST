@@ -10,7 +10,6 @@ class BasketsController < ApplicationController
   end
 
   def show
-  	@basket = Basket.new
     # [...]
   end
 

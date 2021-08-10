@@ -7,7 +7,9 @@
   <% end %>
   
   <% @recipes.each do |recipe| %>
-    <h4> <%= recipe.name %> </h4>
-    <p> <%= recipe.description %> </p>
+    <%= link_to recipe_path(recipe) do %>
+      <h4> <%= recipe.name %> </h4>
+      <p> <%= recipe.description %> </p>
+    <% end %>
   <% end %>
 </div>

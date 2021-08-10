@@ -1,6 +1,6 @@
 <h1>My ingredients</h1>
 <ul>
   <% @ingredients.each do |ingredient| %>
-  <%= ingredient.title%>
+  <%= link_to ingredient.name, ingredient_path(ingredient.id) %>
   <% end %>
 </ul>

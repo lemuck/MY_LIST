@@ -1,15 +1,26 @@
 <div class="container">
-  <h1>All recipes here</h1>
-  <h2>recipes#index</h2>
+  <h1>All recipes</h1>
 
-  <% if current_user.moderator == true  %>
-    <%= link_to 'Add a recipe', new_recipe_path %>
-  <% end %>
-  
-  <% @recipes.each do |recipe| %>
-    <%= link_to recipe_path(recipe) do %>
-      <h4> <%= recipe.name %> </h4>
-      <p> <%= recipe.description %> </p>
+  <% if @user %>
+    <% if @user.moderator %>
+      <%= link_to 'Add a recipe', new_recipe_path %>
     <% end %>
   <% end %>
+  
+  <div class="container">
+    <% @recipes.each do |recipe| %>
+      <div class="row">
+        <div class="col-12">
+          <%= link_to recipe_path(recipe), class:'text-decoration-none' do %>
+            <div class="card-recipe">
+              <div class="recipe-info">
+                <h4> <%= recipe.name %> </h4>
+              </div>
+              <img src="https://image.flaticon.com/icons/png/512/1046/1046857.png" alt="Le Wagon logo" class="recipe-image">
+            </div>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>

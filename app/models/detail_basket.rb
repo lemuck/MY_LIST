@@ -1,5 +1,5 @@
 class DetailBasket < ApplicationRecord
-  belongs_to :ingredient_recipe, dependent: destroy
-  belongs_to :ingredient, dependent: destroy
-  belongs_to :basket, dependent: destroy
+  belongs_to :ingredient_recipe, optional: true
+  belongs_to :ingredient, optional: true
+  belongs_to :basket, optional: true
 end

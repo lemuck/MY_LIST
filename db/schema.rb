@@ -24,8 +24,8 @@ ActiveRecord::Schema.define(version: 2021_08_09_135723) do
   end
 
   create_table "detail_baskets", force: :cascade do |t|
-    t.bigint "ingredient_recipe_id", null: false
-    t.bigint "ingredient_id", null: false
+    t.bigint "ingredient_recipe_id"
+    t.bigint "ingredient_id"
     t.bigint "basket_id", null: false
     t.float "ingredient_quantity"
     t.datetime "created_at", precision: 6, null: false

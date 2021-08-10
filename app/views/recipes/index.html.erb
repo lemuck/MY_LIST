@@ -1,9 +1,11 @@
 <div class="container">
   <h1>All recipes here</h1>
   <h2>recipes#index</h2>
-  
-  <%= link_to 'Add a recipe', new_recipe_path %>
 
+  <% if current_user.moderator == true  %>
+    <%= link_to 'Add a recipe', new_recipe_path %>
+  <% end %>
+  
   <% @recipes.each do |recipe| %>
     <h4> <%= recipe.name %> </h4>
     <p> <%= recipe.description %> </p>

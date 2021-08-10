@@ -3,11 +3,6 @@ class DetailBasketsController < ApplicationController
     @detail_baskets = DetailBasket.all
   end
 
-  def new
-    @new_detail_basket = DetailBasket.new
-    @detail_basket.basket = current_basket
-  end
-
   def create
     @detail_basket = DetailBasket.new(detail_basket_params)
     @detail_basket.basket = current_basket
@@ -15,6 +10,7 @@ class DetailBasketsController < ApplicationController
       redirect_to basket_path(current_basket)
     else
       render :new
+    end
   end
 
   def destroy

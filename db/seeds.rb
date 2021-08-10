@@ -41,19 +41,18 @@ p couscous
 
 
 
-carotte = Ingredient.create(name: "carotte", unit: "kg", price: 3, category: "legume")
+carotte = Ingredient.create(name: "carotte", unit: "kg", unit_price: 3, category: "legume")
 carotte.save!
 p carotte
 
-pate_a_tarte = Ingredient.create(name: "pate à tarte", unit: "g", price: 1, category: "patisserie")
+pate_a_tarte = Ingredient.create(name: "pate à tarte", unit: "g", unit_price: 1, category: "patisserie")
 pate_a_tarte.save!
 p pate_a_tarte
 
-semoule = Ingredient.create(name: "semoule", unit: "g", price: 2, category: "sec")
+semoule = Ingredient.create(name: "semoule", unit: "g", unit_price: 2, category: "sec")
 semoule.save!
 p semoule
 
-courgette = Ingredient.create(name: "courgette", unit: "kg", price: 2.3, category: "legume")
+courgette = Ingredient.create(name: "courgette", unit: "kg", unit_price: 2.3, category: "legume")
 courgette.save!
 p courgette
-

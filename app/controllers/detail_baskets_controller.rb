@@ -15,6 +15,7 @@ class DetailBasketsController < ApplicationController
       redirect_to basket_path(current_basket)
     else
       render :new
+    end
   end
 
   def destroy

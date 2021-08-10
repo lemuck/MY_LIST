@@ -1,3 +1,11 @@
 <div class="container">
   <h1>Your basket</h1>
+  
+  <% @detail_baskets.each do |detail| %>
+    <%= detail.recipe %>
+    <%= detail.ingredient %> <%= ingredient_quantity %>
+    <%= detail %>
+    <% end %>
+
+
 </div>

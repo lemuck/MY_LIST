@@ -1,7 +1,8 @@
 <div class="container">
   <h1>All recipes here</h1>
   <h2>recipes#index</h2>
-  <p>Find me in app/views/recipes/index.html.erb</p>
+  
+  <%= link_to 'Add a recipe', new_recipe_path %>
 
   <% @recipes.each do |recipe| %>
     <h4> <%= recipe.name %> </h4>

@@ -10,5 +10,4 @@ Rails.application.routes.draw do
     resources :baskets, only: [:show]
     resources :details_baskets
   end
-
 end

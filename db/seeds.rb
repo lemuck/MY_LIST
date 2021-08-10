@@ -72,3 +72,15 @@ p detailBasket1
 detailBasket2 = DetailBasket.new(ingredient_recipe_id: ingredient_couscous2.id, basket_id: bobBasket.id)
 detailBasket2.save!
 p detailBasket2
+
+
+
+
+
+
+
+
+
+
+
+

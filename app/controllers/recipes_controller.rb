@@ -1,9 +1,9 @@
 class RecipesController < ApplicationController
-  skip_before_action :authenticate_user!, only: %i[index show]
+  skip_before_action :authenticate_user!, only: %i[index show update]
 
   before_action :set_recipe, only: %i[show update]
   before_action :set_user, only: %i[index]
-
+  
   def show
   end
 

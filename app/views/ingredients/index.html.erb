@@ -1,0 +1,13 @@
+<h1 class="text-center">All ingredients</h1>
+
+<% @ingredients.each do |ingredient| %>
+  <div class="card-product">
+    <img src="https://images.pexels.com/photos/4110101/pexels-photo-4110101.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" />
+    <div class="card-product-infos">
+      <h2>Name: <%= ingredient.name %></h2>
+      <p>Price: <%= ingredient.unit_price%>$</p>
+      <p>Unit of measure: <%= ingredient.unit%></p>
+      <p>Category: <%= ingredient.category%></p>
+    </div>
+  </div>
+<% end %>

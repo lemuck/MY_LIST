@@ -2,24 +2,12 @@
   <h1>Mon Basket</h1>
   <ul>
     <% @detail_baskets.each do |detail| %>
-
-      <!-- If there is  -->
-      <% if Recipe.find(IngredientRecipe.find(detail.ingredient_recipe_id).recipe_id).name || Ingredient.find(IngredientRecipe.find(detail.ingredient_recipe_id).ingredient_id).name %>
-        <li><%= Recipe.find(IngredientRecipe.find(detail.ingredient_recipe_id).recipe_id).name %>: <%= Recipe.find(IngredientRecipe.find(detail.ingredient_recipe_id).recipe_id).description %></li>
-          <ul><li><%= Ingredient.find(IngredientRecipe.find(detail.ingredient_recipe_id).ingredient_id).name %></li>
-            x <%= IngredientRecipe.find(detail.ingredient_recipe_id).ingredient_quantity %></ul>
-
-      <% elsif Recipe.find(IngredientRecipe.find(detail.ingredient_recipe_id).recipe_id).name %>
-        <li><%= Recipe.find(IngredientRecipe.find(detail.ingredient_recipe_id).recipe_id).name %>: <%= Recipe.find(IngredientRecipe.find(detail.ingredient_recipe_id).recipe_id).description %></li>
-
-      <% elsif Ingredient.find(IngredientRecipe.find(detail.ingredient_recipe_id).ingredient_id).name %>
-        <li><%= Ingredient.find(IngredientRecipe.find(detail.ingredient_recipe_id).ingredient_id).name %></li>
-          x <%= IngredientRecipe.find(detail.ingredient_recipe_id).ingredient_quantity %>
-
+      <% if detail.ingredient_recipe %>
+        <li>Recette:  <%= detail.ingredient_recipe.recipe.name %></li>
+          <ul><li> <%= detail.ingredient_recipe.ingredient.name %></li></ul>
       <% else %>
-        <p>Your basket is empty</p>
-          
-      <% end  %>
-	<% end %>
+        <li>Ingredient: <%= detail.ingredient.name %></li>
+      <% end %>
+	  <% end %>
   </ul>
 </div>

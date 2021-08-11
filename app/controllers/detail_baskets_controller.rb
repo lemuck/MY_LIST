@@ -2,15 +2,14 @@ class DetailBasketsController < ApplicationController
   before_action :set_detail_basket, only: [:destroy, :edit, :update]
 
   def index
-    @detail_baskets = DetailBasket.all
-    #@detail_baskets.where(current_user.id == user_id)
+    @detail_baskets = DetailBasket.where(basket_id: current_user.baskets)
   end
 
   def create
     @detail_basket = DetailBasket.new(detail_basket_params)
     @detail_basket.basket = current_user.basket
     if @detail_basket.save
-      redirect_to basket_path(current_basket)
+      redirect_to basket_path(current_user.basket)
     else
       render :new
     end
@@ -39,3 +38,15 @@ class DetailBasketsController < ApplicationController
     params.require(:detail_basket).permit(:ingredient_quantity, :ingredient_id, :ingredient_recipe_id)
   end
 end
+
+
+
+
+
+
+
+
+
+
+
+

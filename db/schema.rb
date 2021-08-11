@@ -10,24 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_09_135723) do
+ActiveRecord::Schema.define(version: 2021_08_09_135725) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "baskets", force: :cascade do |t|
-    t.bigint   "user_id", null: false
-    t.float    "total_price"
+    t.bigint "user_id", null: false
+    t.float "total_price"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_baskets_on_user_id"
   end
 
   create_table "detail_baskets", force: :cascade do |t|
-    t.bigint   "ingredient_recipe_id"
-    t.bigint   "ingredient_id"
-    t.bigint   "basket_id", null: false
-    t.float    "ingredient_quantity"
+    t.bigint "ingredient_recipe_id"
+    t.bigint "ingredient_id"
+    t.bigint "basket_id", null: false
+    t.float "ingredient_quantity"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["basket_id"], name: "index_detail_baskets_on_basket_id"
@@ -36,10 +36,9 @@ ActiveRecord::Schema.define(version: 2021_08_09_135723) do
   end
 
   create_table "ingredient_recipes", force: :cascade do |t|
-    t.bigint   "recipe_id", null: false
-    t.bigint   "ingredient_id", null: false
-    t.float    "ingredient_quantity"
-    t.integer  "person_number"
+    t.bigint "recipe_id", null: false
+    t.bigint "ingredient_id", null: false
+    t.float "ingredient_quantity"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["ingredient_id"], name: "index_ingredient_recipes_on_ingredient_id"
@@ -56,10 +55,11 @@ ActiveRecord::Schema.define(version: 2021_08_09_135723) do
   end
 
   create_table "recipes", force: :cascade do |t|
-    t.string   "name"
-    t.text     "description"
+    t.string "name"
+    t.text "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "person_number", default: 1
   end
 
   create_table "users", force: :cascade do |t|

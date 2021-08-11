@@ -3,5 +3,9 @@
 <p><%= @recipe.description %></p>
 <%@recipe.ingredient_recipes.each do |ingredient_recipe|%>
   <p><%= ingredient_recipe.ingredient.name %></p>
-  <p><%= ingredient_recipe.ingredient_quantity %><%= ingredient_recipe.ingredient.unit %></p>
+  <p><%= (ingredient_recipe.ingredient_quantity * @recipe.person_number).round%><%= ingredient_recipe.ingredient.unit %></p>
+<% end %>
+<%= simple_form_for(@recipe) do |f|%>
+  <%= f.input :person_number %>
+  <%= f.button :submit %>
 <% end %>

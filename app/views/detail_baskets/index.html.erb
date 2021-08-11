@@ -1,13 +1,42 @@
 <div class="container">
-  <h1>Mon Basket</h1>
-  <ul>
-    <% @detail_baskets.each do |detail| %>
-      <% if detail.ingredient_recipe %>
-        <li>Recette:  <%= detail.ingredient_recipe.recipe.name %></li>
-          <ul><li> <%= detail.ingredient_recipe.ingredient.name %></li></ul>
-      <% else %>
-        <li>Ingredient: <%= detail.ingredient.name %></li>
-      <% end %>
-	  <% end %>
-  </ul>
+  <h1>-My Basket-</h1>
+  <div class="basket-content">
+      <% recipe = [] %>
+      <% @detail_baskets.each do |detail| %>
+        <% if detail.ingredient_recipe %>
+          <% unless recipe.include?(detail.ingredient_recipe.recipe) %>
+
+            <div class="card-basket card-basket-recipe d-flex justify-content-between">
+
+              <div class="recipe-name">
+                <h5><%= detail.ingredient_recipe.recipe.name %> </h5>
+              </div>
+
+              <div class="recipe-img">
+                <%= image_tag("recipe.jpeg")%>      
+              </div>
+
+            </div>
+
+          <% end %>
+          <% recipe << detail.ingredient_recipe.recipe %>
+            <ul>
+
+              <div class="card-basket card-basket-ingredient-recipe">
+                <%= detail.ingredient_recipe.ingredient.name %>: <%= detail.ingredient_recipe.ingredient_quantity %> <%= detail.ingredient_recipe.ingredient.unit %>
+              </div>
+
+            </ul>
+        <% else %>
+
+          <div class="card-basket card-basket-ingredient">
+            Ingredient: <%= detail.ingredient.name %>
+          </div>
+
+        <% end %>
+  	  <% end %>
+  </div>
 </div>
+
+
+        

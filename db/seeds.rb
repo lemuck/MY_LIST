@@ -69,18 +69,21 @@ ingredient_couscous1 = IngredientRecipe.new(recipe_id: couscous.id, ingredient_i
 ingredient_couscous1.save
 ingredient_couscous2 = IngredientRecipe.new(recipe_id: couscous.id, ingredient_id: courgette.id, ingredient_quantity: 1)
 ingredient_couscous2.save
-IngredientRecipe.new(recipe_id: couscous.id, ingredient_id: semoule.id, ingredient_quantity: 300).save
+ingredient_couscous3 = IngredientRecipe.new(recipe_id: couscous.id, ingredient_id: semoule.id, ingredient_quantity: 300)
+ingredient_couscous3.save
 p couscous.name
 
 ########## Detail_Baskets
-detailBasket1 = DetailBasket.new(ingredient_id: ingredient_couscous1.ingredient_id ,ingredient_recipe_id: ingredient_couscous1.id, basket_id: bobBasket.id)
+detailBasket1 = DetailBasket.new(ingredient_id: pate_a_tarte.id, basket_id: bobBasket.id)
 detailBasket1.save
 p detailBasket1
 
-detailBasket2 = DetailBasket.new(ingredient_recipe_id: ingredient_couscous2.id, basket_id: bobBasket.id)
-detailBasket2.save
-p detailBasket2
-
+DetailBasket.new(ingredient_recipe_id: ingredient_couscous1.id, basket_id: bobBasket.id).save
+p "1.."
+DetailBasket.new(ingredient_recipe_id: ingredient_couscous2.id, basket_id: bobBasket.id).save
+p "...2.."
+DetailBasket.new(ingredient_recipe_id: ingredient_couscous3.id, basket_id: bobBasket.id).save
+p "......3 detail_baskets done"
 
 
 

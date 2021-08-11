@@ -1,13 +1,14 @@
 class DetailBasketsController < ApplicationController
-  before_action :set_detail_basket
+  before_action :set_detail_basket, only: [:destroy, :edit, :update]
 
   def index
     @detail_baskets = DetailBasket.all
+    #@detail_baskets.where(current_user.id == user_id)
   end
 
   def create
     @detail_basket = DetailBasket.new(detail_basket_params)
-    @detail_basket.basket = current_basket
+    @detail_basket.basket = current_user.basket
     if @detail_basket.save
       redirect_to basket_path(current_basket)
     else

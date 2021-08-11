@@ -1,7 +1,7 @@
 class BasketPolicy < ApplicationPolicy
   
   def show?
-    true
+    false
   end
 
   class Scope < Scope

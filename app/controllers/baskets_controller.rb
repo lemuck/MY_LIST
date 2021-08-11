@@ -2,13 +2,13 @@ class BasketsController < ApplicationController
   before_action :set_basket, only: [:show]
 
   # => It's inside users controller
-  # def create
-  #   @basket = Basket.new(user_id: current_user, total_price: 0)
-  #   @basket.save
-  # end
+  def create
+    @basket = Basket.new(user_id: current_user, total_price: 0)
+    @basket.save
+    redirect_to
+  end
   # <=
   def update
-
   end
 
   def show
@@ -18,8 +18,7 @@ class BasketsController < ApplicationController
   private
 
   def set_basket
-    @basket = Basket.find(params[:user][:basket])
-    authorize @basket
+    @basket = Basket.find(current_user.basket)
   end
 end
 

@@ -40,60 +40,46 @@
 
   <div class='row'>
     <div class='col-12'>
-      <div class='card-banner'>
+  <!--  CAROUSEL ICI ######################################################### -->
 
-  <!--  <span class='card-banner-text'>CAROUSEL ICI</span> <br> -->
-
-    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <div class="card-recipe">
+      <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="card-recipe">
               <div class="recipe-info">
-                <h4> chocolate cake </h4>
+                <h4> Chocolate Cake </h4>
               </div>
               <img src="https://image.flaticon.com/icons/png/512/1046/1046857.png" alt="Le Wagon logo" class="recipe-image">
             </div>
-    </div>
-    <div class="carousel-item">
-      <div class="card-recipe">
-              <div class="recipe-info">
-                <h4> couscous </h4>
+          </div>
+
+          <% Recipe.all.sample(3).each do |recipe| %>
+            <div class="carousel-item">
+              <div class="card-recipe">
+                <div class="recipe-info">
+                  <h4> <%= recipe.name %> </h4>
+                </div>
+                <img src="https://image.flaticon.com/icons/png/512/1046/1046857.png" alt="Le Wagon logo" class="recipe-image">
               </div>
-              <img src="https://image.flaticon.com/icons/png/512/1046/1046857.png" alt="Le Wagon logo" class="recipe-image">
             </div>
-    </div>
-    <div class="carousel-item">
-     <div class="card-recipe">
-              <div class="recipe-info">
-                <h4> Tarte aux carottes </h4>
-              </div>
-              <img src="https://image.flaticon.com/icons/png/512/1046/1046857.png" alt="Le Wagon logo" class="recipe-image">
-            </div>
-    </div>
-  </div>
-  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
-
-
-
-
-
-
-
-
-
+          <% end %>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
       </div>
+      
     </div>
   </div>
-
 
   <!--Effacer quand la home est terminée-->
   <br><br><br><br><br><br><br><br><br><br><br><br><br>
 </div>
+
+
+

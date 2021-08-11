@@ -2,7 +2,7 @@ class RecipesController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
   before_action :set_recipe, only: %i[edit update show destroy]
   before_action :set_user, only: [:index]
-
+  
   def show
   end
 
@@ -25,6 +25,11 @@ class RecipesController < ApplicationController
     end
   end
 
+  def update
+    @recipe.update(recipe_params)
+    redirect_to recipe_path(@recipe)
+  end
+
   private
 
   def set_user
@@ -34,8 +39,8 @@ class RecipesController < ApplicationController
   def set_recipe
     @recipe = Recipe.find(params[:id])
   end
-
+  
   def recipe_params
-    params.require(:recipe).permit(:name, :description)
+    params.require(:recipe).permit(:name, :description, :person_number)
   end
 end

@@ -44,9 +44,9 @@ p semoule.name
 courgette = Ingredient.create(name: "Courgette", unit: "kg", unit_price: 2.3, category: "legume")
 courgette.save
 p courgette.name
-italian_sausage = Ingredient.create(name: "Italian Sausage", unit: "kg", unit_price: 4, category: "meat")
+italian_sausage = Ingredient.create(name: "Italian Sausage", unit: "g", unit_price: 4, category: "meat")
 italian_sausage.save
-lean_ground_beef = Ingredient.create(name: "lean ground beef", unit: "kg", unit_price: 6, category: "meat")
+lean_ground_beef = Ingredient.create(name: "lean ground beef", unit: "g", unit_price: 6, category: "meat")
 lean_ground_beef.save
 
 ########## Recipe
@@ -63,8 +63,8 @@ p choco_cake.name
 pasta_sausage = Recipe.new(name: 'Pasta with italian sausage', description: 'Removed casing from sausage links and cut into 1/2 inch slices. In a large skillet, brown sausage over medium heat for about 10 minutes; remove and set aside. In a large skillet, heat ground beef, olive oil, garlic and onion over medium heat until meat is nicely browned; drain. Pour in tomatoes and tomato sauce; mix in salt, ground black pepper, basil, oregano, bay leaf and cooked sausage. Simmer uncovered for 1 hour, stirring occasionally.Bring a large pot of lightly salted water to a boil. Add pasta and cook for 8 to 10 minutes or until al dente; drain. Mix cooked sauce with hot pasta and remove bay leaf from sauce before serving.
 ')
 pasta_sausage.save
-IngredientRecipe.new(recipe_id: pasta_sausage.id, ingredient_id: italian_sausage.id, ingredient_quantity: 500).save
-IngredientRecipe.new(recipe_id: pasta_sausage.id, ingredient_id: lean_ground_beef.id, ingredient_quantity: 500).save
+ingredient_pasta1 = IngredientRecipe.new(recipe_id: pasta_sausage.id, ingredient_id: italian_sausage.id, ingredient_quantity: 500).save
+ingredient_pasta2 = IngredientRecipe.new(recipe_id: pasta_sausage.id, ingredient_id: lean_ground_beef.id, ingredient_quantity: 500).save
 tarte_aux_carottes = Recipe.new(name: "Tarte aux carottes", description: "tarte avec des carottes")
 tarte_aux_carottes.save
 

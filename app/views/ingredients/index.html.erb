@@ -21,5 +21,12 @@
       <p>Unit of measure: <%= ingredient.unit%></p>
       <p>Category: <%= ingredient.category%></p>
     </div>
+
+    <%= link_to detail_baskets_path(ingredient: ingredient.id), method: :post, class:"text-decoration-none" do %>
+      <div class="btn-cart">
+        <p class="color-white"><i class="fas fa-cart-arrow-down"></i></p>
+      </div>
+    <% end %>
+
   </div>
 <% end %>

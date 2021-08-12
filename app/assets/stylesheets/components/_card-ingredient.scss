@@ -22,6 +22,7 @@
 }
 */
 .card-product {
+  position: relative;
   overflow: hidden;
   height: 120px;
   background: white;
@@ -53,4 +54,18 @@
 
 .card-product .card-product-infos {
   padding: 16px;
+}
+
+.btn-cart {
+  width: 40px;
+  height: 40px;
+  border-radius: 30%;
+  background-color: $vert-clair;
+  position: absolute;
+  right: 30px;
+  top: 41px;
+  p {
+    margin: 0px;
+    font-size: 20px;
+  }
 }

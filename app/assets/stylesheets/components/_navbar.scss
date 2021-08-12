@@ -3,6 +3,7 @@
   padding: 15px 15px;
   display: flex;
   justify-content: space-evenly;
+  align-items: center;
   background-color: $vert-clair;
   border-radius: 50px 50px 50px 50px;
   width: 90%;
@@ -12,11 +13,4 @@
   z-index: 3;
   margin-left: 5%;
   margin-right: 5%;
-}
-.colorwhite {
-  color: white;
-
-}
-.colorwhite:hover {
-  color: white;
 }

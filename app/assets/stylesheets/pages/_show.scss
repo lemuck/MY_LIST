@@ -1,81 +1,95 @@
 .img-show {
-    height: 170px;
-    width: 300px;
-    margin-top: 30px;
-    margin-left: 25px;
-    object-fit: cover;
+	height: 170px;
+	width: 300px;
+	margin-top: 30px;
+	margin-left: 25px;
+	object-fit: cover;
 }
 
 .title-show {
-    background: $vert-clair;
-    font-size: 30px;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    padding: 5px;
-    width: 300px;;
-    margin-top: 20px;
-    margin-left: 20px;
-    text-align: center;
-    border-radius: 10px;
+	background: $vert-clair;
+	font-size: 30px;
+	font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+	padding: 5px;
+	width: 300px;;
+	margin-top: 20px;
+	margin-left: 20px;
+	text-align: center;
+	border-radius: 10px;
 }
 
 .card-show {
-  background: $vert-clair;
-  border-radius: 10px;
-  margin-top: 20px;
-  padding: 10px;
-
+	background: $vert-clair;
+	border-radius: 10px;
+	margin-top: 20px;
+	padding: 10px;
 }
 
 .form{
-    width: 60px;
-    margin-left: 10px;
+	width: 60px;
+	margin-left: 10px;
 }
 
 .btn-form {
-    background: $rouge;
-    color: white;
-    margin-left: 10px;
-    height: 37px;
+	background: $rouge;
+	color: white;
+	margin-left: 10px;
+	height: 37px;
 }
 
 .recette {
-    font-size: 17px;
+	font-size: 17px;
 }
- #titre {
-     font-size: 20px;
- }
+#titre {
+	font-size: 20px;
+}
 
- .show-margin {
-     margin-left: 10px;
- }
+.show-margin {
+	margin-left: 10px;
+}
 
- .btn-show {
-    background: $rouge;
-    border-radius: 10px;
-    margin-top: 20px;
-    text-align: center;
-    margin-bottom: 100px;
- }
- 
- .color-white {
-     color: white;
-     font-size: 20px;
-     padding: 7px;
- }
+.btn-show {
+	background: $rouge;
+	border-radius: 10px;
+	margin-top: 20px;
+	text-align: center;
+	margin-bottom: 100px;
+}
 
- .color-white:hover {
-   color: white;
- }
+.color-white {
+	color: white;
+	font-size: 20px;
+	padding: 7px;
+}
 
- .text-justify {
-     text-align: justify;
- }
+.color-white:hover {
+	color: white;
+}
 
- .etape{
-     margin-left: -20px;
- }
+.text-justify {
+	text-align: justify;
+}
 
- .person-number {
-     margin-top: 5px;
-     font-size: 18px;
- }
+.etape{
+	margin-left: -20px;
+}
+
+.person-number {
+	margin-top: 5px;
+	font-size: 18px;
+}
+
+.enter-number-person {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 19px;
+
+	#enter-number-person-box {
+		width: 40%;
+	}  
+}
+
+.form-control:valid{
+	background-image: none !important;
+}

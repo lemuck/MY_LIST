@@ -5,21 +5,22 @@
   <h1 class="title-show"><%= @recipe.name %></h1>
   <div class="card-show">
     <div class="show-margin">
-      <div class="d-flex">
-        <strong><p class="person-number">Person number :</p></strong>
-        <div class="form">
-          <%= simple_form_for(@recipe) do |f|%>
-            <%= f.input :person_number, label: false %>
-        </div>
-            <%= f.button :submit, value: "Valider" , class:"btn-form"%>
+      <div class="enter-number-person">
+        <p><strong>Number of Person: </strong></p>
+        <div id="enter-number-person-box">
+          <%= simple_form_for @recipe do |f| %>
+            <%= f.input :person_number, label: false, collection: 1..8, include_blank: false, include_hidden: false %>
           <% end %>
+        </div>
       </div>
       <div class="recette">
         <strong><p id="titre">Ingredients : </p></strong>
-        <%@recipe.ingredient_recipes.each do |ingredient_recipe|%>
-          <li><%= (ingredient_recipe.ingredient_quantity * @recipe.person_number).round%>
-          <%= ingredient_recipe.ingredient.unit %>
-          <%= ingredient_recipe.ingredient.name %></li>
+        <% @recipe.ingredient_recipes.each do |ingredient_recipe| %>
+          <li>
+            <span class='ingredient-recipe-quantity'> <%= (ingredient_recipe.ingredient_quantity * @recipe.person_number).round%> </span>
+            <%= ingredient_recipe.ingredient.unit %>
+            <%= ingredient_recipe.ingredient.name %>
+          </li>
         <% end %>
         <br>
         <strong><p id="titre">Recipe :</p></strong>

@@ -41,10 +41,26 @@ p semoule.name
 courgette = Ingredient.create(name: "Courgette", unit: "kg", unit_price: 2.3, category: "legume")
 courgette.save
 p courgette.name
+
 italian_sausage = Ingredient.create(name: "Italian Sausage", unit: "g", unit_price: 4, category: "meat")
 italian_sausage.save
+p italian_sausage.name
+
 lean_ground_beef = Ingredient.create(name: "lean ground beef", unit: "g", unit_price: 6, category: "meat")
 lean_ground_beef.save
+p lean_ground_beef.name
+
+rice = Ingredient.create(name: "Rice", unit: "g", unit_price: 1, category: "sec")
+rice.save
+p rice.name
+
+egg = Ingredient.create(name: "Egg", unit: "", unit_price: 0.1)
+egg.save
+p egg.name
+
+onion = Ingredient.create(name: "Onion", unit: "", unit_price: 0.3, category: "legume")
+onion.save
+p onion.name
 
 ########## Recipe
 choco_cake = Recipe.new(name: 'Chocolate Cake', description: "Add flour, sugar, cocoa, baking powder, baking soda, salt and espresso powder to a large bowl or the bowl of a stand mixer. Whisk through to combine or, using your paddle attachment, stir through flour mixture until combined well.
@@ -58,11 +74,25 @@ IngredientRecipe.new(recipe_id: choco_cake.id, ingredient_id: choco.id, ingredie
 IngredientRecipe.new(recipe_id: choco_cake.id, ingredient_id: flour.id, ingredient_quantity: 500).save
 p choco_cake.name
 
-pasta_sausage = Recipe.new(name: 'Pasta with italian sausage', description: 'Removed casing from sausage links and cut into 1/2 inch slices. In a large skillet, brown sausage over medium heat for about 10 minutes; remove and set aside. In a large skillet, heat ground beef, olive oil, garlic and onion over medium heat until meat is nicely browned; drain. Pour in tomatoes and tomato sauce; mix in salt, ground black pepper, basil, oregano, bay leaf and cooked sausage. Simmer uncovered for 1 hour, stirring occasionally.Bring a large pot of lightly salted water to a boil. Add pasta and cook for 8 to 10 minutes or until al dente; drain. Mix cooked sauce with hot pasta and remove bay leaf from sauce before serving.
-')
+pasta_sausage = Recipe.new(name: 'Pasta with italian sausage', description: 'Removed casing from sausage links and cut into 1/2 inch slices. 
+In a large skillet, brown sausage over medium heat for about 10 minutes; remove and set aside. 
+In a large skillet, heat ground beef, olive oil, garlic and onion over medium heat until meat is nicely browned; drain. 
+Pour in tomatoes and tomato sauce; mix in salt, ground black pepper, basil, oregano, bay leaf and cooked sausage. Simmer uncovered for 1 hour, stirring occasionally.
+Bring a large pot of lightly salted water to a boil. Add pasta and cook for 8 to 10 minutes or until al dente; drain. Mix cooked sauce with hot pasta and remove bay leaf from sauce before serving.')
 pasta_sausage.save
-ingredient_pasta1 = IngredientRecipe.new(recipe_id: pasta_sausage.id, ingredient_id: italian_sausage.id, ingredient_quantity: 500).save
-ingredient_pasta2 = IngredientRecipe.new(recipe_id: pasta_sausage.id, ingredient_id: lean_ground_beef.id, ingredient_quantity: 500).save
+IngredientRecipe.new(recipe_id: pasta_sausage.id, ingredient_id: italian_sausage.id, ingredient_quantity: 500).save
+IngredientRecipe.new(recipe_id: pasta_sausage.id, ingredient_id: lean_ground_beef.id, ingredient_quantity: 500).save
+p pasta_sausage.name
+
+egg_fried_rice = Recipe.new(name: 'Egg Fried Rice', person_number: 2, description: "Cook the rice following pack instructions, then drain, spread it out to steam-dry and set aside.
+Heat 2 tbsp of the oil in a large wok over a high heat, then add the diced onion and fry until lightly browned. 
+Add the rice, stir and toast for about 3 mins, then move to the side of the pan. Add the remaining oil, then tip in the egg mixture. 
+Leave to cook a little, then mix in with the rice – stir vigorously to coat the grains. Tip into a serving bowl and scatter over the spring onion to serve.")
+egg_fried_rice.save
+IngredientRecipe.new(recipe_id: egg_fried_rice.id, ingredient_id: rice.id, ingredient_quantity: 250).save
+IngredientRecipe.new(recipe_id: egg_fried_rice.id, ingredient_id: egg.id, ingredient_quantity: 2).save
+IngredientRecipe.new(recipe_id: egg_fried_rice.id, ingredient_id: onion.id, ingredient_quantity: 1).save
+p egg_fried_rice.name
 
 tarte_aux_carottes = Recipe.new(name: "Tarte aux carottes", description: "tarte avec des carottes")
 tarte_aux_carottes.save

@@ -5,7 +5,7 @@ class RecipesController < ApplicationController
   before_action :set_user, only: %i[index]
 
   def show
-    authorize @recipe
+    # authorize @recipe
   end
 
   def index
@@ -14,7 +14,7 @@ class RecipesController < ApplicationController
     else
       @recipes = Recipe.all
     end
-    authorize @recipes
+    # authorize @recipes
   end
 
   def new
@@ -48,7 +48,7 @@ class RecipesController < ApplicationController
   def set_recipe
     @recipe = Recipe.find(params[:id])
   end
-  
+
   def recipe_params
     params.require(:recipe).permit(:name, :description, :person_number, :query)
   end

@@ -27,8 +27,10 @@ import "bootstrap";
 
 // Internal imports, e.g:
 import { initUpdateLogobarOnScroll } from '../components/logobar';
+import { ingredientQuantityChange } from '../components/ingredient_quantity';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here
   initUpdateLogobarOnScroll()
+  ingredientQuantityChange()
 });

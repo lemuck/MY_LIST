@@ -29,11 +29,9 @@ class DetailBasketsController < ApplicationController
   end
 
   def destroy
-    if params[:ingredient_id]
+    if params[:id]
       @detail_basket.destroy
       redirect_to detail_baskets_path
-    else
-      detail_baskets = @detail_basket.where(recipe_id: params[:recipe_id])
     end
   end
 

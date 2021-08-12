@@ -8,10 +8,10 @@
       <div class="d-flex">
         <strong><p class="person-number">Person number :</p></strong>
         <div class="form">
-          <%= simple_form_for(@recipe) do |f|%>
-            <%= f.input :person_number, label: false %>
+          <%= simple_form_for(@recipe) do |f| %>
+           <%= f.input :person_number, label: false %>
         </div>
-            <%= f.button :submit, value: "Valider" , class:"btn-form"%>
+            <%= f.button :submit, value: "Valid" , class:"btn-form"%>
           <% end %>
       </div>
       <div class="recette">

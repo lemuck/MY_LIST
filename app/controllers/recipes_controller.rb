@@ -8,7 +8,11 @@ class RecipesController < ApplicationController
   end
 
   def index
-    @recipes = Recipe.all
+    if params[:query].present?
+      @recipes = Recipe.search_by_recipe(params[:query])
+    else
+      @recipes = Recipe.all
+    end
   end
 
   def new
@@ -42,6 +46,6 @@ class RecipesController < ApplicationController
   end
   
   def recipe_params
-    params.require(:recipe).permit(:name, :description, :person_number)
+    params.require(:recipe).permit(:name, :description, :person_number, :query)
   end
 end

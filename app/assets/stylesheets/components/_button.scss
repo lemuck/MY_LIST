@@ -1,0 +1,16 @@
+.btn-flat {
+  color: $vert-fonce;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #1EDD88;
+  transition: background 0.3s ease;
+  height: 38px;
+}
+.form-control {
+  width: 50%;
+  border-radius: 5px;
+}
+.d-flex {
+    display: flex !important;
+    justify-content: center;
+}

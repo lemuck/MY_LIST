@@ -2,39 +2,57 @@
   padding: 0px;
 }
 
+.basket-title {
+  text-align: center;
+}
+
 .card-basket {
   border-radius: 12px;
   background-color: white;
   padding: 5px;
-  border: 1px, solid, grey;
+
+  position: relative;
+  box-shadow: 0.6px 0.6px 3px $vert-clair;
+}
+
+.basket-bin {
+  position: absolute;
+  right: 20px;
+  color: $vert-clair;
 }
 
 .card-basket-recipe {
   width: 100%;
   height: 50px;
   margin-top: 10px;
-  margin-bottom: 10px;
-  padding: 10px;
+  margin-bottom: 15px;
+  align-items: center;
+  position: relative;
+  padding-left: 20px;
+  h5 {
+    margin: 0px;
+  }
 }
 
 .recipe-name {
+  position: absolute;
 }
 
-.recipe-img img {
-  width: 50px;
-  height: 50px;
-  object-fit:cover;
-}
-
-
-
-
-
-
-
+.recipe-img {
+  position: absolute;
+  right: 0px;
+  img {
+    width: 50px;
+    height: 50px;
+    object-fit:cover;
+    border-radius: 0px 12px 12px 0px;
+  }
+} 
 
 .card-basket-ingredient-recipe {
-  
+  margin-left: 30px;
+  margin-right: 5px;
+  padding-left: 20px;
 }
 
 .card-basket-ingredient {

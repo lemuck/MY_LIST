@@ -18,7 +18,7 @@ class BasketsController < ApplicationController
   private
 
   def set_basket
-    @basket = Basket.find(current_user.basket)
+    @basket = Basket.find(current_user.baskets.first.id)
   end
 end
 

@@ -1,6 +1,12 @@
 class IngredientsController < ApplicationController
+  skip_before_action :authenticate_user!, only: %i[index]
+
   def index
-    @ingredients = Ingredient.all
+    if params[:query].present?
+      @ingredients = Ingredient.search_by_ingredient(params[:query])
+    else
+      @ingredients = Ingredient.all
+    end
   end
 
   def new
@@ -26,6 +32,6 @@ class IngredientsController < ApplicationController
   private
 
   def ingredient_params
-    params.require(:ingredient).permit(:name, :unit_price, :unit, :category)
+    params.require(:ingredient).permit(:name, :unit_price, :unit, :category, :query)
   end
 end

@@ -6,7 +6,7 @@ class DetailBasketsController < ApplicationController
   end
 
   def create
-    if Recipe.find(params[:recipe])
+    if params[:recipe]
       @recipe = Recipe.find(params[:recipe])
       @recipe.ingredient_recipes.each do |ingredient_recipe|
         detail_basket = DetailBasket.new(ingredient_recipe_id: ingredient_recipe.id,
@@ -15,16 +15,16 @@ class DetailBasketsController < ApplicationController
         detail_basket.save
       end
 
-      flash[:alert] = "#{@recipe.name} successfully added"
+      flash[:notice] = "#{@recipe.name} successfully added"
       redirect_to recipes_path
 
     else
       @ingredient = Ingredient.find(params[:ingredient])
       detail_basket = DetailBasket.new(ingredient_id: @ingredient.id)
-      detail_basket.basket = current_user.baskets.first.id
-      if detail_basket.save
-        flash[:success] = "#{@ingredient.name} successfully added"
-      end
+      detail_basket.basket_id = current_user.baskets.first.id
+      detail_basket.save
+      flash[:notice] = "#{@ingredient.name} successfully added"
+      redirect_to ingredients_path
     end
   end
 

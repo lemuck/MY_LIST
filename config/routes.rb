@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :ingredients, only: [:index, :show]
 
   authenticate :user do
+    resources :users, only: [:show, :update]
     resources :recipes, only: [:new, :create, :destroy]
     resources :baskets, only: [:create, :show]
     resources :detail_baskets, only: [:create, :index, :destroy]

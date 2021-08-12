@@ -1,4 +1,6 @@
 class IngredientsController < ApplicationController
+  skip_before_action :authenticate_user!, only: %i[index]
+
   def index
     if params[:query].present?
       @ingredients = Ingredient.search_by_ingredient(params[:query])

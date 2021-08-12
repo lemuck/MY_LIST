@@ -3,8 +3,9 @@ class RecipesController < ApplicationController
 
   before_action :set_recipe, only: %i[show update]
   before_action :set_user, only: %i[index]
-  
+
   def show
+    authorize @recipe
   end
 
   def index
@@ -13,10 +14,12 @@ class RecipesController < ApplicationController
     else
       @recipes = Recipe.all
     end
+    authorize @recipes
   end
 
   def new
     @recipe = Recipe.new
+    authorize @recipe
   end
 
   def create
@@ -33,6 +36,7 @@ class RecipesController < ApplicationController
   def update
     @recipe.update(recipe_params)
     redirect_to recipe_path(@recipe)
+    authorize @recipe
   end
 
   private

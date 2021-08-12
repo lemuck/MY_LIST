@@ -6,12 +6,24 @@ class DetailBasketsController < ApplicationController
   end
 
   def create
-    @detail_basket = DetailBasket.new(detail_basket_params)
-    @detail_basket.basket = current_user.basket
-    if @detail_basket.save
-      redirect_to basket_path(current_user.basket)
+    if Recipe.find(params[:recipe])
+      @recipe = Recipe.find(params[:recipe])
+      @recipe.ingredient_recipes.each do |ingredient_recipes|
+        detail_basket = DetailBasket.new(ingredient_recipe_id: ingredient_recipes.id, ingredient_quantity: ingredient_recipes.ingredient_quantity)
+        detail_basket.basket_id = current_user.baskets.first.id
+        detail_basket.save
+      end
+      
+    flash[:alert] = "Recipe successfully added"
+    redirect_to recipes_path
+
     else
-      render :new
+      @detail_basket = Ingredient.find(params[:ingredient])
+      detail_basket = DetailBasket.new(ingredient_id: detail_basket.id)
+      detail_basket.basket = current_user.basket
+      if detail_basket.save
+        flash[:success] = "Ingredient successfully added"
+      end
     end
   end
 
@@ -33,15 +45,7 @@ class DetailBasketsController < ApplicationController
   def set_detail_basket
     @detail_basket = DetailBasket.find(params[:id])
   end
-
-  def detail_basket_params
-    params.require(:detail_basket).permit(:ingredient_quantity, :ingredient_id, :ingredient_recipe_id)
-  end
 end
-
-
-
-
 
 
 

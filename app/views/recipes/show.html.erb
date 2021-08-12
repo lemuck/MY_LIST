@@ -36,7 +36,7 @@
       </div>
     </div>
   </div>
-  <%= link_to "#", class:"text-decoration-none" do %>
+  <%= link_to detail_baskets_path(recipe: @recipe.id, person: @recipe.person_number), method: :post, class:"text-decoration-none" do %>
     <div class="btn-show">
       <p class="color-white">Add to card</p>
     </div>

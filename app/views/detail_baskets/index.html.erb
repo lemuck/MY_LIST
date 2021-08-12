@@ -1,5 +1,5 @@
 <div class="container">
-  <h1>-My Basket-</h1>
+  <h1 class= "basket-title">-My Basket-</h1>
   <div class="basket-content">
       <% recipe = [] %>
       <% @detail_baskets.each do |detail| %>
@@ -9,7 +9,7 @@
             <div class="card-basket card-basket-recipe d-flex justify-content-between">
 
               <div class="recipe-name">
-                <h5><%= detail.ingredient_recipe.recipe.name %> </h5>
+                <h5><%= detail.ingredient_recipe.recipe.name %> <%= @recipe.person_number %> pers</h5>
               </div>
 
               <div class="recipe-img">
@@ -21,16 +21,25 @@
           <% end %>
           <% recipe << detail.ingredient_recipe.recipe %>
             <ul>
-
               <div class="card-basket card-basket-ingredient-recipe">
-                <%= detail.ingredient_recipe.ingredient.name %>: <%= detail.ingredient_recipe.ingredient_quantity %> <%= detail.ingredient_recipe.ingredient.unit %>
+                <%= detail.ingredient_recipe.ingredient.name %>: <%= detail.ingredient_quantity.round(1) %> <%= detail.ingredient_recipe.ingredient.unit %>
+
+                <%= link_to detail_basket_path(id:detail.id),method: :delete, class:'basket-bin' do %>
+                <i class="fas fa-trash-alt"></i>
+              <% end %>
               </div>
+
+
 
             </ul>
         <% else %>
 
           <div class="card-basket card-basket-ingredient">
             Ingredient: <%= detail.ingredient.name %>
+
+            <%= link_to detail_basket_path(id:detail.id),method: :delete, class:'basket-bin' do %>
+            <i class="fas fa-trash-alt"></i>
+            <% end %>          
           </div>
 
         <% end %>

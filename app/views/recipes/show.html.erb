@@ -9,7 +9,7 @@
         <p><strong>Number of Person: </strong></p>
         <div id="enter-number-person-box">
           <%= simple_form_for @recipe do |f| %>
-            <%= f.input :person_number, label: false, collection: 1..8, include_blank: false, include_hidden: false %>
+            <%= f.input :person_number, label: false, collection: 1..9, include_blank: false, include_hidden: false %>
           <% end %>
         </div>
       </div>

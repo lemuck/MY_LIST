@@ -18,31 +18,62 @@ john.save
 p john.name
 
 ########## Ingredients
-choco = Ingredient.new(name: 'Chocolate', unit: 'g', unit_price: 2.3)
+
+### sec
+choco = Ingredient.new(name: 'chocolate', unit: 'g', unit_price: 0.31, category: "sec")
 choco.save
 p choco.name
 
-flour = Ingredient.new(name: 'Flour', unit: 'g', unit_price: 1.3)
+flour = Ingredient.new(name: 'flour', unit: 'g', unit_price: 0.0047, category:"sec")
 flour.save
 p flour.name
 
-carotte = Ingredient.create(name: "Carotte", unit: "kg", unit_price: 3, category: "legume")
-carotte.save
-p carotte.name
-
-pate_a_tarte = Ingredient.create(name: "Pate à tarte", unit: "g", unit_price: 1, category: "patisserie")
+pate_a_tarte = Ingredient.create(name: "pate à tarte", unit: "g", unit_price: 1, category: "sec")
 pate_a_tarte.save
 p pate_a_tarte.name
 
-semoule = Ingredient.create(name: "Semoule", unit: "g", unit_price: 2, category: "sec")
+semoule = Ingredient.create(name: "semoule", unit: "g", unit_price: 2, category: "sec")
 semoule.save
 p semoule.name
 
-courgette = Ingredient.create(name: "Courgette", unit: "kg", unit_price: 2.3, category: "legume")
+rice = Ingredient.create(name: "rice", unit: "g", unit_price: 1, category: "sec")
+rice.save
+p rice.name
+
+egg = Ingredient.create(name: "egg", unit: "", unit_price: 0.1, category: "sec")
+egg.save
+p egg.name
+
+sugar = Ingredient.new(name: "sugar", unit:"g", unit_price: 0.012, category: "sec")
+sugar.save
+p sugar.name
+
+lasagne = Ingredient.new(name: "lasagne", unit:"", unit_price: 0.01, category: "sec")
+lasagne.save
+p lasagne.name
+
+### veg
+carotte = Ingredient.create(name: "carotte", unit: "kg", unit_price: 3, category: "veg")
+carotte.save
+p carotte.name
+
+courgette = Ingredient.create(name: "courgette", unit: "kg", unit_price: 2.3, category: "veg")
 courgette.save
 p courgette.name
 
-italian_sausage = Ingredient.create(name: "Italian Sausage", unit: "g", unit_price: 4, category: "meat")
+onion = Ingredient.create(name: "onion", unit: "", unit_price: 0.3, category: "veg")
+onion.save
+p onion.name
+
+tomato = Ingredient.new(name: "tomato", unit:"", unit_price: 0.5, category: "veg")
+tomato.save
+p tomato.name
+
+courgette = Ingredient.new(name: "courgette", unit:"", unit_price: 0.5, category: "veg")
+courgette.save
+p courgette.name
+
+italian_sausage = Ingredient.create(name: "italian Sausage", unit: "g", unit_price: 4, category: "meat")
 italian_sausage.save
 p italian_sausage.name
 
@@ -50,29 +81,71 @@ lean_ground_beef = Ingredient.create(name: "lean ground beef", unit: "g", unit_p
 lean_ground_beef.save
 p lean_ground_beef.name
 
-rice = Ingredient.create(name: "Rice", unit: "g", unit_price: 1, category: "sec")
-rice.save
-p rice.name
+## milk
 
-egg = Ingredient.create(name: "Egg", unit: "", unit_price: 0.1)
-egg.save
-p egg.name
+butter = Ingredient.new(name: "butter", unit:"g", unit_price: 0.12, category: "milk")
+butter.save
+p butter.name
 
-onion = Ingredient.create(name: "Onion", unit: "", unit_price: 0.3, category: "legume")
-onion.save
-p onion.name
+cheese = Ingredient.new(name: "cheese", unit:"g", unit_price: 1.3, category: "milk")
+cheese.save
+p cheese.name
 
-########## Recipe
-choco_cake = Recipe.new(name: 'Chocolate Cake', description: "Add flour, sugar, cocoa, baking powder, baking soda, salt and espresso powder to a large bowl or the bowl of a stand mixer. Whisk through to combine or, using your paddle attachment, stir through flour mixture until combined well.
-Add milk, vegetable oil, eggs, and vanilla to flour mixture and mix together on medium speed until well combined. Reduce speed and carefully add boiling water to the cake batter until well combined.
-Distribute cake batter evenly between the two prepared cake pans. Bake for 30-35 minutes, until a toothpick or cake tester inserted in the center of the chocolate cake comes out clean.
-Remove from the oven and allow to cool for about 10 minutes, remove from the pan and cool completely.")
+fresh_cream = Ingredient.new(name: "fresh cream", unit:"g", unit_price: 0.4, category: "milk")
+fresh_cream.save
+p fresh_cream.name
+
+### condiment
+
+olive_oil = Ingredient.new(name: "olive oil", unit:"ml", unit_price: 0.7, category: "condiment")
+olive_oil.save
+p olive_oil.name
+
+mustard = Ingredient.new(name: "mustard", unit:"teaspoon", unit_price: 0.01, category: "condiment")
+mustard.save
+p mustard.name
+
+tomato_sauce = Ingredient.new(name: "tomato sauce", unit:"g", unit_price: 0.1, category: "sauce")
+tomato_sauce.save
+p tomato_sauce.name
+
+##########  Chocolate cake
+choco_cake = Recipe.new(name: 'Chocolate Cake', description: "Preheat your oven to 180°C (gas mark 6). In a saucepan, melt the chocolate and the butter cut into pieces over a very low heat.In a bowl, add the sugar, eggs and flour. Mix well.Add the chocolate/butter mixture. Mix well.Butter and flour your cake tin and pour in the cake batter.Bake for about 20 minutes.")
 choco_cake.save
-# Line below does same thing as the next 2, (Tested and confirmed) - Dushyant
-# choco_cake.ingredient_recipes << [IngredientRecipe.new(ingredient_id: choco.id, ingredient_quantity: 500),  IngredientRecipe.new(ingredient_id: flour.id, ingredient_quantity: 500)]
-IngredientRecipe.new(recipe_id: choco_cake.id, ingredient_id: choco.id, ingredient_quantity: 500).save
-IngredientRecipe.new(recipe_id: choco_cake.id, ingredient_id: flour.id, ingredient_quantity: 500).save
+IngredientRecipe.new(recipe_id: choco_cake.id, ingredient_id: choco.id, ingredient_quantity: 33.5).save
+IngredientRecipe.new(recipe_id: choco_cake.id, ingredient_id: flour.id, ingredient_quantity: 8.5).save
+IngredientRecipe.new(recipe_id: choco_cake.id, ingredient_id: sugar.id, ingredient_quantity: 16.5).save
+IngredientRecipe.new(recipe_id: choco_cake.id, ingredient_id: butter.id, ingredient_quantity: 1).save
+IngredientRecipe.new(recipe_id: choco_cake.id, ingredient_id: egg.id, ingredient_quantity: 1).save
 p choco_cake.name
+
+######### Mimosa egg
+mimosa_egg = Recipe.new(name: 'Mimosa egg', description: "Cook the eggs for 10 minutes in boiling water, then put them in cold water to stop the cooking process. Make a mayonnaise with 1 egg yolk, 1 teaspoon of mustard, 1/4 l of oil and lemon juice (optional), or use a ready-made mayonnaise sold in shops. Add the lemon juice at the last moment.Shell the eggs, cut them lengthwise, separate the whites from the yolks.In a soup plate, crumble the yolks with a fork, mix half of the crumbled yolks with the mayonnaise and reserve the rest.Fill the half-eggs with this preparation, then sprinkle each half-egg with the rest of the crumbled yolks (which makes the mimosa!!).")
+mimosa_egg.save
+IngredientRecipe.new(recipe_id: mimosa_egg.id, ingredient_id: olive_oil.id, ingredient_quantity: 62.5).save
+IngredientRecipe.new(recipe_id: mimosa_egg.id, ingredient_id: egg.id, ingredient_quantity: 1).save
+IngredientRecipe.new(recipe_id: mimosa_egg.id, ingredient_id: mustard.id, ingredient_quantity: 0.25).save
+p mimosa_egg.name
+
+
+######Lasagne veg
+lasagne_veg = Recipe.new(name: 'Lasagne vegetarian', description: "If you are using onions, fry them in a pan or wok until they melt.Chop the tomatoes, add them to the onions, then simmer with herbs de Provence (don't hesitate!), salt and pepper.Slice the courgettes and add them to the mixture.Add tomato sauce (or tomato purée, if you don't have one), and 1 teaspoon of caster sugar (more in winter, when the tomatoes are blander). Once the mixture is ready, pile it in a large dish: 1 layer of lasagne, 1 layer of preparation, 1 layer of béchamel sauce, 1 layer of Gruyère cheese, and so on (adding a little salt each time), putting a lot of Gruyère cheese on the last layer. Bake in a hot oven (thermostat 7-200°C) for 35 minutes.")
+lasagne_veg.save
+IngredientRecipe.new(recipe_id: lasagne_veg.id, ingredient_id: lasagne.id).save
+IngredientRecipe.new(recipe_id: lasagne_veg.id, ingredient_id: cheese.id, ingredient_quantity: 100).save
+IngredientRecipe.new(recipe_id: lasagne_veg.id, ingredient_id: tomato.id, ingredient_quantity: 1.5).save
+IngredientRecipe.new(recipe_id: lasagne_veg.id, ingredient_id: courgette.id, ingredient_quantity: 1).save
+IngredientRecipe.new(recipe_id: lasagne_veg.id, ingredient_id: tomato_sauce.id, ingredient_quantity: 50).save
+IngredientRecipe.new(recipe_id: lasagne_veg.id, ingredient_id: onion.id, ingredient_quantity: 1).save
+IngredientRecipe.new(recipe_id: lasagne_veg.id, ingredient_id: fresh_cream.id, ingredient_quantity: 1).save
+p lasagne_veg.name
+
+
+
+
+
+
+#### recette a refaire
 
 pasta_sausage = Recipe.new(name: 'Pasta with italian sausage', description: 'Removed casing from sausage links and cut into 1/2 inch slices. 
 In a large skillet, brown sausage over medium heat for about 10 minutes; remove and set aside. 

@@ -1,0 +1,50 @@
+.card-form {
+    background: rgb(226, 248, 211);
+    border-radius: 20px;
+    box-shadow: 3px 3px 3px rgb(184, 184, 184);
+    padding: 13px;
+    margin-top: 20vh;
+    position: absolute;
+    margin-left: 4vw;
+}
+
+#log {
+    margin-left: 0;
+    width: 92vw;
+    padding: 8px;
+    padding-left: 5px;
+}
+
+.margin-log {
+    margin-left: 10vw;
+}
+
+.margin-form {
+    margin-left: 8vw;
+}
+
+.btn-form {
+    background: $rouge;
+    padding: 5px;
+    border-radius: 5px;
+    margin-right: 25vw;
+    margin-top: 10px;
+}
+
+#password {
+    margin-right: 0;
+}
+
+.btn-log {
+    margin-left: 57vw;
+    text-decoration: none;
+}
+
+.btn-log-password {
+    margin-left: 28vw;
+}
+
+.background-form {
+    background-image: url("https://i.pinimg.com/474x/fb/75/81/fb75817ab8042c62e8d3d36ba3a2490c.jpg");
+    height: 93vh;
+}

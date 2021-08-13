@@ -25,18 +25,6 @@
 	padding: 10px;
 }
 
-.form{
-	width: 60px;
-	margin-left: 10px;
-}
-
-.btn-form {
-	background: $rouge;
-	color: white;
-	margin-left: 10px;
-	height: 37px;
-}
-
 .recette {
 	font-size: 17px;
 }
@@ -74,20 +62,29 @@
 	margin-left: -20px;
 }
 
-.person-number {
-	margin-top: 5px;
-	font-size: 18px;
-}
-
 .enter-number-person {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	font-size: 19px;
+	
+	#simple-form-person-number {
+		width: 50%;
+		display: flex;
 
-	#enter-number-person-box {
-		width: 60%;
-	}  
+		.enter-number-person-box {
+			padding: 0% !important;
+			width: 60px !important;
+		}
+
+		.btn-form {
+			background: $rouge;
+			color: white;
+			margin-left: 2px;
+			width: 50%;
+			height: 37px;
+		}
+	}
 }
 
 .form-control:valid{

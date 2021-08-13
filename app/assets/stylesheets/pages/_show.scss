@@ -1,9 +1,9 @@
 .img-show {
 	height: 170px;
-	width: 300px;
-	margin-top: 30px;
-	margin-left: 25px;
-	object-fit: cover;
+//	width: 300px;
+width: 80%;
+margin-top: 10%;
+	margin-left: 10%;
 }
 
 .title-show {
@@ -11,9 +11,10 @@
 	font-size: 30px;
 	font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 	padding: 5px;
-	width: 300px;;
+	width: 80%;
 	margin-top: 20px;
-	margin-left: 20px;
+  margin-left: 10%;
+  margin-right: 10%;
 	text-align: center;
 	border-radius: 10px;
 }
@@ -87,7 +88,7 @@
 
 	#enter-number-person-box {
 		width: 60%;
-	}  
+	}
 }
 
 .form-control:valid{

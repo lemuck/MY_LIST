@@ -40,7 +40,7 @@ rice = Ingredient.create(name: "rice", unit: "g", unit_price: 1, category: "sec"
 rice.save
 p rice.name
 
-egg = Ingredient.create(name: "egg", unit: "", unit_price: 0.1, category: "sec")
+egg = Ingredient.create(name: "egg", unit: "pc", unit_price: 0.1, category: "sec")
 egg.save
 p egg.name
 
@@ -48,7 +48,7 @@ sugar = Ingredient.new(name: "sugar", unit:"g", unit_price: 0.012, category: "se
 sugar.save
 p sugar.name
 
-lasagne = Ingredient.new(name: "lasagne", unit:"", unit_price: 0.01, category: "sec")
+lasagne = Ingredient.new(name: "lasagne", unit:"feuille", unit_price: 0.01, category: "sec")
 lasagne.save
 p lasagne.name
 
@@ -61,15 +61,15 @@ courgette = Ingredient.create(name: "courgette", unit: "kg", unit_price: 2.3, ca
 courgette.save
 p courgette.name
 
-onion = Ingredient.create(name: "onion", unit: "", unit_price: 0.3, category: "veg")
+onion = Ingredient.create(name: "onion", unit: "pc", unit_price: 0.3, category: "veg")
 onion.save
 p onion.name
 
-tomato = Ingredient.new(name: "tomato", unit:"", unit_price: 0.5, category: "veg")
+tomato = Ingredient.new(name: "tomato", unit:"pc", unit_price: 0.5, category: "veg")
 tomato.save
 p tomato.name
 
-courgette = Ingredient.new(name: "courgette", unit:"", unit_price: 0.5, category: "veg")
+courgette = Ingredient.new(name: "courgette", unit:"pc", unit_price: 0.5, category: "veg")
 courgette.save
 p courgette.name
 
@@ -131,13 +131,13 @@ p mimosa_egg.name
 ######Lasagne veg
 lasagne_veg = Recipe.new(name: 'Lasagne vegetarian', description: "If you are using onions, fry them in a pan or wok until they melt.Chop the tomatoes, add them to the onions, then simmer with herbs de Provence (don't hesitate!), salt and pepper.Slice the courgettes and add them to the mixture.Add tomato sauce (or tomato purée, if you don't have one), and 1 teaspoon of caster sugar (more in winter, when the tomatoes are blander). Once the mixture is ready, pile it in a large dish: 1 layer of lasagne, 1 layer of preparation, 1 layer of béchamel sauce, 1 layer of Gruyère cheese, and so on (adding a little salt each time), putting a lot of Gruyère cheese on the last layer. Bake in a hot oven (thermostat 7-200°C) for 35 minutes.")
 lasagne_veg.save
-IngredientRecipe.new(recipe_id: lasagne_veg.id, ingredient_id: lasagne.id).save
+IngredientRecipe.new(recipe_id: lasagne_veg.id, ingredient_id: lasagne.id, ingredient_quantity: 3).save
 IngredientRecipe.new(recipe_id: lasagne_veg.id, ingredient_id: cheese.id, ingredient_quantity: 100).save
 IngredientRecipe.new(recipe_id: lasagne_veg.id, ingredient_id: tomato.id, ingredient_quantity: 1.5).save
 IngredientRecipe.new(recipe_id: lasagne_veg.id, ingredient_id: courgette.id, ingredient_quantity: 1).save
 IngredientRecipe.new(recipe_id: lasagne_veg.id, ingredient_id: tomato_sauce.id, ingredient_quantity: 50).save
 IngredientRecipe.new(recipe_id: lasagne_veg.id, ingredient_id: onion.id, ingredient_quantity: 1).save
-IngredientRecipe.new(recipe_id: lasagne_veg.id, ingredient_id: fresh_cream.id, ingredient_quantity: 1).save
+IngredientRecipe.new(recipe_id: lasagne_veg.id, ingredient_id: fresh_cream.id, ingredient_quantity: 20).save
 p lasagne_veg.name
 
 

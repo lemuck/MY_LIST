@@ -45,18 +45,19 @@
       <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <div class="card">
-              <img src="https://images.pexels.com/photos/132694/pexels-photo-132694.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Le Wagon logo" class="recipe-image">
-              <div class="card-body">
-                <h5 class="card-title">Chocolate cake</h5>
-                <p class="card-text"> Chocolate Cake</p>
+            <%= link_to recipe_path(@recipes.first), class:"text-decoration-none" do %>
+              <div class="card">
+                <img src="https://images.pexels.com/photos/132694/pexels-photo-132694.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Le Wagon logo" class="recipe-image">
+                <div class="card-body">
+                  <h5 class="card-title text-dark"><%= @recipes.first.name %></h5>
+                  <p class="card-text text-dark"><%= @recipes.first.description %></p>
+                </div>
               </div>
-            </div>
+            <% end %>
           </div>
 
-          <% Recipe.all.sample(3).each do |recipe| %>
+          <% @recipes.sample(3).each do |recipe| %>
             <div class="carousel-item">
-
             <%= link_to recipe_path(recipe), class:"text-decoration-none" do %>
               <div class="card">
                 <img src="https://images.pexels.com/photos/132694/pexels-photo-132694.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Le Wagon logo" style="height= 50px" class="recipe-image">
@@ -66,7 +67,6 @@
                 </div>
               </div>
             <% end %>
-
             </div>
           <% end %>
 

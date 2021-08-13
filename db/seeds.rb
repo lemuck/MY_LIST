@@ -186,13 +186,13 @@ ingredient_couscous3.save
 p couscous.name
 
 ########## Detail_Baskets
-detailBasket1 = DetailBasket.new(ingredient_id: pate_a_tarte.id, basket_id: bobBasket.id)
-detailBasket1.save
-p detailBasket1
+# detailBasket1 = DetailBasket.new(ingredient_id: pate_a_tarte.id, basket_id: bobBasket.id)
+# detailBasket1.save
+# p detailBasket1
 
-DetailBasket.new(ingredient_recipe_id: ingredient_couscous1.id, basket_id: bobBasket.id).save
-p "1.."
-DetailBasket.new(ingredient_recipe_id: ingredient_couscous2.id, basket_id: bobBasket.id).save
-p "...2.."
-DetailBasket.new(ingredient_recipe_id: ingredient_couscous3.id, basket_id: bobBasket.id).save
-p "......3 detail_baskets done"
+# DetailBasket.new(ingredient_recipe_id: ingredient_couscous1.id, basket_id: bobBasket.id).save
+# p "1.."
+# DetailBasket.new(ingredient_recipe_id: ingredient_couscous2.id, basket_id: bobBasket.id).save
+# p "...2.."
+# DetailBasket.new(ingredient_recipe_id: ingredient_couscous3.id, basket_id: bobBasket.id).save
+# p "......3 detail_baskets done"

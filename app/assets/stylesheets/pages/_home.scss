@@ -32,13 +32,11 @@
 
 .card {
   height: 200px;
-  width: 80%;
 }
 .recipe-image {
   height: 100px;
 }
-.carousel-item {
-  left: 10%;
-  right: 10%;
-  width: 80%;
+
+#carouselExampleControls {
+  padding: 0 20px;
 }

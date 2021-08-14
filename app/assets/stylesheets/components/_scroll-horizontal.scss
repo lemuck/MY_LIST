@@ -1,0 +1,40 @@
+
+  .container-scroll {
+        display: flex;
+        flex-wrap: nowrap;
+        height: 35vh;
+        overflow-x: auto;
+        width: auto;
+    }
+  
+  
+  .container-scroll .row {
+    margin: auto;
+  }
+  
+  .container-scroll .row .col {
+    height: 35vh;
+    width: 50vw;
+  }
+  
+
+  .card-scroll {
+      background: $vert-clair;
+      height: 30vh;
+      width: 45vw;
+      border-radius: 10px;
+      box-shadow: 3px 3px 3px rgb(197, 197, 197);
+  }
+
+  .recipe-img-scroll {
+    height: 60%;
+    width: 100%;
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+
+  #body-scroll {
+    font-size: 5.5vw;
+    margin: 10px;
+  }

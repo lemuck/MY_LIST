@@ -16,7 +16,7 @@
         <strong><p id="titre">Ingredients : </p></strong>
         <% @recipe.ingredient_recipes.each do |ingredient_recipe| %>
           <li>
-            <span class='ingredient-recipe-quantity'> <%= (ingredient_recipe.ingredient_quantity * @recipe.person_number).round%> </span>
+            <span class='ingredient-recipe-quantity'> <%= (ingredient_recipe.ingredient_quantity * @recipe.person_number).round(2) %> </span>
             <%= ingredient_recipe.ingredient.unit %>
             <%= ingredient_recipe.ingredient.name %>
           </li>

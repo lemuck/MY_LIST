@@ -2,47 +2,61 @@
   <h1 class= "basket-title">-My Basket-</h1>
   <div class="basket-content">
       <% recipe = [] %>
-      <% @detail_baskets.each do |detail| %>
-        <% if detail.ingredient_recipe %>
-          <% unless recipe.include?(detail.ingredient_recipe.recipe) %>
+      <% if @detail_baskets.empty? %>
 
-            <div class="card-basket card-basket-recipe d-flex justify-content-between">
+        <div class="empty_basket">
+          <p>Your basket is empty for now...</p>
+        </div>
 
-              <div class="recipe-name">
-                <h5><%= detail.ingredient_recipe.recipe.name %></h5>
+      <% else %>
+
+        <% @detail_baskets.each do |detail| %>
+          <% if detail.ingredient_recipe %>
+            <% unless recipe.include?(detail.ingredient_recipe.recipe) %>
+
+              <div class="card-basket card-basket-recipe d-flex justify-content-between">
+
+                <div class="recipe-name">
+                  <h5><%= detail.ingredient_recipe.recipe.name %></h5>
+                </div>
+
+                <div class="recipe-img">
+                  <%= image_tag "recipe.jpg" %>
+                </div>
+
               </div>
 
-              <div class="recipe-img">
-                <%= image_tag "recipe.jpg" %>      
-              </div>
+            <% end %>
+            <% recipe << detail.ingredient_recipe.recipe %>
+              <ul>
+                <div class="card-basket card-basket-ingredient-recipe">
+                  <%= detail.ingredient_recipe.ingredient.name %>: <%= detail.ingredient_quantity.round(1) %> <%= detail.ingredient_recipe.ingredient.unit %>
 
+                  <%= link_to detail_basket_path(id:detail.id),method: :delete, class:'basket-bin' do %>
+                  <i class="fas fa-trash-alt"></i>
+                <% end %>
+                </div>
+              </ul>
+          <% else %>
+
+            <div class="card-basket card-basket-ingredient">
+              Ingredient: <%= detail.ingredient.name %>
+              <%= detail.ingredient_quantity %>
+
+              <%= link_to detail_basket_path(id:detail.id),method: :delete, class:'basket-bin' do %>
+              <i class="fas fa-trash-alt"></i>
+              <% end %>
             </div>
 
           <% end %>
-          <% recipe << detail.ingredient_recipe.recipe %>
-            <ul>
-              <div class="card-basket card-basket-ingredient-recipe">
-                <%= detail.ingredient_recipe.ingredient.name %>: <%= detail.ingredient_quantity.round(1) %> <%= detail.ingredient_recipe.ingredient.unit %>
-
-                <%= link_to detail_basket_path(id:detail.id),method: :delete, class:'basket-bin' do %>
-                <i class="fas fa-trash-alt"></i>
-              <% end %>
-              </div>
-
-
-
-            </ul>
-        <% else %>
-
-          <div class="card-basket card-basket-ingredient">
-            Ingredient: <%= detail.ingredient.name %>
-
-            <%= link_to detail_basket_path(id:detail.id),method: :delete, class:'basket-bin' do %>
-            <i class="fas fa-trash-alt"></i>
-            <% end %>          
-          </div>
-
-        <% end %>
-  	  <% end %>
+    	  <% end %>
+    </div>
+    <div class="link-to-basket">
+      <%= link_to basket_path(@basket) do %>
+        <div class="btn-show">
+          <p class="color-white">Validate</p>
+        </div>
+      <% end %>
+    <% end %>
   </div>
 </div>

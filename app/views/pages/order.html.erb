@@ -1,0 +1,14 @@
+<div class="fruit">
+    <div class="opacity-order">
+        <div class="card-order">
+            <h2 class="title-order"><strong>Your order is confirmed !</strong></h2>
+            <h4 class="text-order center"><strong>Thank to shopping with us</strong></h4>
+            <div class="padding-order">
+                <h5 class="text-order">Order number: <%= current_user.baskets.first.id %></h5>
+                <h5 class="text-order">Order date: <%= Date.today %></h5>
+                <h5 class="text-order">Delivery date: <%= Date.today + 8%></h5>
+                <h5 class="text-order">Total Price:</h5>
+            </div>
+        </div>
+    </div>
+</div>

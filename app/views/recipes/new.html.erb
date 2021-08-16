@@ -1,7 +1,2 @@
-<h1>Create a new recipe</h1>
-
-<%= simple_form_for @recipe do |f| %>
-  <%= f.input :name %>
-  <%= f.input :description %>
-  <%= f.button :submit %>
-<% end %>
+<h3>Create a Recipe</h3>
+<%= render 'shared/recipe-new-edit-form' %>

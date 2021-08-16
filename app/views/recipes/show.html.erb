@@ -2,7 +2,17 @@
   <div>
     <%= cl_image_tag @recipe.photo.key, height: 300, width: 400, crop: :fill,  class: "image-show"%>
   </div>
-  <h1 class="title-show"><%= @recipe.name %></h1>
+  <h1 class="title-show">
+    <%= @recipe.name %>
+  </h1>
+  <% if @user %>
+    <% if @user.moderator %>
+      <%= link_to edit_recipe_path(id:@recipe.id) do %>
+        <i class="far fa-edit"></i>
+        Edit this Recipe
+      <% end %>
+    <% end %>
+  <% end %>
   <div class="card-show">
     <div class="show-margin">
       <div class="enter-number-person">

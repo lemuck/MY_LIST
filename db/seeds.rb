@@ -17,6 +17,10 @@ john = User.new(name: "John", email: "John@bob.com", password: "azerty")
 john.save
 p john.name
 
+modo = User.new(name: "Modman", email: "modman@mod.com", password: "zxcvbn", moderator: true)
+modo.save
+p modo.name
+
 ########## Ingredients
 
 ### sec

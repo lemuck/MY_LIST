@@ -27,18 +27,17 @@
     <div class="quantity-selector">
 
     </div>
-      <div class="form-ingredient">
+    <div class="form-ingredient">
         <%= simple_form_for @detail_basket, html: { id: "simple-form-person-number"} do |f| %>
-          <%= f.input :ingredient_quantity, label: false %>
-          <%= f.hidden_field :ingredient, value: "#{ingredient.id}" %>
-            <%= button_tag do %>
-            <div class="btn-cart">
-              <p class="color-white"><i class="fas fa-cart-arrow-down"></i></p>
-            </div>
-            <% end %>
+        <%= f.input :ingredient_quantity, label: false %>
+        <%= f.hidden_field :ingredient, value: "#{ingredient.id}" %>
+        <%= button_tag do %>
+          <div class="btn-cart">
+            <p class="color-white"><i class="fas fa-cart-arrow-down"></i></p>
+          </div>
         <% end %>
-
-      </div>
-
+      <% end %>    
+    </div>
+    <br><br><br><br>
   </div>
 <% end %>

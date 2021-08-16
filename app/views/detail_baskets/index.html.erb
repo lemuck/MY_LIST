@@ -5,7 +5,7 @@
       <% if @detail_baskets.empty? %>
 
         <div class="empty_basket">
-          <p>You're basket is empty for now...</p>
+          <p>Your basket is empty for now...</p>
         </div>
 
       <% else %>
@@ -21,7 +21,7 @@
                 </div>
 
                 <div class="recipe-img">
-                  <%= image_tag "recipe.jpg" %>      
+                  <%= image_tag "recipe.jpg" %>
                 </div>
 
               </div>
@@ -45,7 +45,7 @@
 
               <%= link_to detail_basket_path(id:detail.id),method: :delete, class:'basket-bin' do %>
               <i class="fas fa-trash-alt"></i>
-              <% end %>          
+              <% end %>
             </div>
 
           <% end %>

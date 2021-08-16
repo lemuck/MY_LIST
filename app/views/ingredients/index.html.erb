@@ -25,7 +25,7 @@
     <div class="quantity-selector">
 
     </div>
-      <div class="form-ingredient">
+    <div class="form-ingredient">
         <%= simple_form_for @detail_basket, html: { id: "simple-form-person-number"} do |f| %>
           <%= f.input :ingredient_quantity, label: false %>
           <%= f.hidden_field :ingredient, value: "#{ingredient.id}" %>
@@ -36,7 +36,7 @@
             <% end %>
         <% end %>
         
-      </div>
-        
+    </div>
+    <br><br><br><br>
   </div>
 <% end %>

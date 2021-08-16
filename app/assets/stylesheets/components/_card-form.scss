@@ -1,7 +1,7 @@
 .card-form {
 	background: rgb(226, 248, 211);
 	border-radius: 20px;
-	box-shadow: 3px 3px 3px rgb(184, 184, 184);
+	box-shadow: 1px 1px 5px #2C2825;
 	padding: 13px;
 	margin-top: 20vh;
 	position: absolute;
@@ -47,4 +47,8 @@
 .background-form {
 	background-image: url("https://i.pinimg.com/474x/fb/75/81/fb75817ab8042c62e8d3d36ba3a2490c.jpg");
 	height: 93vh;
+}
+
+.log-in .btn-log:first-of-type {
+  visibility: hidden;
 }

@@ -33,52 +33,10 @@
   <div class='row'>
     <div class='col-12'>
       <div class='card-banner' id="card-best-rec">
-        <span class='card-banner-text'>Best Recipes</span>
+        <span class='card-banner-text'>Top rated recipes</span>
       </div>
     </div>
   </div>
-
-  <!--  CAROUSEL ICI ######################################################### -->
-
-      <%# <div id="carouselExampleControls" class="carousel slide" data-ride="carousel"> %>
-        <%# <div class="carousel-inner"> %>
-          <%# <div class="carousel-item active"> %>
-            <%# <%= link_to recipe_path(@recipes.first), class:"text-decoration-none" do %>
-              <%# <div class="card">
-                <img src="https://images.pexels.com/photos/132694/pexels-photo-132694.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Le Wagon logo" class="recipe-image"> %>
-                <%# <div class="card-body"> %>
-                  <%# <h5 class="card-title text-dark"><%= @recipes.first.name %></h5> 
-                  <%# <p class="card-text text-dark"><%= @recipes.first.description %></p>
-                <%# </div> %>
-              <%# </div> %>
-            <%# <% end %> 
-          <%# </div> %>
-
-          <%# <% @recipes.sample(3).each do |recipe| %>
-            <%# <div class="carousel-item"> %>
-            <%# <%= link_to recipe_path(recipe), class:"text-decoration-none" do %>
-              <%# <div class="card"> %>
-                <%# <img src="https://images.pexels.com/photos/132694/pexels-photo-132694.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Le Wagon logo" style="height= 50px" class="recipe-image">
-                <div class="card-body"> %>
-                  <%# <h5 class="card-title text-dark"><%= recipe.name %></h5>
-                  <%# <p class="card-text text-dark"><%= recipe.description %></p> 
-                <%# </div>
-              </div> %>
-            <%# <% end %>
-            <%# </div> %>
-          <%# <% end %> 
-
-        <%# </div> %>
-        <%# <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev"> %>
-          <%# <span class="carousel-control-prev-icon" aria-hidden="true"></span> %>
-          <%# <span class="sr-only">Previous</span> %>
-        <%# </a> %>
-        <%# <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next"> %>
-          <%# <span class="carousel-control-next-icon" aria-hidden="true"></span> %>
-          <%# <span class="sr-only">Next</span> %>
-        <%# </a> %>
-      <%# </div> %>
-
 
   <div class='container-scroll'>
     <% @recipes.sample(5).each do |recipe|  %>

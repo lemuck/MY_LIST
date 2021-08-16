@@ -1,6 +1,6 @@
 <div class="container">
   <div>
-    <img src="https://image.flaticon.com/icons/png/512/1046/1046857.png" class="img-show">
+    <%= cl_image_tag @recipe.photo.key, height: 300, width: 400, crop: :fill,  class: "image-show"%>
   </div>
   <h1 class="title-show"><%= @recipe.name %></h1>
   <div class="card-show">

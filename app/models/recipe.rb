@@ -1,7 +1,7 @@
 class Recipe < ApplicationRecord
   has_many :ingredient_recipes
   has_many :ingredients, through: :ingredient_recipes
-
+  has_one_attached :photo
   validates :name, :description, presence: true
 
   include PgSearch::Model

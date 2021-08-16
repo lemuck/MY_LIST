@@ -19,6 +19,8 @@ class RecipesController < ApplicationController
 
   def new
     @recipe = Recipe.new
+    @ingredients = Ingredient.all
+    @recipe.ingredient_recipes.build
     # authorize @recipe
   end
 
@@ -26,20 +28,20 @@ class RecipesController < ApplicationController
     @recipe = Recipe.new(recipe_params)
     if @recipe.save
       flash[:success] = "Recipe successfully created"
-      redirect_to @recipe
+      redirect_to recipes_path
     else
       flash[:error] = "Something went wrong"
       render 'new'
     end
   end
 
-  def update
-    @recipe.update(recipe_params)
-    redirect_to recipe_path(@recipe)
+  def edit
     # authorize @recipe
   end
 
-  def edit
+  def update
+    @recipe.update(recipe_params)
+    redirect_to recipe_path(@recipe)
     # authorize @recipe
   end
 
@@ -54,6 +56,6 @@ class RecipesController < ApplicationController
   end
 
   def recipe_params
-    params.require(:recipe).permit(:name, :description, :person_number, :query)
+    params.require(:recipe).permit(:name, :description, :person_number, :query, :photo, ingredient_recipe_ids: [], ingredient_recipes_attributes: %i[id recipe_id ingredient_id ingredient_quantity])
   end
 end

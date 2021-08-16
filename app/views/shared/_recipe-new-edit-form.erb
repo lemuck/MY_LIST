@@ -1,0 +1,29 @@
+<div class="container"> 
+  <div class="recipe-new-edit-form">
+
+    <%= simple_form_for @recipe do |f| %>
+      <%= f.input :name %>
+      <%= f.input :description, :input_html => {:rows => 10} %>
+      <%= f.input :person_number, collection: 1..8, include_blank: false, include_hidden: false %>
+      <%= f.input :photo, as: :file, input_html: {multiple: false} %>
+      <%= f.simple_fields_for :ingredient_recipes do |g| %>
+        <ol>
+          <% 2.times do  %>
+            <li>
+              <div class="simple-field-form-for-ingredient">
+                <%= g.label 'Ingredient:  ' %>
+                <%= g.input :ingredient_id, label: false, class:'ingredient-box', collection: Ingredient.all.map { |ingredient| [ingredient.name, ingredient.id]} %>
+              </div>
+              <%= g.label 'Quantity:  ' %>
+              <%= g.number_field :ingredient_quantity, in: 1.0..10000.0 %>
+              <p>-------------------------------</p>
+            </li>
+          <% end %>
+        </ol>
+      <% end %>
+
+      <%= f.button :submit, class:"btn-form" %>
+    <% end %>
+    <br><br><br><br><br><br><br><br><br>
+  </div>
+</div>

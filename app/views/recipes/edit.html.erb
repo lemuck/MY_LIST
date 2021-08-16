@@ -1,11 +1,2 @@
-<div class="container"> 
-  <div class="card-form">
-    <%= simple_form_for @recipe do |f| %>
-      <%= f.input :name %>
-      <%= f.input :description %>
-      <%= f.input :person_number, collection: 1..8, include_blank: false, include_hidden: false %>
-      <%= f.input :photo, as: :file, input_html: {multiple: false} %>
-      <%= f.button :submit, class:"btn-form" %>
-    <% end %>
-  </div>
-</div>
+<h3>Edit Recipe</h3>
+<%= render 'shared/recipe-new-edit-form' %>

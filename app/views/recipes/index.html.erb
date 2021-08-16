@@ -26,7 +26,7 @@
               <div class="recipe-info">
                 <h4> <%= recipe.name %> </h4>
               </div>
-              <img src="https://image.flaticon.com/icons/png/512/1046/1046857.png" alt="Le Wagon logo" class="recipe-image">
+              <%= cl_image_tag recipe.photo.key, height: 300, width: 400, crop: :fill,  class: "recipe-image"%>
             </div>
           <% end %>
         </div>

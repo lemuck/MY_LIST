@@ -62,10 +62,34 @@
   border-radius: 30%;
   background-color: $vert-clair;
   position: absolute;
-  right: 30px;
+  right: 15px;
   top: 41px;
+  visibility: visible;
   p {
     margin: 0px;
     font-size: 20px;
   }
+  i {
+    margin-right: 4px;
+  }
 }
+
+.form-group input {
+  width: 40px;
+  position: absolute;
+  right: 60px;
+  top: 42px;
+}
+
+.form-ingredient button {
+  visibility: hidden;
+}
+
+
+
+
+
+
+
+
+

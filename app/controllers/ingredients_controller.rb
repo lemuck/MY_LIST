@@ -7,6 +7,7 @@ class IngredientsController < ApplicationController
     else
       @ingredients = Ingredient.all
     end
+    @detail_basket = DetailBasket.new
   end
 
   def new

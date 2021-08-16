@@ -3,6 +3,7 @@ class DetailBasketsController < ApplicationController
 
   def index
     @detail_baskets = DetailBasket.where(basket_id: current_user.baskets)
+    @basket = Basket.find(current_user.baskets.first.id)
   end
 
   def create
@@ -19,8 +20,8 @@ class DetailBasketsController < ApplicationController
       redirect_to recipes_path
 
     else
-      @ingredient = Ingredient.find(params[:ingredient])
-      detail_basket = DetailBasket.new(ingredient_id: @ingredient.id)
+      @ingredient = Ingredient.find(params[:detail_basket][:ingredient].to_i)
+      detail_basket = DetailBasket.new(ingredient_id: @ingredient.id, ingredient_quantity: params[:detail_basket][:ingredient_quantity].to_i)
       detail_basket.basket_id = current_user.baskets.first.id
       detail_basket.save
       flash[:notice] = "#{@ingredient.name} successfully added"

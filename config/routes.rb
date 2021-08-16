@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   authenticate :user do
     resources :users, only: [:show, :update]
     resources :recipes, only: [:new, :create, :destroy]
-    resources :baskets, only: [:create, :show]
+    resources :baskets, only: [:create, :show, :index]
     resources :detail_baskets, only: [:create, :index, :destroy]
   end
 end

@@ -16,7 +16,9 @@
   <div class="card-product">
     <img src="https://images.pexels.com/photos/4110101/pexels-photo-4110101.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" />
     <div class="card-product-infos">
-      <h2><%= ingredient.name %></h2>
+
+      <h2 id="ingredient-<%= ingredient.id %>"><%= ingredient.name %></h2>
+
       <p>Price: <%= ingredient.unit_price%>$</p>
       <p>Unit of measure: <%= ingredient.unit%></p>
       <p>Category: <%= ingredient.category%></p>
@@ -27,15 +29,14 @@
     </div>
     <div class="form-ingredient">
         <%= simple_form_for @detail_basket, html: { id: "simple-form-person-number"} do |f| %>
-          <%= f.input :ingredient_quantity, label: false %>
-          <%= f.hidden_field :ingredient, value: "#{ingredient.id}" %>
-            <%= button_tag do %>
-            <div class="btn-cart">
-              <p class="color-white"><i class="fas fa-cart-arrow-down"></i></p>
-            </div>
-            <% end %>
+        <%= f.input :ingredient_quantity, label: false %>
+        <%= f.hidden_field :ingredient, value: "#{ingredient.id}" %>
+        <%= button_tag do %>
+          <div class="btn-cart">
+            <p class="color-white"><i class="fas fa-cart-arrow-down"></i></p>
+          </div>
         <% end %>
-        
+      <% end %>    
     </div>
     <br><br><br><br>
   </div>

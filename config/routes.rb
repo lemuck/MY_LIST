@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users, :controllers => { :sessions => "user_sessions" }
-  root to: 'pages#home'
+  root to: 'pages#newhome'
+  get '/home', to: 'pages#home', as: 'home'
   resources :recipes, only: [:index, :show, :update]
   resources :ingredients, only: [:index, :show]
 

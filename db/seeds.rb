@@ -193,7 +193,7 @@ IngredientRecipe.new(recipe_id: tarte_aux_carottes.id, ingredient_id: carotte.id
 IngredientRecipe.new(recipe_id: tarte_aux_carottes.id, ingredient_id: pate_a_tarte.id, ingredient_quantity: 400).save
 p tarte_aux_carottes.name
 
-file = URI.open('https://www.pexels.com/photo/bowl-of-vegetarian-salad-with-couscous-and-vegetables-4194378/')
+file = URI.open('https://images.pexels.com/photos/4194378/pexels-photo-4194378.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260')
 couscous = Recipe.new(name: "Couscous", description: "Semoule de blé avec des carottes")
 couscous.photo.attach(io: file, filename: 'couscous.jpeg', content_type: 'image/jpeg')
 

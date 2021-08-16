@@ -1,8 +1,8 @@
 class RecipesController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show update]
 
-  before_action :set_recipe, only: %i[show update]
-  before_action :set_user, only: %i[index]
+  before_action :set_recipe, only: %i[show update edit]
+  before_action :set_user, only: %i[index show]
 
   def show
     # authorize @recipe
@@ -19,7 +19,7 @@ class RecipesController < ApplicationController
 
   def new
     @recipe = Recipe.new
-    authorize @recipe
+    # authorize @recipe
   end
 
   def create
@@ -36,7 +36,11 @@ class RecipesController < ApplicationController
   def update
     @recipe.update(recipe_params)
     redirect_to recipe_path(@recipe)
-    authorize @recipe
+    # authorize @recipe
+  end
+
+  def edit
+    # authorize @recipe
   end
 
   private

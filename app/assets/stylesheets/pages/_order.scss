@@ -1,0 +1,42 @@
+.card-order {
+    background: rgb(251, 252, 214);
+    padding: 3vw;
+    margin-top: 20vh;
+    margin-left: 5vw;
+    position: absolute;
+    border-radius: 10px;
+    width: 90%;
+}
+
+.fruit {
+    background-image: url("https://fac.img.pmdstatic.net/scale/http.3A.2F.2Fprd2-bone-image.2Es3-website-eu-west-1.2Eamazonaws.2Ecom.2FFAC.2F2019.2F09.2F20.2F59cb9936-1272-42e6-aa33-99a4963bbdfb.2Ejpeg/autox600/quality/65/les-fruits-rouges.jpg");
+    background-position: center;
+    background-size: cover;
+    height: 93vh;
+}
+
+.opacity-order {
+    background: rgba(255, 252, 226, 0.5);
+    width: 100%;
+    height: 100%;
+}
+
+.title-order {
+    padding-left: 5vw;
+    padding-right: 5vw;
+    font-size: 8vw;
+    text-align: center;
+}
+
+.center {
+    margin-top: 3vh;
+    font-size: 6vw;
+}
+
+.text-order {
+    padding-left: 5vw;
+}
+
+.padding-order {
+    padding-top: 10vh;
+}

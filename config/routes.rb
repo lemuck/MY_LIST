@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => { :sessions => "user_sessions" }
   root to: 'pages#newhome'
   get '/home', to: 'pages#home', as: 'home'
+  get '/order', to: 'pages#order', as: 'order'
   resources :recipes, only: [:index, :show, :update]
   resources :ingredients, only: [:index, :show]
 

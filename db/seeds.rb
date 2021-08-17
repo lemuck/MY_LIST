@@ -24,53 +24,53 @@ p modo.name
 
 ########## Ingredients
 
-### sec
-choco = Ingredient.new(name: 'chocolate', unit: 'g', unit_price: 0.31, category: "sec")
+### dry
+choco = Ingredient.new(name: 'chocolate', unit: 'g', unit_price: 0.31, category: "dry")
 choco.save
 p choco.name
 
-flour = Ingredient.new(name: 'flour', unit: 'g', unit_price: 0.0047, category:"sec")
+flour = Ingredient.new(name: 'flour', unit: 'g', unit_price: 0.0047, category:"dry")
 flour.save
 p flour.name
 
-pate_a_tarte = Ingredient.create(name: "pate à tarte", unit: "g", unit_price: 1, category: "sec")
+pate_a_tarte = Ingredient.create(name: "pate à tarte", unit: "g", unit_price: 1, category: "dry")
 pate_a_tarte.save
 p pate_a_tarte.name
 
-semoule = Ingredient.create(name: "semoule", unit: "g", unit_price: 2, category: "sec")
+semoule = Ingredient.create(name: "semoule", unit: "g", unit_price: 2, category: "dry")
 semoule.save
 p semoule.name
 
-rice = Ingredient.create(name: "rice", unit: "g", unit_price: 1, category: "sec")
+rice = Ingredient.create(name: "rice", unit: "g", unit_price: 1, category: "dry")
 rice.save
 p rice.name
 
-sugar = Ingredient.new(name: "sugar", unit:"g", unit_price: 0.012, category: "sec")
+sugar = Ingredient.new(name: "sugar", unit:"g", unit_price: 0.012, category: "dry")
 sugar.save
 p sugar.name
 
-lasagne = Ingredient.new(name: "lasagne", unit:"feuille", unit_price: 0.01, category: "sec")
+lasagne = Ingredient.new(name: "lasagne", unit:"feuille", unit_price: 0.01, category: "dry")
 lasagne.save
 p lasagne.name
 
-### veg
-carotte = Ingredient.create(name: "carotte", unit: "kg", unit_price: 3, category: "veg")
+### vegetables
+carotte = Ingredient.create(name: "carotte", unit: "kg", unit_price: 3, category: "vegetables")
 carotte.save
 p carotte.name
 
-courgette = Ingredient.create(name: "courgette", unit: "kg", unit_price: 2.3, category: "veg")
+courgette = Ingredient.create(name: "courgette", unit: "kg", unit_price: 2.3, category: "vegetables")
 courgette.save
 p courgette.name
 
-onion = Ingredient.create(name: "onion", unit: "pc", unit_price: 0.3, category: "veg")
+onion = Ingredient.create(name: "onion", unit: "pc", unit_price: 0.3, category: "vegetables")
 onion.save
 p onion.name
 
-tomato = Ingredient.new(name: "tomato", unit:"pc", unit_price: 0.5, category: "veg")
+tomato = Ingredient.new(name: "tomato", unit:"pc", unit_price: 0.5, category: "vegetables")
 tomato.save
 p tomato.name
 
-courgette = Ingredient.new(name: "courgette", unit:"pc", unit_price: 0.5, category: "veg")
+courgette = Ingredient.new(name: "courgette", unit:"pc", unit_price: 0.5, category: "vegetables")
 courgette.save
 p courgette.name
 
@@ -84,21 +84,21 @@ lean_ground_beef = Ingredient.create(name: "lean ground beef", unit: "g", unit_p
 lean_ground_beef.save
 p lean_ground_beef.name
 
-## milk
+## dairy milk
 
-egg = Ingredient.create(name: "egg", unit: "pc", unit_price: 0.1, category: "milk")
+egg = Ingredient.create(name: "egg", unit: "pc", unit_price: 0.1, category: "dairy milk")
 egg.save
 p egg.name
 
-butter = Ingredient.new(name: "butter", unit:"g", unit_price: 0.12, category: "milk")
+butter = Ingredient.new(name: "butter", unit:"g", unit_price: 0.12, category: "dairy milk")
 butter.save
 p butter.name
 
-cheese = Ingredient.new(name: "cheese", unit:"g", unit_price: 1.3, category: "milk")
+cheese = Ingredient.new(name: "cheese", unit:"g", unit_price: 1.3, category: "dairy milk")
 cheese.save
 p cheese.name
 
-fresh_cream = Ingredient.new(name: "fresh cream", unit:"g", unit_price: 0.4, category: "milk")
+fresh_cream = Ingredient.new(name: "fresh cream", unit:"g", unit_price: 0.4, category: "dairy milk")
 fresh_cream.save
 p fresh_cream.name
 
@@ -111,6 +111,8 @@ p olive_oil.name
 mustard = Ingredient.new(name: "mustard", unit:"teaspoon", unit_price: 0.01, category: "condiment")
 mustard.save
 p mustard.name
+
+##### sauce
 
 tomato_sauce = Ingredient.new(name: "tomato sauce", unit:"g", unit_price: 0.1, category: "sauce")
 tomato_sauce.save

@@ -28,7 +28,7 @@ class RecipesController < ApplicationController
     @recipe = Recipe.new(recipe_params)
     if @recipe.save
       flash[:success] = "Recipe successfully created"
-      redirect_to recipes_path
+      redirect_to recipe_path(@recipe)
     else
       flash[:error] = "Something went wrong"
       render 'new'
@@ -56,6 +56,8 @@ class RecipesController < ApplicationController
   end
 
   def recipe_params
-    params.require(:recipe).permit(:name, :description, :person_number, :query, :photo, ingredient_recipe_ids: [], ingredient_recipes_attributes: %i[id recipe_id ingredient_id ingredient_quantity])
+    params.require(:recipe).permit(:name, :description, :person_number, :query, :photo,
+                                   ingredient_recipe_ids: [],
+                                   ingredient_recipes_attributes: %i[id recipe_id ingredient_id ingredient_quantity])
   end
 end

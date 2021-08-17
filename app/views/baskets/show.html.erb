@@ -1,9 +1,10 @@
 <div class="container">
   <h1>Your basket</h1>
   <div class="basket">
-    <% @basket.detail_baskets.each do |detail| %>
+
+    <% @basket.detail_baskets.group() do |detail| %>
       <%= detail %>
-      <%= raise %>
+      <% detail.where() %>
     <% end %>
   </div>
 </div>

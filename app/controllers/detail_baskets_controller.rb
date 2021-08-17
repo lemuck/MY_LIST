@@ -4,6 +4,8 @@ class DetailBasketsController < ApplicationController
   def index
     @detail_baskets = DetailBasket.where(basket_id: current_user.baskets)
     @basket = Basket.find(current_user.baskets.first.id)
+    @products = @detail_baskets.where.not(ingredient_id: nil)
+    @recipes = @detail_baskets.where(ingredient_id: nil)
   end
 
   def create

@@ -1,10 +1,66 @@
 <div class="container">
-  <h1>Your basket</h1>
+  <h1>-My list-</h1>
   <div class="basket">
 
-    <% @basket.detail_baskets.group() do |detail| %>
-      <%= detail %>
-      <% detail.where() %>
+<!--     <div class="head">
+      <div class="item">
+        <p>Item</p>
+      </div>
+      <div class="qty-price-amt">
+        <p>Qty</p>
+        <p>Price</p>
+        <p>Amt</p>
+      </div>
+    </div> -->
+
+
+
+
+    <% category = [] %>
+    <% ingredient = [] %>
+    <% @basket.detail_baskets.each do |detail| %>
+
+      <!-- Sorry pour le code :( -->
+
+      <% if detail.ingredient_recipe %>
+        <% quantity = detail.ingredient_recipe.ingredient_quantity %>
+        <% ingredient_category = detail.ingredient_recipe.ingredient.category %>
+        <% name = detail.ingredient_recipe.ingredient.name %>
+        <% unit = detail.ingredient_recipe.ingredient.unit %>
+      <% else %>
+        <% quantity = detail.ingredient_quantity %>
+        <% ingredient_category = detail.ingredient.category %>
+        <% name = detail.ingredient.name %>
+        <% unit = detail.ingredient.unit %>
+      <% end %>
+
+
+      <% unless category.include?(ingredient_category) %>
+
+        <div class="card-basket card-basket-recipe d-flex justify-content-between">
+
+          <div class="recipe-name">
+            <h5><%= ingredient_category %></h5>
+          </div>
+
+          <div class="recipe-img">
+            <%= image_tag "recipe.jpg" %>
+          </div>
+
+        </div>
+      <% end %>
+      <% category << ingredient_category %>
+      <ul>
+        <div class="card-basket card-basket-ingredient-recipe">
+          <%= name %>: <%= quantity.round(1) %> <%= unit %>
+
+          <%= link_to detail_basket_path(id:detail.id),method: :delete, class:'basket-bin' do %>
+            <i class="fas fa-trash-alt"></i>
+          <% end %>
+        </div>
+      </ul>
+
     <% end %>
+
   </div>
 </div>

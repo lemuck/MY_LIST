@@ -5,9 +5,12 @@
       <% products = [] %>
       <% if @detail_baskets.empty? %>
 
-        <div class="empty_basket">
-          <p>Your basket is empty for now...</p>
+        <%# <div class="empty_basket"> %>
+        <div class="basket_empty">
+          <h4>Your basket is empty for now...</h4>
+          <img src="https://cdn2.iconfinder.com/data/icons/outline-web-application-1/20/cart-512.png" alt="" id="img-empty" >
         </div>
+        <%# </div> %>
 
       <% else %>
         <% unless @recipes.empty? %>

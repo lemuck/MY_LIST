@@ -1,3 +1,4 @@
+
 <div class="background-new-home">
   <div class="opacity">
     <div class="text-newhome">
@@ -6,7 +7,10 @@
     </div>
     <% if current_user == nil%>
       <div class="link">
-          <%= link_to "Sign up now !", new_user_session_path, class:"btn-home-signup"%>
+          <%= link_to "Log in", new_user_session_path, class:"btn-home-signup-width"%>
+      </div>
+      <div class="link">
+          <%= link_to "Sign up now",  new_user_registration_path, class:"btn-home-signup"%>
       </div>
       <div class="link-home">
           <%= link_to "Continue without sign up", home_path, class:"btn-home" %>
@@ -15,6 +19,7 @@
       <div class="link">
           <%= link_to "Continue", home_path, class:"btn-home-signup", id:"continue"%>
       </div>
+
     <% end %>
   </div>
 </div>

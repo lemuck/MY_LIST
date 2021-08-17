@@ -27,9 +27,7 @@ class DetailBasketsController < ApplicationController
       detail_basket.basket_id = current_user.baskets.first.id
       detail_basket.save
       flash[:notice] = "#{@ingredient.name} successfully added"
-      if @ingredient.category
-        redirect_to ingredients_path(@ingredient, anchor: "ingredient-#{@ingredient.id}")
-      end
+      redirect_to ingredients_path(category: @ingredient.category, anchor: "ingredient-#{@ingredient.id}")
     end
   end
 

@@ -1,0 +1,43 @@
+<div class="container-category">
+    <div class="d-flex justify-content-between">
+        <%= link_to ingredients_path(category: "sec") do%>
+            <div class="card-category" id="dry">
+                <div class="opacity-category">
+                    <h3 class="padding11"><strong>Dry</strong></h3>
+                </div>
+            </div>
+        <% end %>
+        <%= link_to ingredients_path(category: "veg") do%>
+            <div class="card-category" id="vegetable">
+                <div class="opacity-category">
+                    <h3 class="padding11"><strong>Vegetables</strong></h3>
+                </div>
+            </div>
+        <% end %>
+    </div>
+    <div class="d-flex justify-content-between">
+        <%= link_to ingredients_path(category: "milk"), class:'text-decoration-none' do %>
+            <div class="card-category" id="diary">
+                <div class="opacity-category">
+                    <h3 class="padding8"><strong>Dairy products</strong></h3>
+                </div>
+            </div>
+        <% end %>
+        <%= link_to ingredients_path(category: "condiment") do%>
+            <div class="card-category" id="condiment">
+                <div class="opacity-category">
+                    <h3 class="padding10"><strong>Condiment</strong></h3>
+                </div>
+            </div>
+        <% end %>
+    </div>
+    <div class="d-flex justify-content-between">
+        <%= link_to ingredients_path(category: "meat") do%>
+            <div class="card-category" id="meat">
+                <div class="opacity-category">
+                    <h3 class="padding11"><strong>Meat</strong></h3>
+                </div>
+            </div>
+        <% end %>
+    </div>
+</div>

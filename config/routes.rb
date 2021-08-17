@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root to: 'pages#newhome'
   get '/home',  to: 'pages#home',  as: 'home'
   get '/order', to: 'pages#order', as: 'order'
+  get '/category', to: 'pages#category', as: 'category'
 
   authenticate :user do
     resources :users, only: [:show, :update]

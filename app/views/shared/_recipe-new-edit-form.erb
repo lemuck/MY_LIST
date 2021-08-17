@@ -1,29 +1,32 @@
-<div class="container"> 
-  <div class="recipe-new-edit-form">
-
-    <%= simple_form_for @recipe do |f| %>
-      <%= f.input :name %>
-      <%= f.input :description, :input_html => {:rows => 10} %>
-      <%= f.input :person_number, collection: 1..8, include_blank: false, include_hidden: false %>
-      <%= f.input :photo, as: :file, input_html: {multiple: false} %>
-      <%= f.simple_fields_for :ingredient_recipes do |g| %>
-        <ol>
-          <% 2.times do  %>
-            <li>
-              <div class="simple-field-form-for-ingredient">
-                <%= g.label 'Ingredient:  ' %>
-                <%= g.input :ingredient_id, label: false, class:'ingredient-box', collection: Ingredient.all.map { |ingredient| [ingredient.name, ingredient.id]} %>
+<span id="all-ingredientsftw" data-ingredient="<%= @ingredients.to_json %>"></span>
+<div class="container">
+  <div class="intermediaire">
+    <div class="recipe-new-edit-form">
+      <%= simple_form_for @recipe do |f| %>
+        <%= f.input :name, label: "Name of Recipe", input_html: { class: "w-100" } %>
+        <%= f.input :description, label: "Steps to make Recipe", input_html: {rows: 10, class: "w-100" } %>
+        <div class="form-flex">
+          <p> Number of People: </p>
+          <%= f.input :person_number, collection: 1..8, input_html: { class: "person-number-box" }, label: false, include_blank: false, include_hidden: false %>
+        </div>
+        <%= f.input :photo, as: :file, input_html: {multiple: false} %>
+        <%= f.simple_fields_for :ingredient_recipes do |g| %>
+          <div id="fieldsetContainer" class="simple-field-form-for-ingredient">
+            <fieldset id="ingredient-0">
+              <div class="form-flex">
+                <p> Ingredient: </p>
+                <%= g.association :ingredient, input_html: { class: "ingredient-box", id: 'ingredient-name-0' }, label: false, include_blank: false, include_hidden: false  %>
               </div>
               <%= g.label 'Quantity:  ' %>
-              <%= g.number_field :ingredient_quantity, in: 1.0..10000.0 %>
-              <p>-------------------------------</p>
-            </li>
-          <% end %>
-        </ol>
+              <%= g.number_field :ingredient_quantity, in: 1.0..10000.0, class: "quantity-box" %>
+            </fieldset>
+          </div>
+        <% end %>
+        <div class="submit-btn">
+          <%= f.button :submit, class:"btn-form mr-0" %>
+        </div>
       <% end %>
-
-      <%= f.button :submit, class:"btn-form" %>
-    <% end %>
-    <br><br><br><br><br><br><br><br><br>
+    </div>
+    <button id="btnAddIngredient">Add another Ingredient</button>
   </div>
 </div>

@@ -1,8 +1,48 @@
-.simple-field-form-for-ingredient {
-  display: flex;
-  justify-content: space-between;
+.intermediaire {
+  margin-bottom: 10vh;
+}
+
+.recipe-new-edit-form{
+  position: initial;
+  z-index: 2;
+  .form-flex{
+    display: flex;
+    align-items: center;
   
-  .ingredient-box {
-    width: 100px;
+    .person-number-box {
+      margin-left: 20px;
+      width: 100%;
+    }
   }
+  .submit-btn{
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+.simple-field-form-for-ingredient {
+
+  .ingredient-box {
+    margin-top: 15px;
+    margin-left: 20px;
+    width: 100%;
+  }
+
+  .quantity-box {
+    border-color: lightgray;
+    border-style: double;
+    border-radius: 5px;
+  }
+}
+
+#btnAddIngredient {
+  position: relative;
+  z-index: 1;
+  bottom: 38px;
+  border-radius: 6px;
+  border-color: lightgray;
+  box-shadow: none;
+  padding: 5px;
+  background-color: $bleu-clair;
+  color: whitesmoke;
 }

@@ -1,0 +1,72 @@
+.my-list {
+  background-color: white;
+  box-shadow: 1px 1px 3px black;
+  padding: 20px;
+  padding-top: 10px;
+  padding-bottom: 4px;
+}
+
+.ingredient-category {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.head-list {
+  padding-top: 10px;
+  display: flex;
+  justify-content: space-evenly;
+  border-bottom: dashed;
+}
+
+.head-list .item {
+  text-align: center;
+  width: 30%;
+}
+
+.head-list .qty-price-amt {
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+  width: 60%;
+}
+
+.body-list {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: baseline;
+}
+
+.body-list .item {
+  text-align: center;
+  width: 30%;
+}
+
+.body-list .qty-price-amt {
+  display: flex;
+  justify-content: space-evenly;
+  width: 60%;
+  p {
+  	font-size: 12px;
+  }
+}
+
+.footer-list {
+  margin-top: 20px;
+  padding-top:20px;
+  border-top: dashed;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.footer-list .item {
+  text-align: center;
+  width: 30%;
+}
+
+.footer-list .qty-price-amt {
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+  width: 60%;
+}

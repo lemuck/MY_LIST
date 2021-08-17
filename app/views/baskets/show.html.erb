@@ -1,24 +1,24 @@
 <div class="container">
   <h1>-My list-</h1>
-  <div class="basket">
+  <div class="my-list">
 
-<!--     <div class="head">
+    <div class="head-list">
       <div class="item">
-        <p>Item</p>
+        <strong><p>Item</p></strong>
       </div>
       <div class="qty-price-amt">
-        <p>Qty</p>
-        <p>Price</p>
-        <p>Amt</p>
+        <strong><p>Qty</p></strong>
+        <strong><p>Price</p></strong>
+        <strong><p>Amt</p></strong>
       </div>
-    </div> -->
-
-
+    </div>
 
 
     <% category = [] %>
     <% ingredient = [] %>
+    <% amt = 0 %>
     <% @basket.detail_baskets.each do |detail| %>
+
 
       <!-- Sorry pour le code :( -->
 
@@ -27,40 +27,64 @@
         <% ingredient_category = detail.ingredient_recipe.ingredient.category %>
         <% name = detail.ingredient_recipe.ingredient.name %>
         <% unit = detail.ingredient_recipe.ingredient.unit %>
+        <% price = detail.ingredient_recipe.ingredient.unit_price %>
       <% else %>
         <% quantity = detail.ingredient_quantity %>
         <% ingredient_category = detail.ingredient.category %>
         <% name = detail.ingredient.name %>
         <% unit = detail.ingredient.unit %>
+        <% price = detail.ingredient.unit_price %>
       <% end %>
 
 
       <% unless category.include?(ingredient_category) %>
 
-        <div class="card-basket card-basket-recipe d-flex justify-content-between">
-
-          <div class="recipe-name">
-            <h5><%= ingredient_category %></h5>
-          </div>
-
-          <div class="recipe-img">
-            <%= image_tag "recipe.jpg" %>
-          </div>
-
+        <div class="ingredient-category">
+          <h5><strong>----------  <%= ingredient_category.upcase %>  ----------</strong></h5>
         </div>
+
       <% end %>
       <% category << ingredient_category %>
-      <ul>
-        <div class="card-basket card-basket-ingredient-recipe">
-          <%= name %>: <%= quantity.round(1) %> <%= unit %>
 
-          <%= link_to detail_basket_path(id:detail.id),method: :delete, class:'basket-bin' do %>
-            <i class="fas fa-trash-alt"></i>
-          <% end %>
+      <div class="body-list">
+        <div class="item">
+          <strong><%= name.capitalize %></strong>
         </div>
-      </ul>
+
+          <%#= link_to detail_basket_path(id:detail.id),method: :delete, class:'basket-bin' do %>
+            <!-- <i class="fas fa-trash-alt"></i> -->
+          <%# end %>
+
+        <div class="qty-price-amt">
+          <p><%= quantity.round(1) %> <%= unit %></p>
+          <p><%= price %> $/ <%= unit %> </p>
+          <p><%= (quantity * price).round(2) %>
+          <% amt += (quantity * price).round(2) %> $
+          </p>
+        </div>
+      </div>
 
     <% end %>
 
+    <div class="footer-list">
+      <div class="item">
+        <strong><p>SubTotal</p></strong>
+      </div>
+      <div class="qty-price-amt">
+        <strong><h5><%= amt %> $ </h5></strong>
+      </div>
+    </div>
+
   </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
 </div>
+
+
+
+
+

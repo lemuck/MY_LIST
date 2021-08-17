@@ -11,15 +11,22 @@
       <% end %>
     <% end %>
   <% end %>
-  <div class="card-show">
+  <div class="card-show card-recette">
     <div class="show-margin">
       <div class="enter-number-person">
-        <p><strong>Person Number: </strong></p>
+        <p><strong></strong></p>
         <%= simple_form_for @recipe, html: { id: "simple-form-person-number"} do |f| %>
           <%= f.input :person_number, label: false, collection: 1..8, include_blank: false, include_hidden: false, input_html: { class: "enter-number-person-box" }  %>
-          <%= f.button :submit, value: "Valider" , class:"btn-form"%>
+          <%= f.button :submit, value: "Number of people" , class:"btn-form"%>
         <% end %>
+
+      <%= link_to detail_baskets_path(recipe: @recipe.id, person: @recipe.person_number), method: :post, class:"text-decoration-none" do %>
+        <div class="btn-cart btn-recette">
+          <p class="color-white"><i class="fas fa-cart-arrow-down"></i></p>
+        </div>
+      <% end %>
       </div>
+
       <div class="recette">
         <strong><p id="titre">Ingredients : </p></strong>
         <% @recipe.ingredient_recipes.each do |ingredient_recipe| %>

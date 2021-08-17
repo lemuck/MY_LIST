@@ -64,20 +64,20 @@ margin-top: 10%;
 }
 
 .enter-number-person {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	font-size: 19px;
-	
+	  display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 19px;
+
 	#simple-form-person-number {
 		width: 50%;
 		display: flex;
-		align-items: center;
-
+  	align-items: center;
 		.enter-number-person-box {
 			padding: 0% !important;
 			width: 60px !important;
-		}
+
+	}
 
 		.btn-form {
 			background: $rouge;
@@ -86,6 +86,7 @@ margin-top: 10%;
 			width: 50%;
 			height: 36px;
 			margin-bottom: 25px;
+      width: 175px;
 		}
 	}
 }

@@ -45,10 +45,6 @@ rice = Ingredient.create(name: "rice", unit: "g", unit_price: 1, category: "sec"
 rice.save
 p rice.name
 
-egg = Ingredient.create(name: "egg", unit: "pc", unit_price: 0.1, category: "sec")
-egg.save
-p egg.name
-
 sugar = Ingredient.new(name: "sugar", unit:"g", unit_price: 0.012, category: "sec")
 sugar.save
 p sugar.name
@@ -78,6 +74,8 @@ courgette = Ingredient.new(name: "courgette", unit:"pc", unit_price: 0.5, catego
 courgette.save
 p courgette.name
 
+##### meat
+
 italian_sausage = Ingredient.create(name: "italian Sausage", unit: "g", unit_price: 4, category: "meat")
 italian_sausage.save
 p italian_sausage.name
@@ -87,6 +85,10 @@ lean_ground_beef.save
 p lean_ground_beef.name
 
 ## milk
+
+egg = Ingredient.create(name: "egg", unit: "pc", unit_price: 0.1, category: "milk")
+egg.save
+p egg.name
 
 butter = Ingredient.new(name: "butter", unit:"g", unit_price: 0.12, category: "milk")
 butter.save

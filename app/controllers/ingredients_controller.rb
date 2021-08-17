@@ -2,8 +2,11 @@ class IngredientsController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index]
 
   def index
+    @category = params[:category]
     if params[:query].present?
       @ingredients = Ingredient.search_by_ingredient(params[:query])
+    elsif @category.present?
+      @ingredients = Ingredient.where(category: @category)
     else
       @ingredients = Ingredient.all
     end

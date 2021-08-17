@@ -8,6 +8,8 @@ class BasketsController < ApplicationController
   end
 
   def show
+            raise
+    # if ingredient_recipe
 
   end
 

@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get '/home',  to: 'pages#home',  as: 'home'
   get '/order', to: 'pages#order', as: 'order'
   get '/category', to: 'pages#category', as: 'category'
+  get '/my_list', to: 'pages#my_list', as: 'my_list'
   authenticate :user do
     resources :users, only: [:show, :update, :edit]
 

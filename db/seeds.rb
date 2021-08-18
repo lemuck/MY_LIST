@@ -66,13 +66,10 @@ bun.save
 p bun.name
 
 ### vegetables
+
 carotte = Ingredient.create(name: "carotte", unit: "kg", unit_price: 3, category: "vegetables")
 carotte.save
 p carotte.name
-
-courgette = Ingredient.create(name: "courgette", unit: "kg", unit_price: 2.3, category: "vegetables")
-courgette.save
-p courgette.name
 
 onion = Ingredient.create(name: "onion", unit: "pc", unit_price: 0.3, category: "vegetables")
 onion.save
@@ -89,6 +86,12 @@ p courgette.name
 lettuce = Ingredient.new(name: "lettuce", unit:"pc", unit_price: 1, category: "vegetables")
 lettuce.save
 p lettuce.name
+
+##### fruits
+
+apple = Ingredient.new(name: "apple", unit:"pc", unit_price: 0.3, category: "fruits")
+apple.save
+p apple.name
 
 ##### meat
 
@@ -163,9 +166,9 @@ choco_cake = Recipe.new(name: 'Chocolate Cake', description: "Preheat your oven 
 choco_cake.photo.attach(io: file, filename: 'cake.jpeg', content_type: 'image/jpeg')
 choco_cake.save
 IngredientRecipe.new(recipe_id: choco_cake.id, ingredient_id: choco.id, ingredient_quantity: 33.5).save
-IngredientRecipe.new(recipe_id: choco_cake.id, ingredient_id: flour.id, ingredient_quantity: 8.5).save
+IngredientRecipe.new(recipe_id: choco_cake.id, ingredient_id: flour.id, ingredient_quantity: 100).save
 IngredientRecipe.new(recipe_id: choco_cake.id, ingredient_id: sugar.id, ingredient_quantity: 16.5).save
-IngredientRecipe.new(recipe_id: choco_cake.id, ingredient_id: butter.id, ingredient_quantity: 1).save
+IngredientRecipe.new(recipe_id: choco_cake.id, ingredient_id: butter.id, ingredient_quantity: 30).save
 IngredientRecipe.new(recipe_id: choco_cake.id, ingredient_id: egg.id, ingredient_quantity: 1).save
 p choco_cake.name
 
@@ -248,8 +251,7 @@ p fried_chicken.name
 
 ##### Hamburger
 file = URI.open('https://images.pexels.com/photos/1639565/pexels-photo-1639565.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=500&w=500')
-hamburger = Recipe.new(name: "Hamburger", person_number: 1, description: "Add 80% lean ground beef to a large bowl.Add Worcestershire sauce, seasoning salt, garlic powder, and pepper.
-Use your hands to form 4 hamburger patties 3/4 inch thick.Use your thumbs to make an indention in the middle of the patties.Grill over medium-high heat for about 4 minutes on each side.
+hamburger = Recipe.new(name: "Hamburger", person_number: 1, description: "Add 80% lean ground beef to a large bowl.Add Worcestershire sauce, seasoning salt, garlic powder, and pepper. Use your hands to form 4 hamburger patties 3/4 inch thick.Use your thumbs to make an indention in the middle of the patties.Grill over medium-high heat for about 4 minutes on each side.
 Serve on hamburger buns.Top with your favorite traditional burger toppings (lettuce, tomato, onion, pickles, ketchup, etc.)")
 hamburger.photo.attach(io: file, filename: 'hamburger.jpeg', content_type: 'image/jpeg')
 hamburger.save
@@ -263,11 +265,9 @@ p hamburger.name
 
 ##### pizza pepperoni
 file = URI.open('https://images.pexels.com/photos/3682837/pexels-photo-3682837.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=500&w=500')
-pizza_pepperoni = Recipe.new(name: "Pizza Pepperoni", person_number: 2, description: "For sauce: Combine all sauce ingredients with 1/2 cup water in a medium bowl; set aside for flavors to develop while making crust. Freeze remaining paste .
-For crusts: Combine 2 cups of flour with the dry yeast, sugar and salt. Add the water and oil and mix until well blended (about 1 minute). Gradually add enough remaining flour slowly, until a soft, sticky dough ball is formed.
-Knead for about 4 minutes, on a floured surface, until dough is smooth and elastic. Add more flour, if needed. (If using RapidRise® Yeast, let dough rest, covered, for 10 minutes.)
-Divide dough in half. Pat each half (with floured hands) into a 12-inch greased pizza pan OR roll dough to fit pans. For pizzas: Preheat oven to 425 degrees F. Top crusts with sauce, pepperoni and cheese.
-Bake for 18 to 20 minutes until crusts are browned and cheese is bubbly. For best results, rotate pizza pans between top and bottom oven racks halfway through baking.")
+pizza_pepperoni = Recipe.new(name: "Pizza Pepperoni", person_number: 2, description: "For sauce: Combine all sauce ingredients with 1/2 cup water in a medium bowl; set aside for flavors to develop while making crust. Freeze remaining paste.
+For crusts: Combine 2 cups of flour with the dry yeast, sugar and salt. Add the water and oil and mix until well blended (about 1 minute). Gradually add enough remaining flour slowly, until a soft, sticky dough ball is formed. Knead for about 4 minutes, on a floured surface, until dough is smooth and elastic. Add more flour, if needed. (If using RapidRise® Yeast, let dough rest, covered, for 10 minutes.)
+Divide dough in half. Pat each half (with floured hands) into a 12-inch greased pizza pan OR roll dough to fit pans. For pizzas: Preheat oven to 425 degrees F. Top crusts with sauce, pepperoni and cheese. Bake for 18 to 20 minutes until crusts are browned and cheese is bubbly. For best results, rotate pizza pans between top and bottom oven racks halfway through baking.")
 pizza_pepperoni.photo.attach(io: file, filename: 'pizza_pepperoni.jpeg', content_type: 'image/jpeg')
 pizza_pepperoni.save
 IngredientRecipe.new(recipe_id: pizza_pepperoni.id, ingredient_id: flour.id, ingredient_quantity: 200).save
@@ -279,11 +279,9 @@ IngredientRecipe.new(recipe_id: pizza_pepperoni.id, ingredient_id: pepperoni.id,
 p pizza_pepperoni.name
 
 ##### pizza margherita
-file = URI.open('https://images.pexels.com/photos/3682837/pexels-photo-3682837.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=500&w=500')
-pizza_margherita = Recipe.new(name: "Pizza Margherita", person_number: 1, description: "For sauce: Combine all sauce ingredients with 1/2 cup water in a medium bowl; set aside for flavors to develop while making crust. Freeze remaining paste .
-For crusts: Combine 2 cups of flour with the dry yeast, sugar and salt. Add the water and oil and mix until well blended (about 1 minute). Gradually add enough remaining flour slowly, until a soft, sticky dough ball is formed.
-Knead for about 4 minutes, on a floured surface, until dough is smooth and elastic. Add more flour, if needed. (If using RapidRise® Yeast, let dough rest, covered, for 10 minutes.)
-Divide dough in half. Pat each half (with floured hands) into a 12-inch greased pizza pan OR roll dough to fit pans. For pizzas: Preheat oven to 425 degrees F. Top crusts with sauce and cheese.
+file = URI.open('https://images.pexels.com/photos/7912401/pexels-photo-7912401.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=500')
+pizza_margherita = Recipe.new(name: "Pizza Margherita", person_number: 1, description: "For sauce: Combine all sauce ingredients with 1/2 cup water in a medium bowl; set aside for flavors to develop while making crust. Freeze remaining paste. For crusts: Combine 2 cups of flour with the dry yeast, sugar and salt. Add the water and oil and mix until well blended (about 1 minute). Gradually add enough remaining flour slowly, until a soft, sticky dough ball is formed.
+Knead for about 4 minutes, on a floured surface, until dough is smooth and elastic. Add more flour, if needed. Divide dough in half. Pat each half (with floured hands) into a 12-inch greased pizza pan OR roll dough to fit pans. For pizzas: Preheat oven to 425 degrees F. Top crusts with sauce and cheese.
 Bake for 18 to 20 minutes until crusts are browned and cheese is bubbly. For best results, rotate pizza pans between top and bottom oven racks halfway through baking.")
 pizza_margherita.photo.attach(io: file, filename: 'pizza_margherita.jpeg', content_type: 'image/jpeg')
 pizza_margherita.save
@@ -295,12 +293,35 @@ IngredientRecipe.new(recipe_id: pizza_margherita.id, ingredient_id: cheese.id, i
 IngredientRecipe.new(recipe_id: pizza_margherita.id, ingredient_id: basil.id, ingredient_quantity: 10).save
 p pizza_margherita.name
 
+###### Carrot cake
+file = URI.open('https://images.pexels.com/photos/2612373/pexels-photo-2612373.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=500&w=500')
+carrot_cake = Recipe.new(name: 'Carrot Cake',person_number: 5, description: "Preheat oven to 350 degrees F (175 degrees C). Grease and flour an 8x12 inch pan. In a medium bowl, sift together flour, baking soda, salt and cinnamon. Set aside. In a large bowl, combine eggs, buttermilk, oil, sugar and vanilla. Mix well. Add flour mixture and mix well.
+In a medium bowl, combine shredded carrots, coconut, walnuts, pineapple and raisins. Using a large wooden spoon or a very heavy whisk, add carrot mixture to batter and fold in well. Pour into prepared 8x12 inch pan, and bake at 350 degrees F (175 degrees C) for 1 hour. Check with toothpick. Allow to cool for at least 20 minutes before serving.")
+carrot_cake.photo.attach(io: file, filename: 'carrot_cake.jpeg', content_type: 'image/jpeg')
+carrot_cake.save
+IngredientRecipe.new(recipe_id: carrot_cake.id, ingredient_id: carotte.id, ingredient_quantity: 0.6).save
+IngredientRecipe.new(recipe_id: carrot_cake.id, ingredient_id: flour.id, ingredient_quantity: 600).save
+IngredientRecipe.new(recipe_id: carrot_cake.id, ingredient_id: sugar.id, ingredient_quantity: 100).save
+IngredientRecipe.new(recipe_id: carrot_cake.id, ingredient_id: butter.id, ingredient_quantity: 30).save
+IngredientRecipe.new(recipe_id: carrot_cake.id, ingredient_id: egg.id, ingredient_quantity: 3).save
+IngredientRecipe.new(recipe_id: carrot_cake.id, ingredient_id: buttermilk.id, ingredient_quantity: 200).save
+p carrot_cake.name
+
+##### Tarte au pommes
+file = URI.open('https://images.pexels.com/photos/4993114/pexels-photo-4993114.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500')
+tarte_aux_pommes = Recipe.new(name: "Tarte aux Pommes", person_number: 4, description: "Mettez les pommes dans la pate à tarte. Cuisinez au fours pour 60min á 180. Mangez le truc.")
+tarte_aux_pommes.photo.attach(io: file, filename: 'tarte_pommes.jpeg', content_type: 'image/jpeg')
+tarte_aux_pommes.save
+IngredientRecipe.new(recipe_id: tarte_aux_pommes.id, ingredient_id: apple.id, ingredient_quantity: 1).save
+IngredientRecipe.new(recipe_id: tarte_aux_pommes.id, ingredient_id: pate_a_tarte.id, ingredient_quantity: 100).save
+IngredientRecipe.new(recipe_id: tarte_aux_pommes.id, ingredient_id: sugar.id, ingredient_quantity: 30).save
+p tarte_aux_pommes.name
+
 
 #### recette a refaire
 
-
 ##### Couscous
-file = URI.open('https://images.pexels.com/photos/4194378/pexels-photo-4194378.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260')
+file = URI.open('https://images.pexels.com/photos/4194378/pexels-photo-4194378.jpeg?auto=compress&cs=tinysrgb&h=500&w=500')
 couscous = Recipe.new(name: "Couscous", description: "Lavez et épluchez les carottes, les navets et les tomates et les couper en cubes. Dans un autocuiseur, versez 3 cuillères à soupe d'huile d'olive.
 Mettez à chauffer et faites-y dorer les pilons de poulet. Quand ils sont dorés, versez l'équivalent d'1 litre d'eau et ajouter les cubes de bouillon de boeuf, le concentré de tomate, les carottes, navets et tomates, les épices à couscous et l'harissa.
 Fermez votre autocuiseur et compter 25 mn de cuisson une fois que celui-ci est monté en pression. En attendant, lavez et coupez les courgettes en cubes et égouttez les pois chiches.

@@ -20,3 +20,20 @@
   box-shadow: 0 1px 2px rgba(0,0,0,0.2);
   border: white 1px solid;
 }
+
+.avatar-profile {
+  height: 20vh;
+  width: 20vh;
+  object-fit: cover;
+  border-radius: 10%;
+  margin-left: 25vw;
+}
+
+.text-align-center {
+  text-align: center;
+  margin-top: 3vh;
+}
+
+#btn-profile {
+  padding: 1vh;
+}

@@ -1,8 +1,25 @@
 <h1 class= "text-center" id="my-profile">-Profile Page-</h1>
 <br>
-  <div class="profile-edit">
-    <%= link_to "Edit my profile !", edit_user_registration_path, class:"btn-home-signup" %>
+<div class="container">
+  <% if current_user.photo.attached? %>
+    <%= cl_image_tag current_user.photo.key, data: { toggle: "dropdown" }, class:"avatar-profile", 'aria-haspopup': true, 'aria-expanded': false %>
+  <% else %>
+    <%= image_tag "https://images.affiches-et-posters.com//albums/3/47831/affiche-film-avatar.jpg", class:"avatar-profile", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+  <% end %>
+  <div class="text-align-center">
+    <h2><%= current_user.name %></h2>
   </div>
-  <div class="recipe">
-    <h3>My Recipes</h3>
+
+  <div class="card-address-profile">
+    <p>Email: <%= current_user.email %></p>
+    <p>Address: <%= Faker::Address.street_address %>, <%= Faker::Address.city%></p>
+    <p>Postcode: <%= Faker::Address.postcode%></p>
   </div>
+
+  <div class="btn-show" id="btn-profile">
+    <%= link_to "Edit my profile", edit_user_registration_path, class:"color-white" %>
+  </div> 
+</div>
+
+
+

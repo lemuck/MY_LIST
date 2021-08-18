@@ -13,6 +13,10 @@ class BasketsController < ApplicationController
     #@sorted_details = @basket.detail_baskets.sort_by { |detail| detail.ingredient.category || detail.ingredient_recipe.category }
   end
 
+  def gif
+    sleep(3)
+    redirect to
+  end
   # def if_statement(detail)
   #   if detail.ingredient_recipe
   #     @quantity = detail.ingredient_recipe.ingredient_quantity
@@ -31,9 +35,3 @@ class BasketsController < ApplicationController
     @basket = Basket.find(current_user.baskets.first.id)
   end
 end
-
-
-
-
-
-

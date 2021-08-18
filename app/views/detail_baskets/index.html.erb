@@ -2,55 +2,74 @@
   <h1 class= "basket-title">-My Basket-</h1>
   <div class="basket-content">
       <% recipe = [] %>
+      <% products = [] %>
       <% if @detail_baskets.empty? %>
 
-        <div class="empty_basket">
-          <p>Your basket is empty for now...</p>
+        <%# <div class="empty_basket"> %>
+        <div class="basket_empty">
+          <h4>Your basket is empty for now...</h4>
+          <img src="https://cdn2.iconfinder.com/data/icons/outline-web-application-1/20/cart-512.png" alt="" id="img-empty" >
         </div>
+        <%# </div> %>
 
       <% else %>
+        <% unless @recipes.empty? %>
+          <div class="card-title" id="title-recipe">
+            <div class="opacity-recipe">
+              <h1>RECIPES</h1>
+            </div>
+          </div>
+        <% end %>
 
-        <% @detail_baskets.each do |detail| %>
-          <% if detail.ingredient_recipe %>
-            <% unless recipe.include?(detail.ingredient_recipe.recipe) %>
-
-              <div class="card-basket card-basket-recipe d-flex justify-content-between">
-
-                <div class="recipe-name">
-                  <h5><%= detail.ingredient_recipe.recipe.name %></h5>
-                </div>
-
-                <div class="recipe-img">
-                  <%= image_tag "recipe.jpg" %>
-                </div>
-
+        <% @recipes.each do |detail| %>
+          <% unless recipe.include?(detail.ingredient_recipe.recipe) %>
+            <div class="card-basket card-basket-recipe d-flex justify-content-between">
+              <div class="recipe-name">
+                <h5><%= detail.ingredient_recipe.recipe.name %></h5>
               </div>
 
-            <% end %>
-            <% recipe << detail.ingredient_recipe.recipe %>
-              <ul>
-                <div class="card-basket card-basket-ingredient-recipe">
-                  <%= detail.ingredient_recipe.ingredient.name %>: <%= detail.ingredient_quantity.round(1) %> <%= detail.ingredient_recipe.ingredient.unit %>
+              <div class="recipe-img">
+                <%= image_tag "recipe.jpg" %>
+              </div>
+            </div>
+          <% end %>
 
-                  <%= link_to detail_basket_path(id:detail.id),method: :delete, class:'basket-bin' do %>
-                  <i class="fas fa-trash-alt"></i>
-                <% end %>
-                </div>
-              </ul>
-          <% else %>
+          <% recipe << detail.ingredient_recipe.recipe %>
 
-            <div class="card-basket card-basket-ingredient">
-              Ingredient: <%= detail.ingredient.name %>
-              <%= detail.ingredient_quantity %>
+            <ul>
+              <div class="card-basket card-basket-ingredient-recipe">
+                <%= detail.ingredient_recipe.ingredient.name %>: <%= detail.ingredient_quantity.round(1) %> <%= detail.ingredient_recipe.ingredient.unit %>
 
-              <%= link_to detail_basket_path(id:detail.id),method: :delete, class:'basket-bin' do %>
-              <i class="fas fa-trash-alt"></i>
+                <%= link_to detail_basket_path(id:detail.id),method: :delete, class:'basket-bin' do %>
+                <i class="fas fa-trash-alt"></i>
+              <% end %>
+              </div>
+            </ul>
+
+        <% end %>
+
+
+
+        <% unless @products.empty? %>
+          <div class="card-title" id="title-product">
+            <div class="opacity-recipe">
+              <h1>PRODUCTS</h1>
+            </div>
+          </div>
+        <% end %>
+        <% @products.each do |product| %>
+            <div class="card-basket card-basket-ingredient-recipe mb-2">
+              <%= product.ingredient.name %>
+              <%= product.ingredient_quantity %>
+
+              <%= link_to detail_basket_path(id:product.id),method: :delete, class:'basket-bin' do %>
+                <i class="fas fa-trash-alt"></i>
               <% end %>
             </div>
+        <% end %>
 
-          <% end %>
-    	  <% end %>
     </div>
+
     <div class="link-to-basket">
       <%= link_to basket_path(@basket) do %>
         <div class="btn-show">

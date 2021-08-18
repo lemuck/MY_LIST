@@ -1,15 +1,31 @@
 .btn-flat {
   color: $vert-fonce;
-  padding: 8px 24px;
-  border-radius: 4px;
+  padding: 10px;
+  padding-bottom: 3px;
+  border-radius: 50%;
   background: #1EDD88;
   transition: background 0.3s ease;
-  height: 38px;
+  margin-top: 0.6vh;
+  position: absolute;
+  margin-left: 75vw;
+
 }
+
+#btn-ingredient {
+  margin-left: 72vw;
+}
+
 .form-control {
-  width: 65vw;
-  border-radius: 5px;
+  border-radius: 7vw;
+  height: 5vh;
 }
+
+#form-control-search {
+  height: 7vh;
+  border-radius: 15vw;
+  margin-bottom: 2vh;
+}
+
 .d-flex {
   display: flex !important;
   justify-content: center;

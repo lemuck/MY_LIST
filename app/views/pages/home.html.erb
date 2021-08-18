@@ -44,9 +44,9 @@
         <div class='col'>
           <%= link_to recipe_path(recipe), class:"text-decoration-none" do %>
             <div class="card-scroll">
-              <img src="https://images.pexels.com/photos/132694/pexels-photo-132694.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="recipe-img-scroll">
+              <%= cl_image_tag recipe.photo.key, crop: :fill,  class: "recipe-image-home"%>
               <div>
-                <h5 class="card-title text-dark" id="body-scroll"><%= recipe.name %></h5>
+                <h5 class="card-title-best-recipe text-dark" id="body-scroll"><%= recipe.name %></h5>
               </div>
             </div>
           <% end %>

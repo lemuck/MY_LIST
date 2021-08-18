@@ -8,32 +8,29 @@ class BasketsController < ApplicationController
   end
 
   def show
-    @sorted_details = @basket.ingredients.sort_by { |ingredient| ingredient.category }
-
-    #@sorted_details = @basket.detail_baskets.sort_by { |detail| detail.ingredient.category || detail.ingredient_recipe.category }
+    #@sorted_details = @basket.ingredients.sort_by { |ingredient| ingredient.category }
+    @sorted_details = @basket.detail_baskets.sort_by { |ingredient| ingredient.ingredient_item.category }
+    @final_basket = []
+    @sorted_details.each do |ingredient|
+      if @final_basket.any?{ |ing| ing[:name] == ingredient.name }
+        
+        ingredi = @final_basket.select { |ingre| ingre[:name] == ingredient.name }
+        ingredi[0][:quantity] += ingredient.quantity
+      else
+        final_ingredient = { name:       ingredient.name,
+                             unit:       ingredient.unit,
+                             unit_price: ingredient.unit_price,
+                             category:   ingredient.category,
+                             quantity:   ingredient.quantity
+                         }
+        @final_basket << final_ingredient
+      end  
+    end  
   end
-
-  # def if_statement(detail)
-  #   if detail.ingredient_recipe
-  #     @quantity = detail.ingredient_recipe.ingredient_quantity
-  #     @ingredient_category = detail.ingredient_recipe.ingredient.category
-  #     @name = detail.ingredient_recipe.ingredient.name
-  #   else
-  #     @quantity = detail.ingredient_quantity
-  #     @ingredient_category = detail.ingredient.category
-  #     @name = detail.ingredient.name
-  #   end
-  # end
-
+  
   private
 
   def set_basket
     @basket = Basket.find(current_user.baskets.first.id)
   end
 end
-
-
-
-
-
-

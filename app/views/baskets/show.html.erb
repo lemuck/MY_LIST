@@ -17,52 +17,35 @@
     <% category = [] %>
     <% ingredient = [] %>
     <% amt = 0 %>
-    <% @basket.detail_baskets.each do |detail| %>
-
-
-      <!-- Sorry pour le code :( -->
-
-      <% if detail.ingredient_recipe %>
-        <% quantity = detail.ingredient_recipe.ingredient_quantity %>
-        <% ingredient_category = detail.ingredient_recipe.ingredient.category %>
-        <% name = detail.ingredient_recipe.ingredient.name %>
-        <% unit = detail.ingredient_recipe.ingredient.unit %>
-        <% price = detail.ingredient_recipe.ingredient.unit_price %>
-      <% else %>
-        <% quantity = detail.ingredient_quantity %>
-        <% ingredient_category = detail.ingredient.category %>
-        <% name = detail.ingredient.name %>
-        <% unit = detail.ingredient.unit %>
-        <% price = detail.ingredient.unit_price %>
-      <% end %>
-
-
-      <% unless category.include?(ingredient_category) %>
+    <% @final_basket.each do |detail| %>
+    
+      <% unless category.include?(detail[:category]) %>
 
         <div class="ingredient-category">
-          <h5><strong>----------  <%= ingredient_category.upcase %>  ----------</strong></h5>
+          <h5><strong>-----  <%= detail[:category].upcase %>  -----</strong></h5>
         </div>
 
       <% end %>
-      <% category << ingredient_category %>
+      <% category << detail[:category] %>
 
-      <div class="body-list">
-        <div class="item">
-          <strong><%= name.capitalize %></strong>
+        <div class="body-list">
+          <div class="item">
+            <strong><%= detail[:name].capitalize %></strong>
+          </div>
+
+            <%#= link_to detail_basket_path(id:detail.id),method: :delete, class:'basket-bin' do %>
+              <!-- <i class="fas fa-trash-alt"></i> -->
+            <%# end %>
+
+          <div class="qty-price-amt">
+            <p><%= detail[:quantity].round(1) %> <%= detail[:unit] %></p>
+            <p><%= detail[:price] %> $/ <%= detail[:unit] %> </p>
+            <p><%= (detail[:quantity] || 0 * detail[:price]).round(2) %>
+            <% amt += (detail[:quantity] || 0 * detail[:price]).round(2) %> $
+            </p>
+          </div>
         </div>
 
-          <%#= link_to detail_basket_path(id:detail.id),method: :delete, class:'basket-bin' do %>
-            <!-- <i class="fas fa-trash-alt"></i> -->
-          <%# end %>
-
-        <div class="qty-price-amt">
-          <p><%= quantity.round(1) %> <%= unit %></p>
-          <p><%= price %> $/ <%= unit %> </p>
-          <p><%= (quantity * price).round(2) %>
-          <% amt += (quantity * price).round(2) %> $
-          </p>
-        </div>
-      </div>
 
     <% end %>
 
@@ -98,9 +81,6 @@
   <br>
 
 
+<button class="btn-primary" id="orderbutton">Order</button>
+<img src="https://media.giphy.com/media/L05HgB2h6qICDs5Sms/giphy.gif" alt="this slowpoke moves"  width="250" alt="404 image" id="gif" class="d-none"/>
 </div>
-
-
-
-
-

@@ -1,15 +1,19 @@
 
 <h1 class="text-center"><%=@category.capitalize%></h1>
 
-<%= form_tag ingredients_path, method: :get do %>
+<div class="container">
+  <%= form_tag ingredients_path, method: :get do %>
    <div class="d-flex search">
     <%= text_field_tag :query,
       params[:query],
-      class: "form-control",
+      class: "form-control", id:"form-control-search",
       placeholder: "Find an ingredient"%>
-      <%= submit_tag "Search", class: "btn btn-flat" %>
-    </div>
+      <%= button_tag(type:"submit", class: "btn btn-flat") do %>
+        <i class="fas fa-search text-decoration-none text-white h4"></i>
+      <% end %>
+   </div>
   <% end %>
+</div>
 
 
 <% @ingredients.each do |ingredient| %>

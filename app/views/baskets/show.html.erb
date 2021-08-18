@@ -25,17 +25,15 @@
           <h5><strong>-----  <%= detail[:category].upcase %>  -----</strong></h5>
         </div>
 
-        <% end %>
-        <% category << detail[:category] %>
+      <% end %>
+      <% category << detail[:category] %>
 
         <div class="body-list">
           <div class="item">
             <strong><%= detail[:name].capitalize %></strong>
           </div>
 
-            <%#= link_to detail_basket_path(id:detail.id),method: :delete, class:'basket-bin' do %>
-              <!-- <i class="fas fa-trash-alt"></i> -->
-            <%# end %>
+
 
           <div class="qty-price-amt">
             <p><%= detail[:quantity].round(1) %> <%= detail[:unit] %></p>
@@ -59,12 +57,40 @@
     </div>
 
   </div>
+
+
+
+<%############ popup %>
+  <%= link_to order_path  do %>
+    <h4 class="btn-show color-white">Order</h4>
+  <% end %>
+  <div class="d-flex justify-content-center">
+    <div class="spinner-border text-success" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div>
+
+
+
   <br>
   <br>
   <br>
   <br>
   <br>
 
+
 <button class="btn-primary" id="orderbutton">Order</button>
 <img src="https://media.giphy.com/media/L05HgB2h6qICDs5Sms/giphy.gif" alt="this slowpoke moves"  width="250" alt="404 image" id="gif" class="d-none"/>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+

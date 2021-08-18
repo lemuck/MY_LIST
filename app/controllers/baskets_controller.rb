@@ -14,8 +14,12 @@ class BasketsController < ApplicationController
     #@sorted_details = @basket.ingredients.sort_by { |ingredient| ingredient.category }
 
 
+
+
+    @sorted_details = @basket.detail_baskets.sort_by { |ingredient| ingredient.ingredient_item.category }
+
     @final_basket = []
-    @basket.detail_baskets.each do |ingredient|
+    @sorted_details.each do |ingredient|
       if @final_basket.any?{ |ing| ing[:name] == ingredient.name }
 
         ingredi = @final_basket.select { |ingre| ingre[:name] == ingredient.name }

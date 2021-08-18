@@ -49,9 +49,17 @@ sugar = Ingredient.new(name: "sugar", unit:"g", unit_price: 0.012, category: "dr
 sugar.save
 p sugar.name
 
-lasagne = Ingredient.new(name: "lasagne", unit:"feuille", unit_price: 0.01, category: "dry")
+lasagne = Ingredient.new(name: "lasagne", unit:"feuille", unit_price: 0.09, category: "dry")
 lasagne.save
 p lasagne.name
+
+pasta = Ingredient.new(name: "Pasta", unit:"g", unit_price: 0.05, category: "dry")
+pasta.save
+p pasta.name
+
+bun = Ingredient.new(name: "bun", unit:"pc", unit_price: 0.5, category: "dry")
+bun.save
+p bun.name
 
 ### vegetables
 carotte = Ingredient.create(name: "carotte", unit: "kg", unit_price: 3, category: "vegetables")
@@ -74,6 +82,10 @@ courgette = Ingredient.new(name: "courgette", unit:"pc", unit_price: 0.5, catego
 courgette.save
 p courgette.name
 
+lettuce = Ingredient.new(name: "lettuce", unit:"pc", unit_price: 1, category: "vegetables")
+lettuce.save
+p lettuce.name
+
 ##### meat
 
 italian_sausage = Ingredient.create(name: "italian Sausage", unit: "g", unit_price: 4, category: "meat")
@@ -84,6 +96,10 @@ lean_ground_beef = Ingredient.create(name: "lean ground beef", unit: "g", unit_p
 lean_ground_beef.save
 p lean_ground_beef.name
 
+chicken = Ingredient.create(name: "chicken", unit: "kg", unit_price: 3, category: "meat")
+chicken.save
+p chicken.name
+
 ## dairy milk
 
 egg = Ingredient.create(name: "egg", unit: "pc", unit_price: 0.1, category: "dairy milk")
@@ -93,6 +109,10 @@ p egg.name
 butter = Ingredient.new(name: "butter", unit:"g", unit_price: 0.12, category: "dairy milk")
 butter.save
 p butter.name
+
+buttermilk = Ingredient.new(name: "buttermilk", unit:"ml", unit_price: 0.002, category: "dairy milk")
+buttermilk.save
+p buttermilk.name
 
 cheese = Ingredient.new(name: "cheese", unit:"g", unit_price: 1.3, category: "dairy milk")
 cheese.save
@@ -112,14 +132,18 @@ mustard = Ingredient.new(name: "mustard", unit:"teaspoon", unit_price: 0.01, cat
 mustard.save
 p mustard.name
 
-##### sauce
+worcestershire = Ingredient.new(name: "worcestershire sauce", unit:"ml", unit_price: 0.05, category: "condiment")
+worcestershire.save
+p worcestershire.name
+
+#### sauce
 
 tomato_sauce = Ingredient.new(name: "tomato sauce", unit:"g", unit_price: 0.1, category: "sauce")
 tomato_sauce.save
 p tomato_sauce.name
 
-##########  Chocolate cake
 
+###### Chocolate cake
 file = URI.open('https://images.pexels.com/photos/3740196/pexels-photo-3740196.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940')
 choco_cake = Recipe.new(name: 'Chocolate Cake', description: "Preheat your oven to 180°C (gas mark 6). In a saucepan, melt the chocolate and the butter cut into pieces over a very low heat.In a bowl, add the sugar, eggs and flour. Mix well.Add the chocolate/butter mixture. Mix well.Butter and flour your cake tin and pour in the cake batter.Bake for about 20 minutes.")
 choco_cake.photo.attach(io: file, filename: 'cake.jpeg', content_type: 'image/jpeg')
@@ -131,18 +155,17 @@ IngredientRecipe.new(recipe_id: choco_cake.id, ingredient_id: butter.id, ingredi
 IngredientRecipe.new(recipe_id: choco_cake.id, ingredient_id: egg.id, ingredient_quantity: 1).save
 p choco_cake.name
 
-######### Mimosa egg
+##### Mimosa egg
 file = URI.open('https://media.foodnetwork.ca/recipetracker/dmm/M/I/Mimosa_Eggs_001.jpg')
-mimosa_egg = Recipe.new(name: 'Mimosa egg', description: "Cook the eggs for 10 minutes in boiling water, then put them in cold water to stop the cooking process. Make a mayonnaise with 1 egg yolk, 1 teaspoon of mustard, 1/4 l of oil and lemon juice (optional), or use a ready-made mayonnaise sold in shops. Add the lemon juice at the last moment.Shell the eggs, cut them lengthwise, separate the whites from the yolks.In a soup plate, crumble the yolks with a fork, mix half of the crumbled yolks with the mayonnaise and reserve the rest.Fill the half-eggs with this preparation, then sprinkle each half-egg with the rest of the crumbled yolks (which makes the mimosa!!).")
-mimosa_egg.photo.attach(io: file, filename: 'egg.jpg', content_type: 'image/jpg')
+mimosa_egg = Recipe.new(name: 'Mimosa Egg', description: "Cook the eggs for 10 minutes in boiling water, then put them in cold water to stop the cooking process. Make a mayonnaise with 1 egg yolk, 1 teaspoon of mustard, 1/4 l of oil and lemon juice (optional), or use a ready-made mayonnaise sold in shops. Add the lemon juice at the last moment.Shell the eggs, cut them lengthwise, separate the whites from the yolks.In a soup plate, crumble the yolks with a fork, mix half of the crumbled yolks with the mayonnaise and reserve the rest.Fill the half-eggs with this preparation, then sprinkle each half-egg with the rest of the crumbled yolks (which makes the mimosa!!).")
+mimosa_egg.photo.attach(io: file, filename: 'mimosa_egg.jpg', content_type: 'image/jpg')
 mimosa_egg.save
 IngredientRecipe.new(recipe_id: mimosa_egg.id, ingredient_id: olive_oil.id, ingredient_quantity: 62.5).save
 IngredientRecipe.new(recipe_id: mimosa_egg.id, ingredient_id: egg.id, ingredient_quantity: 1).save
 IngredientRecipe.new(recipe_id: mimosa_egg.id, ingredient_id: mustard.id, ingredient_quantity: 0.25).save
 p mimosa_egg.name
 
-
-######Lasagne veg
+##### Lasagne veg
 file = URI.open('https://images.pexels.com/photos/2765875/pexels-photo-2765875.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500')
 lasagne_veg = Recipe.new(name: 'Lasagne vegetarian', description: "If you are using onions, fry them in a pan or wok until they melt.Chop the tomatoes, add them to the onions, then simmer with herbs de Provence (don't hesitate!), salt and pepper.Slice the courgettes and add them to the mixture.Add tomato sauce (or tomato purée, if you don't have one), and 1 teaspoon of caster sugar (more in winter, when the tomatoes are blander). Once the mixture is ready, pile it in a large dish: 1 layer of lasagne, 1 layer of preparation, 1 layer of béchamel sauce, 1 layer of Gruyère cheese, and so on (adding a little salt each time), putting a lot of Gruyère cheese on the last layer. Bake in a hot oven (thermostat 7-200°C) for 35 minutes.")
 lasagne_veg.photo.attach(io: file, filename: 'lasagne.jpeg', content_type: 'image/jpeg')
@@ -156,71 +179,86 @@ IngredientRecipe.new(recipe_id: lasagne_veg.id, ingredient_id: onion.id, ingredi
 IngredientRecipe.new(recipe_id: lasagne_veg.id, ingredient_id: fresh_cream.id, ingredient_quantity: 20).save
 p lasagne_veg.name
 
-
-
-
-
-
-#### recette a refaire
+##### Pasta Sausage
 file = URI.open('https://images.pexels.com/photos/5710170/pexels-photo-5710170.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500')
-pasta_sausage = Recipe.new(name: 'Pasta with italian sausage', description: 'Removed casing from sausage links and cut into 1/2 inch slices.
+pasta_sausage = Recipe.new(name: 'Pasta with italian sausage', person_number: 3, description: 'Removed casing from sausage links and cut into 1/2 inch slices.
 In a large skillet, brown sausage over medium heat for about 10 minutes; remove and set aside.
 In a large skillet, heat ground beef, olive oil, garlic and onion over medium heat until meat is nicely browned; drain.
 Pour in tomatoes and tomato sauce; mix in salt, ground black pepper, basil, oregano, bay leaf and cooked sausage. Simmer uncovered for 1 hour, stirring occasionally.
 Bring a large pot of lightly salted water to a boil. Add pasta and cook for 8 to 10 minutes or until al dente; drain. Mix cooked sauce with hot pasta and remove bay leaf from sauce before serving.')
 pasta_sausage.photo.attach(io: file, filename: 'pasta.jpeg', content_type: 'image/jpeg')
 pasta_sausage.save
-IngredientRecipe.new(recipe_id: pasta_sausage.id, ingredient_id: italian_sausage.id, ingredient_quantity: 500).save
-IngredientRecipe.new(recipe_id: pasta_sausage.id, ingredient_id: lean_ground_beef.id, ingredient_quantity: 500).save
+IngredientRecipe.new(recipe_id: pasta_sausage.id, ingredient_id: italian_sausage.id, ingredient_quantity: 300).save
+IngredientRecipe.new(recipe_id: pasta_sausage.id, ingredient_id: lean_ground_beef.id, ingredient_quantity: 300).save
+IngredientRecipe.new(recipe_id: pasta_sausage.id, ingredient_id: olive_oil.id, ingredient_quantity: 10).save
+IngredientRecipe.new(recipe_id: pasta_sausage.id, ingredient_id: onion.id, ingredient_quantity: 1).save
+IngredientRecipe.new(recipe_id: pasta_sausage.id, ingredient_id: tomato.id, ingredient_quantity: 2).save
+IngredientRecipe.new(recipe_id: pasta_sausage.id, ingredient_id: tomato_sauce.id, ingredient_quantity: 200).save
+IngredientRecipe.new(recipe_id: pasta_sausage.id, ingredient_id: pasta.id, ingredient_quantity: 300).save
 p pasta_sausage.name
 
+##### Egg fried rice
 file = URI.open('https://images.pexels.com/photos/6937447/pexels-photo-6937447.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940')
 egg_fried_rice = Recipe.new(name: 'Egg Fried Rice', person_number: 2, description: "Cook the rice following pack instructions, then drain, spread it out to steam-dry and set aside.
 Heat 2 tbsp of the oil in a large wok over a high heat, then add the diced onion and fry until lightly browned.
 Add the rice, stir and toast for about 3 mins, then move to the side of the pan. Add the remaining oil, then tip in the egg mixture.
 Leave to cook a little, then mix in with the rice – stir vigorously to coat the grains. Tip into a serving bowl and scatter over the spring onion to serve.")
 egg_fried_rice.photo.attach(io: file, filename: 'rice.jpeg', content_type: 'image/jpeg')
-
 egg_fried_rice.save
 IngredientRecipe.new(recipe_id: egg_fried_rice.id, ingredient_id: rice.id, ingredient_quantity: 250).save
-IngredientRecipe.new(recipe_id: egg_fried_rice.id, ingredient_id: egg.id, ingredient_quantity: 2).save
+IngredientRecipe.new(recipe_id: egg_fried_rice.id, ingredient_id: egg.id, ingredient_quantity: 4).save
 IngredientRecipe.new(recipe_id: egg_fried_rice.id, ingredient_id: onion.id, ingredient_quantity: 1).save
 p egg_fried_rice.name
 
+##### Tarte au carottes
 file = URI.open('https://images.pexels.com/photos/4993114/pexels-photo-4993114.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500')
-tarte_aux_carottes = Recipe.new(name: "Tarte aux carottes", description: "tarte avec des carottes")
+tarte_aux_carottes = Recipe.new(name: "Tarte aux carottes", person_number: 4, description: "Mettez les carottes dans la pate à tarte. Cuisinez au fours pour 60min á 180. Mangez le truc.")
 tarte_aux_carottes.photo.attach(io: file, filename: 'tarte.jpeg', content_type: 'image/jpeg')
-
 tarte_aux_carottes.save
-
 IngredientRecipe.new(recipe_id: tarte_aux_carottes.id, ingredient_id: carotte.id, ingredient_quantity: 0.7).save
 IngredientRecipe.new(recipe_id: tarte_aux_carottes.id, ingredient_id: pate_a_tarte.id, ingredient_quantity: 400).save
 p tarte_aux_carottes.name
 
+##### Fried Chicken
+file = URI.open('https://images.pexels.com/photos/60616/fried-chicken-chicken-fried-crunchy-60616.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=500')
+fried_chicken = Recipe.new(name: "Fried Chicken", person_number: 2, description: "Place the chicken pieces in a container, cover with the buttermilk and refrigerate for 12 hours.Preheat the oven to 180C/160C Fan/Gas 4.
+Mix together the flours with the dried spices and herbs on a large plate. Remove the chicken from the buttermilk and shake off as much of the buttermilk as possible. Roll the chicken pieces around in the dry mix until coated.
+Heat a large frying pan over a medium-low heat and add a glug of oil. Fry 2-3 pieces of chicken at a time (do not crowd the pan) until golden-brown all over and cooked through. When cooked, drain the chicken on kitchen paper and then transfer to a roasting tin.
+Put the chicken pieces in the oven until the coating is crunchy rather than crisp (up to 15 minutes).Serve in a basket.")
+fried_chicken.photo.attach(io: file, filename: 'fried_chicken.jpeg', content_type: 'image/jpeg')
+fried_chicken.save
+IngredientRecipe.new(recipe_id: fried_chicken.id, ingredient_id: chicken.id, ingredient_quantity: 1).save
+IngredientRecipe.new(recipe_id: fried_chicken.id, ingredient_id: flour.id, ingredient_quantity: 200).save
+IngredientRecipe.new(recipe_id: fried_chicken.id, ingredient_id: buttermilk.id, ingredient_quantity: 100).save
+p fried_chicken.name
+
+##### Hamburger
+file = URI.open('https://images.pexels.com/photos/1639565/pexels-photo-1639565.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=500&w=500')
+hamburger = Recipe.new(name: "Hamburger", person_number: 1, description: "Add 80% lean ground beef to a large bowl.Add Worcestershire sauce, seasoning salt, garlic powder, and pepper.
+Use your hands to form 4 hamburger patties 3/4 inch thick.Use your thumbs to make an indention in the middle of the patties.Grill over medium-high heat for about 4 minutes on each side.
+Serve on hamburger buns.Top with your favorite traditional burger toppings (lettuce, tomato, onion, pickles, ketchup, etc.)")
+hamburger.photo.attach(io: file, filename: 'hamburger.jpeg', content_type: 'image/jpeg')
+hamburger.save
+IngredientRecipe.new(recipe_id: hamburger.id, ingredient_id: lean_ground_beef.id, ingredient_quantity: 200).save
+IngredientRecipe.new(recipe_id: hamburger.id, ingredient_id: worcestershire.id, ingredient_quantity: 3).save
+IngredientRecipe.new(recipe_id: hamburger.id, ingredient_id: bun.id, ingredient_quantity: 1).save
+IngredientRecipe.new(recipe_id: hamburger.id, ingredient_id: onion.id, ingredient_quantity: 0.5).save
+IngredientRecipe.new(recipe_id: hamburger.id, ingredient_id: tomato.id, ingredient_quantity: 0.5).save
+IngredientRecipe.new(recipe_id: hamburger.id, ingredient_id: lettuce.id, ingredient_quantity: 1).save
+p hamburger.name
+
+#### recette a refaire
+
+##### Couscous
 file = URI.open('https://images.pexels.com/photos/4194378/pexels-photo-4194378.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260')
-couscous = Recipe.new(name: "Couscous", description: "Semoule de blé avec des carottes")
+couscous = Recipe.new(name: "Couscous", description: "Lavez et épluchez les carottes, les navets et les tomates et les couper en cubes. Dans un autocuiseur, versez 3 cuillères à soupe d'huile d'olive.
+Mettez à chauffer et faites-y dorer les pilons de poulet. Quand ils sont dorés, versez l'équivalent d'1 litre d'eau et ajouter les cubes de bouillon de boeuf, le concentré de tomate, les carottes, navets et tomates, les épices à couscous et l'harissa.
+Fermez votre autocuiseur et compter 25 mn de cuisson une fois que celui-ci est monté en pression. En attendant, lavez et coupez les courgettes en cubes et égouttez les pois chiches.
+Une fois les 25 mn écoulées, évacuez la vapeur de votre autocuiseur, ouvrez et rajouter les courgettes et les pois chiches. Remettez au feu : comptez 10 mn de cuisson une fois votre autocuiseur sous pression.
+Faites cuire vos merguez sur un grill ou à la poêle, mais pas avec les légumes. Servez accompagné d'une semoule fine.")
 couscous.photo.attach(io: file, filename: 'couscous.jpeg', content_type: 'image/jpeg')
-
 couscous.save
-
-ingredient_couscous1 = IngredientRecipe.new(recipe_id: couscous.id, ingredient_id: carotte.id, ingredient_quantity: 0.7)
-ingredient_couscous1.save
-ingredient_couscous2 = IngredientRecipe.new(recipe_id: couscous.id, ingredient_id: courgette.id, ingredient_quantity: 1)
-ingredient_couscous2.save
-ingredient_couscous3 = IngredientRecipe.new(recipe_id: couscous.id, ingredient_id: semoule.id, ingredient_quantity: 300)
-ingredient_couscous3.save
+IngredientRecipe.new(recipe_id: couscous.id, ingredient_id: carotte.id, ingredient_quantity: 0.7).save
+IngredientRecipe.new(recipe_id: couscous.id, ingredient_id: courgette.id, ingredient_quantity: 1).save
+IngredientRecipe.new(recipe_id: couscous.id, ingredient_id: semoule.id, ingredient_quantity: 300).save
 p couscous.name
-
-########## Detail_Baskets
-
-# detailBasket1 = DetailBasket.new(ingredient_id: pate_a_tarte.id, basket_id: bobBasket.id)
-# detailBasket1.save
-# p detailBasket1
-
-
-# DetailBasket.new(ingredient_recipe_id: ingredient_couscous1.id, basket_id: bobBasket.id).save
-# p "1.."
-# DetailBasket.new(ingredient_recipe_id: ingredient_couscous2.id, basket_id: bobBasket.id).save
-# p "...2.."
-# DetailBasket.new(ingredient_recipe_id: ingredient_couscous3.id, basket_id: bobBasket.id).save
-# p "......3 detail_baskets done"

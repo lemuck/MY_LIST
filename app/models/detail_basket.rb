@@ -27,4 +27,8 @@ class DetailBasket < ApplicationRecord
   def category
     ingredient_id.nil? ? ingredient_recipe.ingredient.category : ingredient.category
   end
+
+  def ingredient_item
+    ingredient_id.nil? ? ingredient_recipe.ingredient : ingredient
+  end
 end

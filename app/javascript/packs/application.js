@@ -28,9 +28,10 @@ import "bootstrap";
 // Internal imports, e.g:
 import { initUpdateLogobarOnScroll } from '../components/logobar';
 // import { ingredientQuantityChange } from '../components/ingredient_quantity';
-
+import { displayGif } from '../components/displayGif';
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here
-  initUpdateLogobarOnScroll()
+  initUpdateLogobarOnScroll();
+  displayGif();
   // ingredientQuantityChange() --- commented because we switched back to form submit
 });

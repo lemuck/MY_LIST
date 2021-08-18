@@ -24,65 +24,66 @@
 .card-product {
   position: relative;
   overflow: hidden;
-  height: 120px;
+  height: 12vh;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
-  margin: 15px;
+  margin: 3vh;
 }
 
 .card-product img {
   height: 100%;
-  width: 120px;
+  width: 25vw;
   object-fit: cover;
 }
 
 .card-product h2 {
-  font-size: 16px;
+  font-size: 2vh;
   font-weight: bold;
   margin: 0;
 }
 
 .card-product p {
-  font-size: 12px;
+  font-size: 1.5vh;
   line-height: 1.4;
   opacity: .7;
   margin-bottom: 0;
-  margin-top: 8px;
+  margin-top: vh;
 }
 
 .card-product .card-product-infos {
-  padding: 16px;
+  padding: 2vh;
 }
 
 .btn-cart {
-  width: 40px;
-  height: 40px;
+  width: 5vh;
+  height: 5vh;
   border-radius: 30%;
   background-color: $vert-clair;
   position: absolute;
-  right: 15px;
-  top: 41px;
+  right: 4vw;
+  top: 1.5vh;
   visibility: visible;
   p {
     margin: 0px;
-    font-size: 20px;
+    font-size: 2.5vh;
   }
   i {
-    margin-right: 4px;
+    margin-right: 1vw;
   }
 }
-.form-ingredient .form-group input {
-  width: 40px;
+
+.ingredient_quantity {
+  bottom: 4vh;
   position: absolute;
-  right: 60px;
-  top: 42px;
+  right: 17vw;
 }
 
 .form-ingredient button {
   visibility: hidden;
 }
+
 
 
 

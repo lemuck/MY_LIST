@@ -28,6 +28,7 @@ import "bootstrap";
 // Internal imports, e.g:
 import { initUpdateLogobarOnScroll } from '../components/logobar';
 import { addIngredientBtn } from '../components/add_ingredient_to_form';
+import { timeOutAlert } from '../components/time_out';
 // import { displayIngredientUnit } from '../components/display_unit_in_form';
 
 // import { ingredientQuantityChange } from '../components/ingredient_quantity';
@@ -35,9 +36,9 @@ import { displayGif } from '../components/displayGif';
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here
 
-  initUpdateLogobarOnScroll()
-  addIngredientBtn()
+  initUpdateLogobarOnScroll();
+  // addIngredientBtn();
   // displayIngredientUnit()
-
+  timeOutAlert();
   // ingredientQuantityChange() --- commented because we switched back to form submit
 });

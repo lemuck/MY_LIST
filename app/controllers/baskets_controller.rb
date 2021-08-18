@@ -7,14 +7,17 @@ class BasketsController < ApplicationController
   def update
   end
 
+  def gif
+  end
+
   def show
     #@sorted_details = @basket.ingredients.sort_by { |ingredient| ingredient.category }
 
-    
+
     @final_basket = []
     @basket.detail_baskets.each do |ingredient|
       if @final_basket.any?{ |ing| ing[:name] == ingredient.name }
-        
+
         ingredi = @final_basket.select { |ingre| ingre[:name] == ingredient.name }
         ingredi[0][:quantity] += ingredient.quantity
       else
@@ -25,10 +28,10 @@ class BasketsController < ApplicationController
                              quantity:   ingredient.quantity
                          }
         @final_basket << final_ingredient
-      end  
-    end  
+      end
+    end
   end
-  
+
   private
 
   def set_basket

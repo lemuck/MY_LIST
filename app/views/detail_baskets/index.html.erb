@@ -2,7 +2,6 @@
   <h1 class= "basket-title">-My Basket-</h1>
   <div class="basket-content">
       <% recipe = [] %>
-      <% products = [] %>
       <% if @detail_baskets.empty? %>
 
         <%# <div class="empty_basket"> %>
@@ -59,8 +58,8 @@
         <% end %>
         <% @products.each do |product| %>
             <div class="card-basket card-basket-ingredient-recipe mb-2">
+              <%= product.ingredient_quantity.round %> <%= product.ingredient.unit %>
               <%= product.ingredient.name %>
-              <%= product.ingredient_quantity %>
 
               <%= link_to detail_basket_path(id:product.id),method: :delete, class:'basket-bin' do %>
                 <i class="fas fa-trash-alt"></i>

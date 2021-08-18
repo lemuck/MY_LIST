@@ -25,23 +25,23 @@
 
       <p>Price: <%= ingredient.unit_price%>$</p>
       <p>Unit of measure: <%= ingredient.unit%></p>
-      <p>Category: <%= ingredient.category%></p>
     </div>
 
-    <div class="quantity-selector">
-
-    </div>
+  
     <div class="form-ingredient">
-        <%= simple_form_for @detail_basket, html: { id: "simple-form-person-number"} do |f| %>
-        <%= f.input :ingredient_quantity, label: false %>
-        <%= f.hidden_field :ingredient, value: "#{ingredient.id}" %>
-        <%= button_tag do %>
-          <div class="btn-cart">
-            <p class="color-white"><i class="fas fa-cart-arrow-down"></i></p>
-          </div>
+        <%= simple_form_for @detail_basket do |f| %>
+              <div class="ingredient_quantity">
+                <%= f.input :ingredient_quantity, label: false, collection: 1..15, include_blank: false, include_hidden: false %>
+                <%= f.hidden_field :ingredient, value: "#{ingredient.id}" %>
+              </div>
+              <%= button_tag do %>
+                  <div class="btn-cart">
+                    <p class="color-white"><i class="fas fa-cart-arrow-down"></i></p>
+                  </div>
+              <% end %>
         <% end %>
-      <% end %>    
     </div>
     <br><br><br><br>
   </div>
 <% end %>
+

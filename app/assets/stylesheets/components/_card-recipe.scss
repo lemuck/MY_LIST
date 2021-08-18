@@ -13,8 +13,8 @@
   }
 
   .recipe-image {
-    width: 45%;
-    background-color: $blanc-casse;
+    width: 50%;
+    object-fit: cover;
   }
 }
 .card-recette {

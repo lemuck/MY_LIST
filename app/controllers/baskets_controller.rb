@@ -28,16 +28,10 @@ class BasketsController < ApplicationController
       end  
     end  
   end
-
+  
   private
 
   def set_basket
     @basket = Basket.find(current_user.baskets.first.id)
   end
 end
-
-
-
-
-
-

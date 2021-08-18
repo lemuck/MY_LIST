@@ -33,6 +33,10 @@ flour = Ingredient.new(name: 'flour', unit: 'g', unit_price: 0.0047, category:"d
 flour.save
 p flour.name
 
+yeast = Ingredient.new(name: 'yeast', unit: 'g', unit_price: 0.01, category:"dry")
+yeast.save
+p yeast.name
+
 pate_a_tarte = Ingredient.create(name: "pate à tarte", unit: "g", unit_price: 1, category: "dry")
 pate_a_tarte.save
 p pate_a_tarte.name
@@ -96,6 +100,10 @@ lean_ground_beef = Ingredient.create(name: "lean ground beef", unit: "g", unit_p
 lean_ground_beef.save
 p lean_ground_beef.name
 
+pepperoni = Ingredient.create(name: "pepperoni", unit: "g", unit_price: 0.09, category: "meat")
+pepperoni.save
+p pepperoni.name
+
 chicken = Ingredient.create(name: "chicken", unit: "kg", unit_price: 3, category: "meat")
 chicken.save
 p chicken.name
@@ -114,7 +122,7 @@ buttermilk = Ingredient.new(name: "buttermilk", unit:"ml", unit_price: 0.002, ca
 buttermilk.save
 p buttermilk.name
 
-cheese = Ingredient.new(name: "cheese", unit:"g", unit_price: 1.3, category: "dairy milk")
+cheese = Ingredient.new(name: "cheese", unit:"g", unit_price: 0.01, category: "dairy milk")
 cheese.save
 p cheese.name
 
@@ -141,6 +149,12 @@ p worcestershire.name
 tomato_sauce = Ingredient.new(name: "tomato sauce", unit:"g", unit_price: 0.1, category: "sauce")
 tomato_sauce.save
 p tomato_sauce.name
+
+#### spice
+
+basil = Ingredient.new(name: "Basil", unit:"leaves", unit_price: 0.08, category: "spice")
+basil.save
+p basil.name
 
 
 ###### Chocolate cake
@@ -247,7 +261,43 @@ IngredientRecipe.new(recipe_id: hamburger.id, ingredient_id: tomato.id, ingredie
 IngredientRecipe.new(recipe_id: hamburger.id, ingredient_id: lettuce.id, ingredient_quantity: 1).save
 p hamburger.name
 
+##### pizza pepperoni
+file = URI.open('https://images.pexels.com/photos/3682837/pexels-photo-3682837.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=500&w=500')
+pizza_pepperoni = Recipe.new(name: "Pizza Pepperoni", person_number: 2, description: "For sauce: Combine all sauce ingredients with 1/2 cup water in a medium bowl; set aside for flavors to develop while making crust. Freeze remaining paste .
+For crusts: Combine 2 cups of flour with the dry yeast, sugar and salt. Add the water and oil and mix until well blended (about 1 minute). Gradually add enough remaining flour slowly, until a soft, sticky dough ball is formed.
+Knead for about 4 minutes, on a floured surface, until dough is smooth and elastic. Add more flour, if needed. (If using RapidRise® Yeast, let dough rest, covered, for 10 minutes.)
+Divide dough in half. Pat each half (with floured hands) into a 12-inch greased pizza pan OR roll dough to fit pans. For pizzas: Preheat oven to 425 degrees F. Top crusts with sauce, pepperoni and cheese.
+Bake for 18 to 20 minutes until crusts are browned and cheese is bubbly. For best results, rotate pizza pans between top and bottom oven racks halfway through baking.")
+pizza_pepperoni.photo.attach(io: file, filename: 'pizza_pepperoni.jpeg', content_type: 'image/jpeg')
+pizza_pepperoni.save
+IngredientRecipe.new(recipe_id: pizza_pepperoni.id, ingredient_id: flour.id, ingredient_quantity: 200).save
+IngredientRecipe.new(recipe_id: pizza_pepperoni.id, ingredient_id: yeast.id, ingredient_quantity: 5).save
+IngredientRecipe.new(recipe_id: pizza_pepperoni.id, ingredient_id: olive_oil.id, ingredient_quantity: 30).save
+IngredientRecipe.new(recipe_id: pizza_pepperoni.id, ingredient_id: tomato_sauce.id, ingredient_quantity: 90).save
+IngredientRecipe.new(recipe_id: pizza_pepperoni.id, ingredient_id: cheese.id, ingredient_quantity: 70).save
+IngredientRecipe.new(recipe_id: pizza_pepperoni.id, ingredient_id: pepperoni.id, ingredient_quantity: 60).save
+p pizza_pepperoni.name
+
+##### pizza margherita
+file = URI.open('https://images.pexels.com/photos/3682837/pexels-photo-3682837.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=500&w=500')
+pizza_margherita = Recipe.new(name: "Pizza Margherita", person_number: 1, description: "For sauce: Combine all sauce ingredients with 1/2 cup water in a medium bowl; set aside for flavors to develop while making crust. Freeze remaining paste .
+For crusts: Combine 2 cups of flour with the dry yeast, sugar and salt. Add the water and oil and mix until well blended (about 1 minute). Gradually add enough remaining flour slowly, until a soft, sticky dough ball is formed.
+Knead for about 4 minutes, on a floured surface, until dough is smooth and elastic. Add more flour, if needed. (If using RapidRise® Yeast, let dough rest, covered, for 10 minutes.)
+Divide dough in half. Pat each half (with floured hands) into a 12-inch greased pizza pan OR roll dough to fit pans. For pizzas: Preheat oven to 425 degrees F. Top crusts with sauce and cheese.
+Bake for 18 to 20 minutes until crusts are browned and cheese is bubbly. For best results, rotate pizza pans between top and bottom oven racks halfway through baking.")
+pizza_margherita.photo.attach(io: file, filename: 'pizza_margherita.jpeg', content_type: 'image/jpeg')
+pizza_margherita.save
+IngredientRecipe.new(recipe_id: pizza_margherita.id, ingredient_id: flour.id, ingredient_quantity: 200).save
+IngredientRecipe.new(recipe_id: pizza_margherita.id, ingredient_id: yeast.id, ingredient_quantity: 5).save
+IngredientRecipe.new(recipe_id: pizza_margherita.id, ingredient_id: olive_oil.id, ingredient_quantity: 30).save
+IngredientRecipe.new(recipe_id: pizza_margherita.id, ingredient_id: tomato_sauce.id, ingredient_quantity: 90).save
+IngredientRecipe.new(recipe_id: pizza_margherita.id, ingredient_id: cheese.id, ingredient_quantity: 70).save
+IngredientRecipe.new(recipe_id: pizza_margherita.id, ingredient_id: basil.id, ingredient_quantity: 10).save
+p pizza_margherita.name
+
+
 #### recette a refaire
+
 
 ##### Couscous
 file = URI.open('https://images.pexels.com/photos/4194378/pexels-photo-4194378.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260')

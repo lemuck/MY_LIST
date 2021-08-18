@@ -1,0 +1,86 @@
+<div class="container">
+  <h1>-My list-</h1>
+  <div class="my-list">
+
+    <div class="head-list">
+      <div class="item">
+        <strong><p>Item</p></strong>
+      </div>
+      <div class="qty-price-amt">
+        <strong><p>Qty</p></strong>
+        <strong><p>Price</p></strong>
+        <strong><p>Amt</p></strong>
+      </div>
+    </div>
+
+
+    <% category = [] %>
+    <% ingredient = [] %>
+    <% amt = 0 %>
+    <% @final_basket.each do |detail| %>
+    
+      <% unless category.include?(detail[:category]) %>
+
+        <div class="ingredient-category">
+          <h5><strong>-----  <%= detail[:category].upcase %>  -----</strong></h5>
+        </div>
+
+      <% end %>
+      <% category << detail[:category] %>
+
+        <div class="body-list">
+          <div class="item">
+            <strong><%= detail[:name].capitalize %></strong>
+          </div>
+
+
+
+          <div class="qty-price-amt">
+            <p><%= detail[:quantity].round(1) %> <%= detail[:unit] %></p>
+            <p><%= detail[:price] %> $/ <%= detail[:unit] %> </p>
+            <p><%= (detail[:quantity] || 0 * detail[:price]).round(2) %>
+            <% amt += (detail[:quantity] || 0 * detail[:price]).round(2) %> $
+            </p>
+          </div>
+        </div>
+
+
+    <% end %>
+
+    <div class="footer-list">
+      <div class="item">
+        <strong><p>SubTotal</p></strong>
+      </div>
+      <div class="qty-price-amt">
+        <strong><h5><%= amt %> $ </h5></strong>
+      </div>
+    </div>
+
+  </div>
+
+
+
+<%############ popup %>
+  <%= link_to order_path  do %>
+    <h4 class="btn-show color-white">Order</h4>
+  <% end %>
+  <div class="d-flex justify-content-center">
+    <div class="spinner-border text-success" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div>
+
+
+
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
+
+<button class="btn-primary" id="orderbutton">Order</button>
+<img src="https://media.giphy.com/media/L05HgB2h6qICDs5Sms/giphy.gif" alt="this slowpoke moves"  width="250" alt="404 image" id="gif" class="d-none"/>
+</div>
+
+

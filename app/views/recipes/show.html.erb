@@ -20,7 +20,7 @@
         <p><strong></strong></p>
         <%= simple_form_for @recipe, html: { id: "simple-form-person-number"} do |f| %>
           <%= f.input :person_number, label: false, collection: 1..8, include_blank: false, include_hidden: false, input_html: { class: "enter-number-person-box" }  %>
-          <%= f.button :submit, value: "Number of people" , class:"btn-form"%>
+          <%= f.button :submit, value: "Adjust" , class:"btn-form btn-person"%>
         <% end %>
 
       <%= link_to detail_baskets_path(recipe: @recipe.id, person: @recipe.person_number), method: :post, class:"text-decoration-none" do %>
@@ -56,7 +56,7 @@
   </div>
   <%= link_to detail_baskets_path(recipe: @recipe.id, person: @recipe.person_number), method: :post, class:"text-decoration-none" do %>
     <div class="btn-show">
-      <p class="color-white">Add to card</p>
+      <p class="color-white">Add to my basket</p>
     </div>
   <% end %>
 </div>

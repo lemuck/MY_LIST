@@ -36,52 +36,62 @@ p choco.name
 
 file = URI.open('https://images.pexels.com/photos/5765/flour-powder-wheat-jar.jpg?auto=compress&cs=tinysrgb&dpr=1&w=500')
 flour = Ingredient.new(name: 'flour', unit: 'g', unit_price: 0.0037, category:"dry")
+flour.photo.attach(io: file, filename: 'flour.jpeg', content_type: 'image/jpeg')
 flour.save
 p flour.name
 
 file = URI.open('https://bakerpedia.com/wp-content/uploads/2019/06/yeast_baking-ingredients-e1561674265192-400x400.jpg')
 yeast = Ingredient.new(name: 'yeast', unit: 'g', unit_price: 0.027, category:"dry")
+yeast.photo.attach(io: file, filename: 'yeast.jpg', content_type: 'image/jpg')
 yeast.save
 p yeast.name
 
 file = URI.open('https://images.pexels.com/photos/6605303/pexels-photo-6605303.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940')
 pate_a_tarte = Ingredient.create(name: "pate à tarte", unit: "pc", unit_price: 1.46, category: "dry")
+pate_a_tarte.photo.attach(io: file, filename: 'tarte.jpeg', content_type: 'image/jpeg')
 pate_a_tarte.save
 p pate_a_tarte.name
 
 
 file = URI.open('https://resize-elle.ladmedia.fr/r/300,386,center-middle,forcey,ffffff/img/var/plain_site/storage/images/elle-a-table/recettes-de-cuisine/nikitouche-2066718/21651242-2-fre-FR/Nikitouche.jpg')
 semoule = Ingredient.create(name: "semoule", unit: "g", unit_price: 0.0029, category: "dry")
+semoule.photo.attach(io: file, filename: 'semoule.jpeg', content_type: 'image/jpeg')
 semoule.save
 p semoule.name
 
 file = URI.open('https://images.pexels.com/photos/7421207/pexels-photo-7421207.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500')
 rice = Ingredient.create(name: "rice", unit: "g", unit_price: 0.0023, category: "dry")
+rice.photo.attach(io: file, filename: 'rice.jpeg', content_type: 'image/jpeg')
 rice.save
 p rice.name
 
 file = URI.open('https://images.pexels.com/photos/2523659/pexels-photo-2523659.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500')
 sugar = Ingredient.new(name: "sugar", unit:"g", unit_price: 0.0012, category: "dry")
+sugar.photo.attach(io: file, filename: 'sugar.jpeg', content_type: 'image/jpeg')
 sugar.save
 p sugar.name
 
 file = URI.open('https://happy-vrac.be/wp-content/uploads/2020/02/Happy-vrac-feuilles-de-lasagne.png')
 lasagne = Ingredient.new(name: "lasagne", unit:"pc", unit_price: 0.08, category: "dry")
+lasagne.photo.attach(io: file, filename: 'lasagne.png', content_type: 'image/png')
 lasagne.save
 p lasagne.name
 
 file = URI.open('https://images.pexels.com/photos/6287348/pexels-photo-6287348.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500')
 pasta = Ingredient.new(name: "Pasta", unit:"g", unit_price: 0.0017, category: "dry")
+pasta.photo.attach(io: file, filename: 'pasta.jpeg', content_type: 'image/jpeg')
 pasta.save
 p pasta.name
 
 file = URI.open('https://images.pexels.com/photos/1755785/pexels-photo-1755785.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500')
 bun = Ingredient.new(name: "bun", unit:"pc", unit_price: 0.7, category: "dry")
+bun.photo.attach(io: file, filename: 'bun.jpeg', content_type: 'image/jpeg')
 bun.save
 p bun.name
 
 file = URI.open('https://images.pexels.com/photos/8064383/pexels-photo-8064383.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500')
 tortilla = Ingredient.new(name: "tortilla", unit:"pc", unit_price: 0.8, category: "dry")
+tortilla.photo.attach(io: file, filename: 'tortilla.jpeg', content_type: 'image/jpeg')
 tortilla.save
 p tortilla.name
 
@@ -89,177 +99,209 @@ p tortilla.name
 
 file = URI.open('https://images.pexels.com/photos/143133/pexels-photo-143133.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500')
 carotte = Ingredient.create(name: "carotte", unit: "kg", unit_price: 1.8, category: "vegetables")
+carotte.photo.attach(io: file, filename: 'carotte.jpeg', content_type: 'image/jpeg')
 carotte.save
 p carotte.name
 
 file = URI.open('https://images.pexels.com/photos/4197445/pexels-photo-4197445.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940')
 onion = Ingredient.create(name: "onion", unit: "pc", unit_price: 0.23, category: "vegetables")
+onion.photo.attach(io: file, filename: 'onion.jpeg', content_type: 'image/jpeg')
 onion.save
 p onion.name
 
 file = URI.open('https://images.pexels.com/photos/5945900/pexels-photo-5945900.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940')
 tomato = Ingredient.new(name: "tomato", unit:"pc", unit_price: 0.52, category: "vegetables")
+tomato.photo.attach(io: file, filename: 'tomato.jpeg', content_type: 'image/jpeg')
 tomato.save
 p tomato.name
 
 file = URI.open('https://images.pexels.com/photos/128420/pexels-photo-128420.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940')
 courgette = Ingredient.new(name: "courgette", unit:"pc", unit_price: 0.8, category: "vegetables")
+courgette.photo.attach(io: file, filename: 'courgette.jpeg', content_type: 'image/jpeg')
 courgette.save
 p courgette.name
 
 file = URI.open('https://images.pexels.com/photos/1199562/pexels-photo-1199562.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500')
 lettuce = Ingredient.new(name: "lettuce", unit:"pc", unit_price: 0.99, category: "vegetables")
+lettuce.photo.attach(io: file, filename: 'lettuce.jpeg', content_type: 'image/jpeg')
 lettuce.save
 p lettuce.name
 
 file = URI.open('https://images.pexels.com/photos/5638332/pexels-photo-5638332.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500')
 mushroom = Ingredient.new(name: "Mushroom", unit:"pc", unit_price: 0.12, category: "vegetables")
+mushroom.photo.attach(io: file, filename: 'mushroom.jpeg', content_type: 'image/jpeg')
 mushroom.save
 p mushroom.name
-#stopped here
-file = URI.open('')
+
+file = URI.open('https://images.pexels.com/photos/3401479/pexels-photo-3401479.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500')
 beans = Ingredient.new(name: "beans", unit:"can", unit_price: 1.4, category: "vegetables")
+beans.photo.attach(io: file, filename: 'beans.jpeg', content_type: 'image/jpeg')
 beans.save
 p beans.name
 
-file = URI.open('https://images.pexels.com/photos/4791265/pexels-photo-4791265.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940')
+file = URI.open('https://images.pexels.com/photos/128536/pexels-photo-128536.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500')
 bell_pepper = Ingredient.new(name: "bell pepper", unit:"pc", unit_price: 0.9, category: "vegetables")
+bell_pepper.photo.attach(io: file, filename: 'bell.jpeg', content_type: 'image/jpeg')
 bell_pepper.save
 p bell_pepper.name
 
 ##### fruits
 
-file = URI.open('https://images.pexels.com/photos/4791265/pexels-photo-4791265.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940')
+file = URI.open('https://images.pexels.com/photos/3652898/pexels-photo-3652898.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500')
 apple = Ingredient.new(name: "apple", unit:"pc", unit_price: 0.3, category: "fruits")
+apple.photo.attach(io: file, filename: 'apple.jpeg', content_type: 'image/jpeg')
 apple.save
 p apple.name
 
 ##### meat
 
-file = URI.open('https://images.pexels.com/photos/4791265/pexels-photo-4791265.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940')
+file = URI.open('https://images.pexels.com/photos/1857729/pexels-photo-1857729.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500')
 italian_sausage = Ingredient.create(name: "italian Sausage", unit: "g", unit_price: 0.016, category: "meat")
+italian_sausage.photo.attach(io: file, filename: 'choco.jpeg', content_type: 'image/jpeg')
 italian_sausage.save
 p italian_sausage.name
 
-file = URI.open('https://images.pexels.com/photos/4791265/pexels-photo-4791265.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940')
+file = URI.open('https://i5.walmartimages.com/asr/c488097d-cd02-491d-9ba1-06414593dad5_3.86f74d35f449351329d6723151047398.jpeg')
 lean_ground_beef = Ingredient.create(name: "lean ground beef", unit: "g", unit_price: 0.02, category: "meat")
+lean_ground_beef.photo.attach(io: file, filename: 'lean.jpeg', content_type: 'image/jpeg')
 lean_ground_beef.save
 p lean_ground_beef.name
 
-file = URI.open('https://images.pexels.com/photos/4791265/pexels-photo-4791265.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940')
+file = URI.open('https://shop.selectfoodsshoppe.com/images/thumbs/0010468_dautore-beef-peperoni-halal_510.jpeg')
 pepperoni = Ingredient.create(name: "pepperoni", unit: "g", unit_price: 0.09, category: "meat")
+peperoni.photo.attach(io: file, filename: 'pepperoni.jpeg', content_type: 'image/jpeg')
 pepperoni.save
 p pepperoni.name
 
-file = URI.open('https://images.pexels.com/photos/4791265/pexels-photo-4791265.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940')
+file = URI.open('https://images.pexels.com/photos/5769384/pexels-photo-5769384.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500')
 chicken = Ingredient.create(name: "chicken", unit: "kg", unit_price: 11.5, category: "meat")
+chicken.photo.attach(io: file, filename: 'chicken.jpeg', content_type: 'image/jpeg')
 chicken.save
 p chicken.name
 
 ##### seafood
 
-file = URI.open('https://images.pexels.com/photos/4791265/pexels-photo-4791265.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940')
+file = URI.open('https://images.pexels.com/photos/1483780/pexels-photo-1483780.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940')
 shrimp = Ingredient.create(name: "shrimp", unit: "g", unit_price: 0.025, category: "seafood")
+shrimp.photo.attach(io: file, filename: 'shrimp.jpeg', content_type: 'image/jpeg')
 shrimp.save
 p shrimp.name
 
-file = URI.open('https://images.pexels.com/photos/4791265/pexels-photo-4791265.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940')
+file = URI.open('https://images.pexels.com/photos/3731945/pexels-photo-3731945.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940')
 fish = Ingredient.create(name: "fish", unit: "pc", unit_price: 23, category: "seafood")
+fish.photo.attach(io: file, filename: 'fish.jpeg', content_type: 'image/jpeg')
 fish.save
 p fish.name
 
 ## dairy milk
 
-file = URI.open('https://images.pexels.com/photos/4791265/pexels-photo-4791265.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940')
+file = URI.open('https://images.pexels.com/photos/6294256/pexels-photo-6294256.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500')
 egg = Ingredient.create(name: "egg", unit: "pc", unit_price: 0.23, category: "dairy milk")
+egg.photo.attach(io: file, filename: 'egg.jpeg', content_type: 'image/jpeg')
 egg.save
 p egg.name
 
-file = URI.open('https://images.pexels.com/photos/4791265/pexels-photo-4791265.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940')
+file = URI.open('https://i.ndtvimg.com/i/2016-03/butter_625x350_61459326043.jpg')
 butter = Ingredient.new(name: "butter", unit:"g", unit_price: 0.011, category: "dairy milk")
+butter.photo.attach(io: file, filename: 'butter.jpg', content_type: 'image/jpg')
 butter.save
 p butter.name
 
-file = URI.open('https://images.pexels.com/photos/4791265/pexels-photo-4791265.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940')
+file = URI.open('https://www.livewellbakeoften.com/wp-content/uploads/2019/01/How-To-Make-Buttermilk-7.jpg')
 buttermilk = Ingredient.new(name: "buttermilk", unit:"ml", unit_price: 0.002, category: "dairy milk")
+buttermilk.photo.attach(io: file, filename: 'buttermilk.jpg', content_type: 'image/jpg')
 buttermilk.save
 p buttermilk.name
 
-file = URI.open('https://images.pexels.com/photos/4791265/pexels-photo-4791265.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940')
+file = URI.open('https://images.pexels.com/photos/248413/pexels-photo-248413.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940')
 cheese = Ingredient.new(name: "cheese", unit:"g", unit_price: 0.015, category: "dairy milk")
+cheese.photo.attach(io: file, filename: 'cheese.jpeg', content_type: 'image/jpeg')
 cheese.save
 p cheese.name
 
-file = URI.open('https://images.pexels.com/photos/4791265/pexels-photo-4791265.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940')
+file = URI.open('https://m.tarladalal.com/glossary/ing/Fresh-creamDSC_7679.jpg')
 fresh_cream = Ingredient.new(name: "fresh cream", unit:"g", unit_price: 0.004, category: "dairy milk")
+fresh_cream.photo.attach(io: file, filename: 'cream.jpg', content_type: 'image/jpg')
 fresh_cream.save
 p fresh_cream.name
 
 ### condiment
 
-file = URI.open('https://images.pexels.com/photos/4791265/pexels-photo-4791265.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940')
+file = URI.open('https://images.pexels.com/photos/8504692/pexels-photo-8504692.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500')
 olive_oil = Ingredient.new(name: "olive oil", unit:"ml", unit_price: 0.008, category: "condiment")
-olive_oil.save
+olive_oil.photo.attach(io: file, filename: 'olive.jpeg', content_type: 'image/jpeg')
+.save
 p olive_oil.name
 
-file = URI.open('https://images.pexels.com/photos/4791265/pexels-photo-4791265.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940')
+file = URI.open('https://images.pexels.com/photos/1435901/pexels-photo-1435901.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500')
 mustard = Ingredient.new(name: "mustard", unit:"tsp", unit_price: 0.005, category: "condiment")
+mustard.photo.attach(io: file, filename: 'choco.jpeg', content_type: 'image/jpeg')
 mustard.save
 p mustard.name
 
-file = URI.open('https://images.pexels.com/photos/4791265/pexels-photo-4791265.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940')
+file = URI.open('https://produits.bienmanger.com/14077-0w0h0_The_Original_Worcestershire_Sauce.jpg')
 worcestershire = Ingredient.new(name: "worcestershire sauce", unit:"ml", unit_price: 0.012, category: "condiment")
+worcestershire.photo.attach(io: file, filename: 'worstershire.jpg', content_type: 'image/jpg')
 worcestershire.save
 p worcestershire.name
 
 #### sauce
 
-file = URI.open('https://images.pexels.com/photos/4791265/pexels-photo-4791265.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940')
+file = URI.open('https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Fresh_Tomato_Sauce_%28Unsplash%29.jpg/375px-Fresh_Tomato_Sauce_%28Unsplash%29.jpg')
 tomato_sauce = Ingredient.new(name: "tomato sauce", unit:"g", unit_price: 0.004, category: "sauce")
+tomato_sauce.photo.attach(io: file, filename: 'tomatosauce.jpg', content_type: 'image/jpg')
 tomato_sauce.save
 p tomato_sauce.name
 
 #### spice
 
-file = URI.open('https://images.pexels.com/photos/4791265/pexels-photo-4791265.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940')
+file = URI.open('https://images.pexels.com/photos/1087902/pexels-photo-1087902.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940')
 basil = Ingredient.new(name: "Basil", unit:"leaves", unit_price: 0.08, category: "spices")
+basil.photo.attach(io: file, filename: 'basil.jpeg', content_type: 'image/jpeg')
 basil.save
 p basil.name
 
 #### drinks
 
-file = URI.open('https://images.pexels.com/photos/4791265/pexels-photo-4791265.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940')
+file = URI.open('https://images.pexels.com/photos/416528/pexels-photo-416528.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500')
 water_half = Ingredient.new(name: "Water 0.5L", unit:"L", unit_price: 0.27, category: "drinks")
+water_half.photo.attach(io: file, filename: 'water.jpeg', content_type: 'image/jpeg')
 water_half.save
 p water_half.name
 
-file = URI.open('https://images.pexels.com/photos/4791265/pexels-photo-4791265.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940')
+file = URI.open('https://images.pexels.com/photos/416528/pexels-photo-416528.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500')
 water_one = Ingredient.new(name: "Water 1L", unit:"L", unit_price: 0.37, category: "drinks")
+water_one.photo.attach(io: file, filename: 'water.jpeg', content_type: 'image/jpeg')
 water_one.save
 p water_one.name
 
-file = URI.open('https://images.pexels.com/photos/4791265/pexels-photo-4791265.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940')
+file = URI.open('https://phoenixbev.mu/userimages/productdetails_451_1537337013.jpg')
 sparkling_water = Ingredient.new(name: "Sparkling Water 1L", unit:"L", unit_price: 0.59, category: "drinks")
+sparkling_water.photo.attach(io: file, filename: 'sparkling.jpg', content_type: 'image/jpg')
 sparkling_water.save
 p sparkling_water.name
 
-file = URI.open('https://images.pexels.com/photos/4791265/pexels-photo-4791265.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940')
+file = URI.open('https://halalfs.com/1-large_default/coca-cola-24-x-33-cl.jpg')
 cola_half = Ingredient.new(name: "Cola 0.5L", unit:"L", unit_price: 0.75, category: "drinks")
+cola_half.photo.attach(io: file, filename: 'cola.jpg', content_type: 'image/jpg')
 cola_half.save
 p cola_half.name
 
-file = URI.open('https://images.pexels.com/photos/4791265/pexels-photo-4791265.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940')
+file = URI.open('https://halalfs.com/1-large_default/coca-cola-24-x-33-cl.jpg')
 cola_one = Ingredient.new(name: "Cola 1L", unit:"L", unit_price: 1.23, category: "drinks")
+cola_one.photo.attach(io: file, filename: 'cola.jpg', content_type: 'image/jpg')
 cola_one.save
 p cola_one.name
 
-file = URI.open('https://images.pexels.com/photos/4791265/pexels-photo-4791265.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940')
+file = URI.open('https://www.indianhealthyrecipes.com/wp-content/uploads/2017/03/homemade-apple-juice-recipe-500x447.jpg')
 juice_apple = Ingredient.new(name: "Apple Juice 1.5L", unit:"L", unit_price: 1.4, category: "drinks")
+juice_apple.photo.attach(io: file, filename: 'applejuice.jpg', content_type: 'image/jpg')
 juice_apple.save
 p juice_apple.name
 
-file = URI.open('https://images.pexels.com/photos/4791265/pexels-photo-4791265.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940')
+file = URI.open('https://m.media-amazon.com/images/I/519Lte818hS._AC_SY580_.jpg')
 blue_bull = Ingredient.new(name: "Blue Bull Energy Drink 0.35", unit:"L", unit_price: 3.85, category: "drinks")
+blue_bull.photo.attach(io: file, filename: 'blue.jpg', content_type: 'image/jpg')
 blue_bull.save
 p blue_bull.name
 

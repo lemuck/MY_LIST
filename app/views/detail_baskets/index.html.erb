@@ -41,8 +41,8 @@
               <%= detail.ingredient_recipe.ingredient.name %>: <%= detail.ingredient_quantity.round(1) %> <%= detail.ingredient_recipe.ingredient.unit %>
 
               <%= link_to detail_basket_path(id:detail.id),method: :delete, class:'basket-bin' do %>
-              <i class="fas fa-trash-alt"></i>
-            <% end %>
+               <i class="fas fa-trash-alt"></i>
+              <% end %>
             </div>
           </ul>
 
@@ -52,20 +52,21 @@
 
       <% unless @products.empty? %>
         <div class="card-title" id="title-product">
-          <div class="opacity-recipe">
+          <div class="opacity-recipe mb-3">
             <h1>PRODUCTS</h1>
           </div>
+        </div>
+      <% end %>
+      
+      <% @products.each do |product| %>
+        <div class="card-basket card-basket-ingredient-recipe mb-2">
+          <span class="color-black"><%= product.ingredient_quantity.round %> <%= product.ingredient.unit %>
+          <%= product.ingredient.name %></span>
 
-        <% end %>
-        <% @products.each do |product| %>
-            <div class="card-basket card-basket-ingredient-recipe mb-2">
-              <%= product.ingredient_quantity.round %> <%= product.ingredient.unit %>
-              <%= product.ingredient.name %>
-
-            <%= link_to detail_basket_path(id:product.id),method: :delete, class:'basket-bin' do %>
-              <i class="fas fa-trash-alt"></i>
-            <% end %>
-          </div>
+          <%= link_to detail_basket_path(id:product.id),method: :delete, class:'basket-bin' do %>
+            <i class="fas fa-trash-alt"></i>
+          <% end %>
+        </div>
       <% end %>
 
     </div>
@@ -76,6 +77,6 @@
           <p class="color-white">Continue to your list</p>
         </div>
       <% end %>
+    <% end %>
     </div>
-  <% end %>
 </div>

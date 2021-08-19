@@ -1,8 +1,8 @@
 .img-show {
 	height: 170px;
 //	width: 300px;
-width: 80%;
-margin-top: 10%;
+	width: 80%;
+	margin-top: 10%;
 	margin-left: 10%;
 }
 
@@ -20,7 +20,8 @@ margin-top: 10%;
 }
 
 .card-show {
-	background: $vert-clair;
+	background: #fdcda3;
+	border: 6px solid $vert-clair;
 	border-radius: 10px;
 	margin-top: 20px;
 	padding: 10px;

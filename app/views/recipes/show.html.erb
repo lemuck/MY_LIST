@@ -4,6 +4,8 @@
 <div class="container">
   <div>
     <%= cl_image_tag @recipe.photo.key, height: 300, width: 400, crop: :fill,  class: "image-show"%>
+    <i class="far fa-heart"></i>
+    <%# a mettre plus gros, en rose, position absolute %>
   </div>
   <h1 class="title-show"><%= @recipe.name %></h1>
   <% if @user %>

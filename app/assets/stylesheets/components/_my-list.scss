@@ -72,32 +72,38 @@
 }
 
 .my-list-pop-up {
-  margin-top: 70px;
-  font-size: 30px;
+  margin-top: 50px;
   font-weight: 900;
   color: $vert-fonce;
     span {
     color: $vert-clair;
-  }
+    }
   h4 {
     text-align: center;
     font-weight: 900;
-    .your-list {
-      border-bottom: solid $vert-fonce;
-    }
   }
   h3 {
+    margin-top: 50px;
     padding: 0px;
     font-weight: 900;
+    text-align: center;
+    font-size: 10vw;
+    border: solid;
+    padding-top: 15px;
+    padding-bottom: 15px;
   }
   .fast {
-    margin-left: 63px
+    margin-left: 0px
   }
   .easy {
-    margin-left: 5px
+    padding-left: 20px;
   }
   .simple {
-    margin-left: 15px
+    margin-left: 0px
+  }
+  .my-list-desc {
+    text-align: left;
+    line-height: 1.4;
   }
 }
 

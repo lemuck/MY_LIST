@@ -1,5 +1,9 @@
+<% if @category.present? %>
+  <h1 class="text-center title-recipe-index"><%=@category.capitalize%></h1>
+<% else %>
+  <h1 class="text-center title-recipe-index"><%=@category%></h1>
+<% end %>
 
-<h1 class="text-center title-recipe-index"><%=@category.capitalize%></h1>
 
 <div class="container">
   <%= form_tag ingredients_path, method: :get do %>
@@ -19,8 +23,8 @@
 <% @ingredients.each do |ingredient| %>
   <div class="card-product">
     <% if ingredient.photo.attached? %>
-    <%= cl_image_tag ingredient.photo.key, height: 300, width: 400, crop: :fill%>
-<% else %>
+      <%= cl_image_tag ingredient.photo.key, height: 300, width: 400, crop: :fill%>
+    <% else %>
      <img src="https://images.pexels.com/photos/4110101/pexels-photo-4110101.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" />
      <% end %>
     <div class="card-product-infos">
@@ -45,6 +49,6 @@
               <% end %>
         <% end %>
     </div>
-    <br><br><br><br>
   </div>
 <% end %>
+<br><br><br>

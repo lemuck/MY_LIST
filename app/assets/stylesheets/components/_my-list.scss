@@ -73,8 +73,32 @@
 
 .my-list-pop-up {
   margin-top: 70px;
-  padding: 20px;
   font-size: 30px;
+  font-weight: 900;
+  color: $vert-fonce;
+    span {
+    color: $vert-clair;
+  }
+  h4 {
+    text-align: center;
+    font-weight: 900;
+    .your-list {
+      border-bottom: solid $vert-fonce;
+    }
+  }
+  h3 {
+    padding: 0px;
+    font-weight: 900;
+  }
+  .fast {
+    margin-left: 63px
+  }
+  .easy {
+    margin-left: 5px
+  }
+  .simple {
+    margin-left: 15px
+  }
 }
 
 

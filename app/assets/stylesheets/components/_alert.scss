@@ -8,17 +8,22 @@
 
 
 .ugo {
+  margin-top: 54px;
   margin-left: 10px;
   margin-right: 10px;
   background-color: white;
-  opacity: 0.9;
+  opacity: 0.98;
   width: 95vw;
-  height: 100vh;
+  height: 85vh;
   position: fixed;
   top: 0;
   left: 0;
   .close {
     margin-top: 55px;
     margin-right: 10px;
+    span {
+      position: absolute;
+      top: 7px;
+    }
   }
 }

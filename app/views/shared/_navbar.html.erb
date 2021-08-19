@@ -5,15 +5,12 @@
   <div>
     <% if user_signed_in? %>
       <div class="nav-item dropup">
-     <!--   <%= image_tag "https://images.affiches-et-posters.com//albums/3/47831/affiche-film-avatar.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-          -->
-        <% if current_user.photo.attached? %>
-          <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-        <% else %>
-          <%= image_tag "https://images.affiches-et-posters.com//albums/3/47831/affiche-film-avatar.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-        <% end %>
-
-
+        <%# if current_user.photo.attached? %>
+          <%# cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+        <%# else %>
+          <%# image_tag "https://images.affiches-et-posters.com//albums/3/47831/affiche-film-avatar.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+        <%# end %>
+        <i class="fas fa-user text-decoration-none text-white h4" id= "navbarDropdown" data-toggle= "dropdown" ></i> 
 
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
           <%= link_to "My Profile", user_path(current_user), class: "dropdown-item" %>
@@ -21,7 +18,7 @@
         </div>
       </div>
     <% else %>
-        <%= link_to '<i class="fas fa-user text-decoration-none text-white h4"></i>'.html_safe, new_user_session_path %>
+        <%= link_to '<i class="far fa-user text-decoration-none text-white h4"></i>'.html_safe, new_user_session_path %>
     <% end %>
   </div>
 </div>

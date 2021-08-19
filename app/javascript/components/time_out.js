@@ -14,22 +14,3 @@ const hiddenAlert = (alert) => {
 };
 
 export { timeOutAlert };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

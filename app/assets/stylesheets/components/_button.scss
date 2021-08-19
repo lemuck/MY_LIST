@@ -1,13 +1,12 @@
 .btn-flat {
-  color: $vert-fonce;
-  padding: 10px;
-  padding-bottom: 3px;
+  color: #315540;
+  padding: 1.2vh;
+  padding-bottom: 0vw;
   border-radius: 50%;
-  background: $vert-fonce;
+  background: #315540;
   transition: background 0.3s ease;
-  margin-top: 0.6vh;
   position: absolute;
-  margin-left: 75vw;
+  right: 10vw;
 
 }
 
@@ -18,12 +17,16 @@
 .form-control {
   border-radius: 7vw;
   height: 5vh;
+  padding: 0;
 }
 
 #form-control-search {
   height: 7vh;
   border-radius: 15vw;
-  margin-bottom: 2vh;
+  position: relative;
+  margin-right: 15px;
+  margin-left: 15px;
+  padding: 0.375rem 0.75rem;
 }
 
 .d-flex {

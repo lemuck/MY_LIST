@@ -1,5 +1,5 @@
 
-<h1 class="text-center"><%=@category.capitalize%></h1>
+<h1 class="text-center title-recipe-index"><%=@category.capitalize%></h1>
 
 <div class="container">
   <%= form_tag ingredients_path, method: :get do %>
@@ -20,9 +20,9 @@
   <div class="card-product">
     <img src="https://images.pexels.com/photos/4110101/pexels-photo-4110101.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" />
     <div class="card-product-infos">
-
-      <h2 id="ingredient-<%= ingredient.id %>"><%= ingredient.name %></h2>
-
+      <div class="name-ingredient-card">
+        <h2 id="ingredient-<%= ingredient.id %>"><%= ingredient.name.capitalize %></h2>
+      </div>
       <p>Price: <%= ingredient.unit_price%>$</p>
       <p>Unit of measure: <%= ingredient.unit%></p>
     </div>

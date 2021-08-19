@@ -18,7 +18,11 @@
 
 <% @ingredients.each do |ingredient| %>
   <div class="card-product">
-    <img src="https://images.pexels.com/photos/4110101/pexels-photo-4110101.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" />
+    <% if ingredient.photo.attached? %>
+    <%= cl_image_tag ingredient.photo.key, height: 300, width: 400, crop: :fill%>
+<% else %>
+     <img src="https://images.pexels.com/photos/4110101/pexels-photo-4110101.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" />
+     <% end %>
     <div class="card-product-infos">
       <div class="name-ingredient-card">
         <h2 id="ingredient-<%= ingredient.id %>"><%= ingredient.name.capitalize %></h2>

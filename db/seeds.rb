@@ -168,7 +168,7 @@ olive_oil = Ingredient.new(name: "olive oil", unit:"ml", unit_price: 0.008, cate
 olive_oil.save
 p olive_oil.name
 
-mustard = Ingredient.new(name: "mustard", unit:"teaspoon", unit_price: 0.005, category: "condiment")
+mustard = Ingredient.new(name: "mustard", unit:"tsp", unit_price: 0.005, category: "condiment")
 mustard.save
 p mustard.name
 

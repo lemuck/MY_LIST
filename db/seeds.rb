@@ -169,7 +169,7 @@ p lean_ground_beef.name
 
 file = URI.open('https://shop.selectfoodsshoppe.com/images/thumbs/0010468_dautore-beef-peperoni-halal_510.jpeg')
 pepperoni = Ingredient.create(name: "pepperoni", unit: "g", unit_price: 0.09, category: "meat")
-peperoni.photo.attach(io: file, filename: 'pepperoni.jpeg', content_type: 'image/jpeg')
+pepperoni.photo.attach(io: file, filename: 'pepperoni.jpeg', content_type: 'image/jpeg')
 pepperoni.save
 p pepperoni.name
 

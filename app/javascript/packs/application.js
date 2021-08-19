@@ -30,15 +30,14 @@ import { initUpdateLogobarOnScroll } from '../components/logobar';
 import { addIngredientBtn } from '../components/add_ingredient_to_form';
 import { timeOutAlert } from '../components/time_out';
 // import { displayIngredientUnit } from '../components/display_unit_in_form';
-
 // import { ingredientQuantityChange } from '../components/ingredient_quantity';
 import { displayGif } from '../components/displayGif';
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here
 
   initUpdateLogobarOnScroll();
-  // addIngredientBtn();
-  // displayIngredientUnit()
+  addIngredientBtn();
   timeOutAlert();
+  // displayIngredientUnit()    --- commented because i cannot get the selected ingredient in the JS
   // ingredientQuantityChange() --- commented because we switched back to form submit
 });

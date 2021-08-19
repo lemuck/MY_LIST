@@ -343,7 +343,7 @@ p lasagne_veg.name
 
 ##### Pasta Sausage
 file = URI.open('https://images.pexels.com/photos/5710170/pexels-photo-5710170.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500')
-pasta_sausage = Recipe.new(name: 'Pasta with italian sausage', person_number: 3, description: 'Removed casing from sausage links and cut into 1/2 inch slices.
+pasta_sausage = Recipe.new(name: 'Pasta carbonara', person_number: 3, description: 'Removed casing from sausage links and cut into 1/2 inch slices.
 In a large skillet, brown sausage over medium heat for about 10 minutes; remove and set aside.
 In a large skillet, heat ground beef, olive oil, garlic and onion over medium heat until meat is nicely browned; drain.
 Pour in tomatoes and tomato sauce; mix in salt, ground black pepper, basil, oregano, bay leaf and cooked sausage. Simmer uncovered for 1 hour, stirring occasionally.

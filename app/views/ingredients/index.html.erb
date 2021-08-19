@@ -23,11 +23,11 @@
       <div class="name-ingredient-card">
         <h2 id="ingredient-<%= ingredient.id %>"><%= ingredient.name.capitalize %></h2>
       </div>
-      <p>Price: <%= ingredient.unit_price%>$</p>
+      <p>Price: <%= ingredient.unit_price%>€</p>
       <p>Unit of measure: <%= ingredient.unit%></p>
     </div>
 
-  
+
     <div class="form-ingredient">
         <%= simple_form_for @detail_basket do |f| %>
               <div class="ingredient_quantity">
@@ -44,4 +44,3 @@
     <br><br><br><br>
   </div>
 <% end %>
-

@@ -1,11 +1,7 @@
 <h1 class= "text-center" id="my-profile">-Profile Page-</h1>
 <br>
 <div class="container">
-  <% if current_user.photo.attached? %>
-    <%= cl_image_tag current_user.photo.key, data: { toggle: "dropdown" }, class:"avatar-profile", 'aria-haspopup': true, 'aria-expanded': false %>
-  <% else %>
-    <%= image_tag "https://images.affiches-et-posters.com//albums/3/47831/affiche-film-avatar.jpg", class:"avatar-profile", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-  <% end %>
+ 
   <div class="text-align-center">
     <h2><%= current_user.name %></h2>
   </div>
@@ -21,7 +17,116 @@
 
   <div class="btn-show" id="btn-profile">
     <%= link_to "Edit my profile", edit_user_registration_path, class:"color-white" %>
-  </div> 
+  </div>
+
+  <div class="card-address-profile">
+    <h4 class="text-center">Add your preferencies :</h4>
+    <br>
+      <!-- begin toggle markup	 -->
+      <label class="toggle" for="uniqueID1">
+        <input type="checkbox" class="toggle__input" id="uniqueID1" />
+        <span class="toggle-track">
+          <span class="toggle-indicator">
+            <!-- 	This check mark is optional	 -->
+            <span class="checkMark">
+              <svg viewBox="0 0 24 24" id="ghq-svg-check" role="presentation" aria-hidden="true">
+                <path d="M9.86 18a1 1 0 01-.73-.32l-4.86-5.17a1.001 1.001 0 011.46-1.37l4.12 4.39 8.41-9.2a1 1 0 111.48 1.34l-9.14 10a1 1 0 01-.73.33h-.01z"></path>
+              </svg>
+            </span>
+          </span>
+        </span>
+        Local
+      </label>
+      <br>
+      <!-- begin toggle markup	 -->
+      <label class="toggle" for="uniqueID2">
+        <input type="checkbox" class="toggle__input" id="uniqueID2" />
+        <span class="toggle-track">
+          <span class="toggle-indicator">
+            <!-- 	This check mark is optional	 -->
+            <span class="checkMark">
+              <svg viewBox="0 0 24 24" id="ghq-svg-check" role="presentation" aria-hidden="true">
+                <path d="M9.86 18a1 1 0 01-.73-.32l-4.86-5.17a1.001 1.001 0 011.46-1.37l4.12 4.39 8.41-9.2a1 1 0 111.48 1.34l-9.14 10a1 1 0 01-.73.33h-.01z"></path>
+              </svg>
+            </span>
+          </span>
+        </span>
+        Bio
+      </label>
+
+      <br>
+      <!-- begin toggle markup	 -->
+      <label class="toggle" for="uniqueID3">
+        <input type="checkbox" class="toggle__input" id="uniqueID3" />
+        <span class="toggle-track">
+          <span class="toggle-indicator">
+            <!-- 	This check mark is optional	 -->
+            <span class="checkMark">
+              <svg viewBox="0 0 24 24" id="ghq-svg-check" role="presentation" aria-hidden="true">
+                <path d="M9.86 18a1 1 0 01-.73-.32l-4.86-5.17a1.001 1.001 0 011.46-1.37l4.12 4.39 8.41-9.2a1 1 0 111.48 1.34l-9.14 10a1 1 0 01-.73.33h-.01z"></path>
+              </svg>
+            </span>
+          </span>
+        </span>
+        Vegan
+      </label>
+
+      <br>
+      <!-- begin toggle markup	 -->
+      <label class="toggle" for="uniqueID4">
+        <input type="checkbox" class="toggle__input" id="uniqueID4" />
+        <span class="toggle-track">
+          <span class="toggle-indicator">
+            <!-- 	This check mark is optional	 -->
+            <span class="checkMark">
+              <svg viewBox="0 0 24 24" id="ghq-svg-check" role="presentation" aria-hidden="true">
+                <path d="M9.86 18a1 1 0 01-.73-.32l-4.86-5.17a1.001 1.001 0 011.46-1.37l4.12 4.39 8.41-9.2a1 1 0 111.48 1.34l-9.14 10a1 1 0 01-.73.33h-.01z"></path>
+              </svg>
+            </span>
+          </span>
+        </span>
+        Vegetarian
+      </label>
+
+      <br>
+
+      <!-- begin toggle markup	 -->
+      <label class="toggle" for="uniqueID5">
+        <input type="checkbox" class="toggle__input" id="uniqueID5" />
+        <span class="toggle-track">
+          <span class="toggle-indicator">
+            <!-- 	This check mark is optional	 -->
+            <span class="checkMark">
+              <svg viewBox="0 0 24 24" id="ghq-svg-check" role="presentation" aria-hidden="true">
+                <path d="M9.86 18a1 1 0 01-.73-.32l-4.86-5.17a1.001 1.001 0 011.46-1.37l4.12 4.39 8.41-9.2a1 1 0 111.48 1.34l-9.14 10a1 1 0 01-.73.33h-.01z"></path>
+              </svg>
+            </span>
+          </span>
+        </span>
+        Gluten free
+      </label>
+
+      <br>
+
+      <!-- begin toggle markup	 -->
+      <label class="toggle" for="uniqueID6">
+        <input type="checkbox" class="toggle__input" id="uniqueID6" />
+        <span class="toggle-track">
+          <span class="toggle-indicator">
+            <!-- 	This check mark is optional	 -->
+            <span class="checkMark">
+              <svg viewBox="0 0 24 24" id="ghq-svg-check" role="presentation" aria-hidden="true">
+                <path d="M9.86 18a1 1 0 01-.73-.32l-4.86-5.17a1.001 1.001 0 011.46-1.37l4.12 4.39 8.41-9.2a1 1 0 111.48 1.34l-9.14 10a1 1 0 01-.73.33h-.01z"></path>
+              </svg>
+            </span>
+          </span>
+        </span>
+        Lactose free
+      </label>
+  </div>
+
+
+  <br><br><br><br><br>
 </div>
 
 

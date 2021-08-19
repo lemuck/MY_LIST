@@ -28,81 +28,81 @@ bobby.save
 ########## Ingredients
 
 ### dry
-choco = Ingredient.new(name: 'chocolate', unit: 'g', unit_price: 0.31, category: "dry")
+choco = Ingredient.new(name: 'chocolate', unit: 'g', unit_price: 0.014, category: "dry")
 choco.save
 p choco.name
 
-flour = Ingredient.new(name: 'flour', unit: 'g', unit_price: 0.0047, category:"dry")
+flour = Ingredient.new(name: 'flour', unit: 'g', unit_price: 0.0037, category:"dry")
 flour.save
 p flour.name
 
-yeast = Ingredient.new(name: 'yeast', unit: 'g', unit_price: 0.01, category:"dry")
+yeast = Ingredient.new(name: 'yeast', unit: 'g', unit_price: 0.027, category:"dry")
 yeast.save
 p yeast.name
 
-pate_a_tarte = Ingredient.create(name: "pate à tarte", unit: "g", unit_price: 1, category: "dry")
+pate_a_tarte = Ingredient.create(name: "pate à tarte", unit: "pc", unit_price: 1.46, category: "dry")
 pate_a_tarte.save
 p pate_a_tarte.name
 
-semoule = Ingredient.create(name: "semoule", unit: "g", unit_price: 2, category: "dry")
+semoule = Ingredient.create(name: "semoule", unit: "g", unit_price: 0.0029, category: "dry")
 semoule.save
 p semoule.name
 
-rice = Ingredient.create(name: "rice", unit: "g", unit_price: 1, category: "dry")
+rice = Ingredient.create(name: "rice", unit: "g", unit_price: 0.0023, category: "dry")
 rice.save
 p rice.name
 
-sugar = Ingredient.new(name: "sugar", unit:"g", unit_price: 0.012, category: "dry")
+sugar = Ingredient.new(name: "sugar", unit:"g", unit_price: 0.0012, category: "dry")
 sugar.save
 p sugar.name
 
-lasagne = Ingredient.new(name: "lasagne", unit:"feuille", unit_price: 0.09, category: "dry")
+lasagne = Ingredient.new(name: "lasagne", unit:"pc", unit_price: 0.08, category: "dry")
 lasagne.save
 p lasagne.name
 
-pasta = Ingredient.new(name: "Pasta", unit:"g", unit_price: 0.05, category: "dry")
+pasta = Ingredient.new(name: "Pasta", unit:"g", unit_price: 0.0017, category: "dry")
 pasta.save
 p pasta.name
 
-bun = Ingredient.new(name: "bun", unit:"pc", unit_price: 0.5, category: "dry")
+bun = Ingredient.new(name: "bun", unit:"pc", unit_price: 0.7, category: "dry")
 bun.save
 p bun.name
 
-tortilla = Ingredient.new(name: "tortilla", unit:"pack", unit_price: 1, category: "dry")
+tortilla = Ingredient.new(name: "tortilla", unit:"pc", unit_price: 0.8, category: "dry")
 tortilla.save
 p tortilla.name
 
 ### vegetables
 
-carotte = Ingredient.create(name: "carotte", unit: "kg", unit_price: 3, category: "vegetables")
+carotte = Ingredient.create(name: "carotte", unit: "kg", unit_price: 1.8, category: "vegetables")
 carotte.save
 p carotte.name
 
-onion = Ingredient.create(name: "onion", unit: "pc", unit_price: 0.3, category: "vegetables")
+onion = Ingredient.create(name: "onion", unit: "pc", unit_price: 0.23, category: "vegetables")
 onion.save
 p onion.name
 
-tomato = Ingredient.new(name: "tomato", unit:"pc", unit_price: 0.5, category: "vegetables")
+tomato = Ingredient.new(name: "tomato", unit:"pc", unit_price: 0.52, category: "vegetables")
 tomato.save
 p tomato.name
 
-courgette = Ingredient.new(name: "courgette", unit:"pc", unit_price: 0.5, category: "vegetables")
+courgette = Ingredient.new(name: "courgette", unit:"pc", unit_price: 0.8, category: "vegetables")
 courgette.save
 p courgette.name
 
-lettuce = Ingredient.new(name: "lettuce", unit:"pc", unit_price: 1, category: "vegetables")
+lettuce = Ingredient.new(name: "lettuce", unit:"pc", unit_price: 0.99, category: "vegetables")
 lettuce.save
 p lettuce.name
 
-mushroom = Ingredient.new(name: "Mushroom", unit:"pc", unit_price: 0.1, category: "vegetables")
+mushroom = Ingredient.new(name: "Mushroom", unit:"pc", unit_price: 0.12, category: "vegetables")
 mushroom.save
 p mushroom.name
 
-beans = Ingredient.new(name: "beans", unit:"can", unit_price: 1, category: "vegetables")
+beans = Ingredient.new(name: "beans", unit:"can", unit_price: 1.4, category: "vegetables")
 beans.save
 p beans.name
 
-bell_pepper = Ingredient.new(name: "bell pepper", unit:"pc", unit_price: 0.5, category: "vegetables")
+bell_pepper = Ingredient.new(name: "bell pepper", unit:"pc", unit_price: 0.9, category: "vegetables")
 bell_pepper.save
 p bell_pepper.name
 
@@ -114,11 +114,11 @@ p apple.name
 
 ##### meat
 
-italian_sausage = Ingredient.create(name: "italian Sausage", unit: "g", unit_price: 4, category: "meat")
+italian_sausage = Ingredient.create(name: "italian Sausage", unit: "g", unit_price: 0.016, category: "meat")
 italian_sausage.save
 p italian_sausage.name
 
-lean_ground_beef = Ingredient.create(name: "lean ground beef", unit: "g", unit_price: 6, category: "meat")
+lean_ground_beef = Ingredient.create(name: "lean ground beef", unit: "g", unit_price: 0.02, category: "meat")
 lean_ground_beef.save
 p lean_ground_beef.name
 
@@ -126,27 +126,27 @@ pepperoni = Ingredient.create(name: "pepperoni", unit: "g", unit_price: 0.09, ca
 pepperoni.save
 p pepperoni.name
 
-chicken = Ingredient.create(name: "chicken", unit: "kg", unit_price: 3, category: "meat")
+chicken = Ingredient.create(name: "chicken", unit: "kg", unit_price: 11.5, category: "meat")
 chicken.save
 p chicken.name
 
 ##### seafood
 
-shrimp = Ingredient.create(name: "shrimp", unit: "g", unit_price: 0.01, category: "seafood")
+shrimp = Ingredient.create(name: "shrimp", unit: "g", unit_price: 0.025, category: "seafood")
 shrimp.save
 p shrimp.name
 
-fish = Ingredient.create(name: "fish", unit: "pc", unit_price: 2.5, category: "seafood")
+fish = Ingredient.create(name: "fish", unit: "pc", unit_price: 23, category: "seafood")
 fish.save
 p fish.name
 
 ## dairy milk
 
-egg = Ingredient.create(name: "egg", unit: "pc", unit_price: 0.1, category: "dairy milk")
+egg = Ingredient.create(name: "egg", unit: "pc", unit_price: 0.23, category: "dairy milk")
 egg.save
 p egg.name
 
-butter = Ingredient.new(name: "butter", unit:"g", unit_price: 0.12, category: "dairy milk")
+butter = Ingredient.new(name: "butter", unit:"g", unit_price: 0.011, category: "dairy milk")
 butter.save
 p butter.name
 
@@ -154,31 +154,31 @@ buttermilk = Ingredient.new(name: "buttermilk", unit:"ml", unit_price: 0.002, ca
 buttermilk.save
 p buttermilk.name
 
-cheese = Ingredient.new(name: "cheese", unit:"g", unit_price: 0.01, category: "dairy milk")
+cheese = Ingredient.new(name: "cheese", unit:"g", unit_price: 0.015, category: "dairy milk")
 cheese.save
 p cheese.name
 
-fresh_cream = Ingredient.new(name: "fresh cream", unit:"g", unit_price: 0.4, category: "dairy milk")
+fresh_cream = Ingredient.new(name: "fresh cream", unit:"g", unit_price: 0.004, category: "dairy milk")
 fresh_cream.save
 p fresh_cream.name
 
 ### condiment
 
-olive_oil = Ingredient.new(name: "olive oil", unit:"ml", unit_price: 0.7, category: "condiment")
+olive_oil = Ingredient.new(name: "olive oil", unit:"ml", unit_price: 0.008, category: "condiment")
 olive_oil.save
 p olive_oil.name
 
-mustard = Ingredient.new(name: "mustard", unit:"teaspoon", unit_price: 0.01, category: "condiment")
+mustard = Ingredient.new(name: "mustard", unit:"teaspoon", unit_price: 0.005, category: "condiment")
 mustard.save
 p mustard.name
 
-worcestershire = Ingredient.new(name: "worcestershire sauce", unit:"ml", unit_price: 0.05, category: "condiment")
+worcestershire = Ingredient.new(name: "worcestershire sauce", unit:"ml", unit_price: 0.012, category: "condiment")
 worcestershire.save
 p worcestershire.name
 
 #### sauce
 
-tomato_sauce = Ingredient.new(name: "tomato sauce", unit:"g", unit_price: 0.1, category: "sauce")
+tomato_sauce = Ingredient.new(name: "tomato sauce", unit:"g", unit_price: 0.004, category: "sauce")
 tomato_sauce.save
 p tomato_sauce.name
 
@@ -190,31 +190,31 @@ p basil.name
 
 #### drinks
 
-water_half = Ingredient.new(name: "Water 0.5L", unit:"L", unit_price: 0.8, category: "drinks")
+water_half = Ingredient.new(name: "Water 0.5L", unit:"L", unit_price: 0.27, category: "drinks")
 water_half.save
 p water_half.name
 
-water_one = Ingredient.new(name: "Water 1L", unit:"L", unit_price: 1.5, category: "drinks")
+water_one = Ingredient.new(name: "Water 1L", unit:"L", unit_price: 0.37, category: "drinks")
 water_one.save
 p water_one.name
 
-sparkling_water = Ingredient.new(name: "Sparkling Water 1L", unit:"L", unit_price: 1.7, category: "drinks")
+sparkling_water = Ingredient.new(name: "Sparkling Water 1L", unit:"L", unit_price: 0.59, category: "drinks")
 sparkling_water.save
 p sparkling_water.name
 
-cola_half = Ingredient.new(name: "Cola 0.5L", unit:"L", unit_price: 1, category: "drinks")
+cola_half = Ingredient.new(name: "Cola 0.5L", unit:"L", unit_price: 0.75, category: "drinks")
 cola_half.save
 p cola_half.name
 
-cola_one = Ingredient.new(name: "Cola 1L", unit:"L", unit_price: 1.8, category: "drinks")
+cola_one = Ingredient.new(name: "Cola 1L", unit:"L", unit_price: 1.23, category: "drinks")
 cola_one.save
 p cola_one.name
 
-juice_apple = Ingredient.new(name: "Apple Juice 1.5L", unit:"L", unit_price: 1.8, category: "drinks")
+juice_apple = Ingredient.new(name: "Apple Juice 1.5L", unit:"L", unit_price: 1.4, category: "drinks")
 juice_apple.save
 p juice_apple.name
 
-blue_bull = Ingredient.new(name: "Blue Bull Energy Drink 0.35", unit:"L", unit_price: 1, category: "drinks")
+blue_bull = Ingredient.new(name: "Blue Bull Energy Drink 0.35", unit:"L", unit_price: 3.85, category: "drinks")
 blue_bull.save
 p blue_bull.name
 
@@ -287,7 +287,7 @@ p egg_fried_rice.name
 
 ##### Tarte au carottes
 file = URI.open('https://images.pexels.com/photos/4993114/pexels-photo-4993114.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500')
-tarte_aux_carottes = Recipe.new(name: "Tarte aux carottes", person_number: 4, description: "Mettez les carottes dans la pate à tarte. Cuisinez au fours pour 60min á 180. Mangez le truc.")
+tarte_aux_carottes = Recipe.new(name: "Carrot Tart", person_number: 4, description: "Mettez les carottes dans la pate à tarte. Cuisinez au fours pour 60min á 180. Mangez le truc.")
 tarte_aux_carottes.photo.attach(io: file, filename: 'tarte.jpeg', content_type: 'image/jpeg')
 tarte_aux_carottes.save
 IngredientRecipe.new(recipe_id: tarte_aux_carottes.id, ingredient_id: carotte.id, ingredient_quantity: 0.7).save
@@ -367,7 +367,7 @@ p carrot_cake.name
 
 ##### Tarte au pommes
 file = URI.open('https://images.pexels.com/photos/4993114/pexels-photo-4993114.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500')
-tarte_aux_pommes = Recipe.new(name: "Tarte aux Pommes", person_number: 4, description: "Mettez les pommes dans la pate à tarte. Cuisinez au fours pour 60min á 180. Mangez le truc.")
+tarte_aux_pommes = Recipe.new(name: "Apple Tart", person_number: 4, description: "Mettez les pommes dans la pate à tarte. Cuisinez au fours pour 60min á 180. Mangez le truc.")
 tarte_aux_pommes.photo.attach(io: file, filename: 'tarte_pommes.jpeg', content_type: 'image/jpeg')
 tarte_aux_pommes.save
 IngredientRecipe.new(recipe_id: tarte_aux_pommes.id, ingredient_id: apple.id, ingredient_quantity: 1).save

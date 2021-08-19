@@ -7,16 +7,20 @@
   background-color: $vert-clair;
   box-shadow: 0 0 4px 1px rgba(0,0,0,0.2);
 
+}
+
   .recipe-info {
     padding: 5px;
     color: $blanc-casse;
+    padding-left: 20px;
+  padding-top: 15px;
   }
 
   .recipe-image {
     width: 50%;
     object-fit: cover;
   }
-}
+
 .card-recette {
   position: relative;
 }

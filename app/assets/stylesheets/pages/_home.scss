@@ -20,6 +20,10 @@
     font-family: $headers-font;
     font-size: xx-large;
     text-decoration: none;
+    font-size: 45px;
+  }
+  .top-rated {
+    font-size: 25px;
   }
 }
 
@@ -33,17 +37,25 @@
 }
 
 #card-banner-list{
-  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.pexels.com/photos/8378748/pexels-photo-8378748.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+  background-image: linear-gradient(rgba(255, 255, 230, 0.3), rgba(70, 70, 70, 0.3)), url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqYfAEsFNhj5EiaRfBCFJ-k8Vu-1_Sae4Mx7p6sW40bhtvM9sWFotRBQp_BTRjlc7ZKaQ&usqp=CAU');
 }
 #card-banner-recipes{
   background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.pexels.com/photos/1813504/pexels-photo-1813504.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260');
 }
 #card-banner-ingredients{
-  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1498837167922-ddd27525d352?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80');
+  background-image: linear-gradient(rgba(255, 255, 230, 0.3), rgba(206, 206, 206, 0.3)), url('https://images.unsplash.com/photo-1498837167922-ddd27525d352?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80');
 }
 
 .color-white {
   color: white;
+}
+
+.color-black {
+  color: black;
+}
+
+.title-card-home {
+  font-size: 7vh;
 }
 
 .card {
@@ -64,7 +76,7 @@
 
 .recipe-image-home {
   width: 100%;
-  height: 60%;
+  height: 70%;
   object-fit: cover;
   border-radius: 10px 10px 0px 0px;
 }

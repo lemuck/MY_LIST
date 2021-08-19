@@ -68,6 +68,10 @@ bun = Ingredient.new(name: "bun", unit:"pc", unit_price: 0.5, category: "dry")
 bun.save
 p bun.name
 
+tortilla = Ingredient.new(name: "tortilla", unit:"pack", unit_price: 1, category: "dry")
+tortilla.save
+p tortilla.name
+
 ### vegetables
 
 carotte = Ingredient.create(name: "carotte", unit: "kg", unit_price: 3, category: "vegetables")
@@ -89,6 +93,18 @@ p courgette.name
 lettuce = Ingredient.new(name: "lettuce", unit:"pc", unit_price: 1, category: "vegetables")
 lettuce.save
 p lettuce.name
+
+mushroom = Ingredient.new(name: "Mushroom", unit:"pc", unit_price: 0.1, category: "vegetables")
+mushroom.save
+p mushroom.name
+
+beans = Ingredient.new(name: "beans", unit:"can", unit_price: 1, category: "vegetables")
+beans.save
+p beans.name
+
+bell_pepper = Ingredient.new(name: "bell pepper", unit:"pc", unit_price: 0.5, category: "vegetables")
+bell_pepper.save
+p bell_pepper.name
 
 ##### fruits
 
@@ -113,6 +129,16 @@ p pepperoni.name
 chicken = Ingredient.create(name: "chicken", unit: "kg", unit_price: 3, category: "meat")
 chicken.save
 p chicken.name
+
+##### seafood
+
+shrimp = Ingredient.create(name: "shrimp", unit: "g", unit_price: 0.01, category: "seafood")
+shrimp.save
+p shrimp.name
+
+fish = Ingredient.create(name: "fish", unit: "pc", unit_price: 2.5, category: "seafood")
+fish.save
+p fish.name
 
 ## dairy milk
 
@@ -158,10 +184,39 @@ p tomato_sauce.name
 
 #### spice
 
-basil = Ingredient.new(name: "Basil", unit:"leaves", unit_price: 0.08, category: "spice")
+basil = Ingredient.new(name: "Basil", unit:"leaves", unit_price: 0.08, category: "spices")
 basil.save
 p basil.name
 
+#### drinks
+
+water_half = Ingredient.new(name: "Water 0.5L", unit:"L", unit_price: 0.8, category: "drinks")
+water_half.save
+p water_half.name
+
+water_one = Ingredient.new(name: "Water 1L", unit:"L", unit_price: 1.5, category: "drinks")
+water_one.save
+p water_one.name
+
+sparkling_water = Ingredient.new(name: "Sparkling Water 1L", unit:"L", unit_price: 1.7, category: "drinks")
+sparkling_water.save
+p sparkling_water.name
+
+cola_half = Ingredient.new(name: "Cola 0.5L", unit:"L", unit_price: 1, category: "drinks")
+cola_half.save
+p cola_half.name
+
+cola_one = Ingredient.new(name: "Cola 1L", unit:"L", unit_price: 1.8, category: "drinks")
+cola_one.save
+p cola_one.name
+
+juice_apple = Ingredient.new(name: "Apple Juice 1.5L", unit:"L", unit_price: 1.8, category: "drinks")
+juice_apple.save
+p juice_apple.name
+
+blue_bull = Ingredient.new(name: "Blue Bull Energy Drink 0.35", unit:"L", unit_price: 1, category: "drinks")
+blue_bull.save
+p blue_bull.name
 
 ###### Chocolate cake
 file = URI.open('https://images.pexels.com/photos/3740196/pexels-photo-3740196.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940')
@@ -319,6 +374,61 @@ IngredientRecipe.new(recipe_id: tarte_aux_pommes.id, ingredient_id: apple.id, in
 IngredientRecipe.new(recipe_id: tarte_aux_pommes.id, ingredient_id: pate_a_tarte.id, ingredient_quantity: 100).save
 IngredientRecipe.new(recipe_id: tarte_aux_pommes.id, ingredient_id: sugar.id, ingredient_quantity: 30).save
 p tarte_aux_pommes.name
+
+##### Tacos Veg
+file = URI.open('https://images.pexels.com/photos/8448331/pexels-photo-8448331.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=500')
+tacos_veg = Recipe.new(name: "Tacos Veg", person_number: 1, description: "Heat olive oil in a skillet over medium-high heat. Add mushrooms and red bell peppers; saute until mushrooms are soft and meaty, about 20 minutes. Add pinto beans, taco seasoning mix, green onions, and water. Stir well; continue to cook until all liquid is evaporated, about 5 minutes more. Divide mushroom filling evenly between tortillas. Add your favorite taco toppings.")
+tacos_veg.photo.attach(io: file, filename: 'tacos_veg.jpeg', content_type: 'image/jpeg')
+tacos_veg.save
+IngredientRecipe.new(recipe_id: tacos_veg.id, ingredient_id: olive_oil.id, ingredient_quantity: 10).save
+IngredientRecipe.new(recipe_id: tacos_veg.id, ingredient_id: bell_pepper.id, ingredient_quantity: 1).save
+IngredientRecipe.new(recipe_id: tacos_veg.id, ingredient_id: mushroom.id, ingredient_quantity: 3).save
+IngredientRecipe.new(recipe_id: tacos_veg.id, ingredient_id: onion.id, ingredient_quantity: 1).save
+IngredientRecipe.new(recipe_id: tacos_veg.id, ingredient_id: beans.id, ingredient_quantity: 1).save
+IngredientRecipe.new(recipe_id: tacos_veg.id, ingredient_id: tortilla.id, ingredient_quantity: 1).save
+p tacos_veg.name
+
+##### Tacos Meat
+file = URI.open('https://images.pexels.com/photos/7613568/pexels-photo-7613568.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=500&w=500')
+tacos_beef = Recipe.new(name: "Tacos Beef", person_number: 1, description: "Heat olive oil in a skillet over medium-high heat. Add the ground beef, mushrooms and red bell peppers; saute until mushrooms are soft and meaty and  the ground beef is cooked, about 20 minutes. Add pinto beans, taco seasoning mix, green onions, and water. Stir well; continue to cook until all liquid is evaporated, about 5 minutes more. Divide beef filling evenly between tortillas. Add your favorite taco toppings.")
+tacos_beef.photo.attach(io: file, filename: 'tacos_meat.jpeg', content_type: 'image/jpeg')
+tacos_beef.save
+IngredientRecipe.new(recipe_id: tacos_beef.id, ingredient_id: olive_oil.id, ingredient_quantity: 10).save
+IngredientRecipe.new(recipe_id: tacos_beef.id, ingredient_id: bell_pepper.id, ingredient_quantity: 1).save
+IngredientRecipe.new(recipe_id: tacos_beef.id, ingredient_id: mushroom.id, ingredient_quantity: 1).save
+IngredientRecipe.new(recipe_id: tacos_beef.id, ingredient_id: lean_ground_beef.id, ingredient_quantity: 100).save
+IngredientRecipe.new(recipe_id: tacos_beef.id, ingredient_id: onion.id, ingredient_quantity: 1).save
+IngredientRecipe.new(recipe_id: tacos_beef.id, ingredient_id: beans.id, ingredient_quantity: 1).save
+IngredientRecipe.new(recipe_id: tacos_beef.id, ingredient_id: tortilla.id, ingredient_quantity: 1).save
+p tacos_beef.name
+
+##### Tacos Chicken
+file = URI.open('https://images.pexels.com/photos/8448324/pexels-photo-8448324.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500')
+tacos_chicken = Recipe.new(name: "Tacos Chicken", person_number: 1, description: "Heat olive oil in a skillet over medium-high heat. Add the diced chicken, mushrooms and red bell peppers; saute until mushrooms are soft and the chicken is cooked, about 20 minutes. Add pinto beans, taco seasoning mix, green onions, and water. Stir well; continue to cook until all liquid is evaporated, about 5 minutes more. Divide chicken filling evenly between tortillas. Add your favorite taco toppings.")
+tacos_chicken.photo.attach(io: file, filename: 'tacos_chicken.jpeg', content_type: 'image/jpeg')
+tacos_chicken.save
+IngredientRecipe.new(recipe_id: tacos_chicken.id, ingredient_id: olive_oil.id, ingredient_quantity: 10).save
+IngredientRecipe.new(recipe_id: tacos_chicken.id, ingredient_id: bell_pepper.id, ingredient_quantity: 1).save
+IngredientRecipe.new(recipe_id: tacos_chicken.id, ingredient_id: mushroom.id, ingredient_quantity: 1).save
+IngredientRecipe.new(recipe_id: tacos_chicken.id, ingredient_id: chicken.id, ingredient_quantity: 0.1).save
+IngredientRecipe.new(recipe_id: tacos_chicken.id, ingredient_id: onion.id, ingredient_quantity: 1).save
+IngredientRecipe.new(recipe_id: tacos_chicken.id, ingredient_id: beans.id, ingredient_quantity: 1).save
+IngredientRecipe.new(recipe_id: tacos_chicken.id, ingredient_id: tortilla.id, ingredient_quantity: 1).save
+p tacos_chicken.name
+
+##### paella
+file = URI.open('https://images.pexels.com/photos/8969237/pexels-photo-8969237.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=500')
+paella = Recipe.new(name: "Paella", person_number: 6, description: "Heat a wok over medium-high heat. Fry hot and mild Italian sausage pieces in the wok until brown on all sides. Remove sausage, and fry the chicken strips in the sausage drippings until browned. Remove chicken and saute onions, green pepper, celery, and garlic for 5 minutes, or until tender.
+Stir in the uncooked rice, tomatoes, bay leaves, salt, oregano and turmeric. Cook and stir for 1 minute, then mix in the reserved tomato juice and chicken broth. Add chicken pieces, cover and simmer for about 20 minutes. Add sausage to the mixture, and continue to simmer for 15 minutes, then stir in the shrimp; cover and cook for 5 to 10 more minutes, or until shrimp is cooked through.")
+paella.photo.attach(io: file, filename: 'paella.jpeg', content_type: 'image/jpeg')
+paella.save
+IngredientRecipe.new(recipe_id: paella.id, ingredient_id: italian_sausage.id, ingredient_quantity: 300).save
+IngredientRecipe.new(recipe_id: paella.id, ingredient_id: bell_pepper.id, ingredient_quantity: 2).save
+IngredientRecipe.new(recipe_id: paella.id, ingredient_id: shrimp.id, ingredient_quantity: 200).save
+IngredientRecipe.new(recipe_id: paella.id, ingredient_id: chicken.id, ingredient_quantity: 0.4).save
+IngredientRecipe.new(recipe_id: paella.id, ingredient_id: onion.id, ingredient_quantity: 1).save
+IngredientRecipe.new(recipe_id: paella.id, ingredient_id: rice.id, ingredient_quantity: 600).save
+p paella.name
 
 
 #### recette a refaire

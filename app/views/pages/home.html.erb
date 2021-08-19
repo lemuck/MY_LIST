@@ -4,7 +4,7 @@
     <div class='col-12'>
       <%= link_to my_list_path, class:'text-decoration-none' do %>
         <div class='card-banner' id='card-banner-list'>
-          <span class='card-banner-text color-white'>My List</span>
+          <span class='card-banner-text color-black'><strong class="title-card-home">My List</strong></span>
         </div>
       <% end %>
     </div>
@@ -14,7 +14,7 @@
     <div class='col-12'>
       <%= link_to recipes_path, class:'text-decoration-none' do %>
         <div class='card-banner' id='card-banner-recipes'>
-          <span class='card-banner-text color-white'>Recipes</span>
+          <span class='card-banner-text color-white'><strong class="title-card-home">Recipes</strong></span>
         </div>
       <% end %>
     </div>
@@ -24,7 +24,7 @@
     <div class='col-12'>
       <%= link_to category_path, class:'text-decoration-none' do %>
         <div class='card-banner' id='card-banner-ingredients'>
-          <span class='card-banner-text color-white'>Shop</span>
+          <span class='card-banner-text color-black'><strong class="title-card-home">Shop</strong></span>
         </div>
       <% end %>
     </div>
@@ -33,7 +33,7 @@
   <div class='row'>
     <div class='col-12'>
       <div class='card-banner' id="card-best-rec">
-        <span class='card-banner-text'>Top rated recipes</span>
+        <span class='card-banner-text top-rated'>Top rated recipes</span>
       </div>
     </div>
   </div>
@@ -46,7 +46,7 @@
             <div class="card-scroll">
               <%= cl_image_tag recipe.photo.key, crop: :fill,  class: "recipe-image-home"%>
               <div>
-                <h5 class="card-title-best-recipe text-dark" id="body-scroll"><%= recipe.name %></h5>
+                <h5 class="card-title-best-recipe color-white" id="body-scroll"><%= recipe.name %></h5>
               </div>
             </div>
           <% end %>

@@ -21,7 +21,6 @@
     font-size: xx-large;
     text-decoration: none;
     font-size: 45px;
-    text-shadow: 0px 0px 2px black;
   }
   .top-rated {
     font-size: 25px;
@@ -58,6 +57,13 @@
 .title-card-home {
   font-size: 7vh;
 }
+
+.text-shadow-white{
+  text-shadow: 0px 0px 10px white;
+}
+.text-shadow-black{
+  text-shadow: 0px 0px 10px black;
+}  
 
 .card {
   height: 200px;

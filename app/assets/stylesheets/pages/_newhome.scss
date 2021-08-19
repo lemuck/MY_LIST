@@ -26,32 +26,35 @@
 .h3-newhome {
     font-size: 6vw;
     margin-top: 8vh;
+    text-align:center;
 }
 
 .btn-home-signup {
     text-decoration: none;
-    color: white;
+    color: $vert-clair;
     font-size: 1.5em;
-    background: $vert-fonce;
+    background: #f9f3d5;
     padding: 8px;
     border-radius: 10px;
     text-align: center;
     width: 50vw;
     display: inline-block;
     //margin-left: 25vw;
+    margin-top: -2vh;
 
 }
 .btn-home-signup-width {
     text-decoration: none;
-    color: white;
+    color: $vert-clair;
     font-size: 1.5em;
-    background: $vert-fonce;
+    background: #f9f3d5;
     padding: 8px;
     border-radius: 10px;
    // margin-left: 25vw;
     text-align: center;
     width: 50vw;
     display: inline-block;
+    margin-top: 10vh;
 }
 
 .btn-home {
@@ -63,7 +66,7 @@
 }
 
 #continue {
-   margin-left: 31vw;
+   margin-left: 0vw;
    padding: 10px;
 }
 

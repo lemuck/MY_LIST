@@ -3,9 +3,10 @@
   <div class="opacity">
     <div class="text-newhome">
         <h1 class="h1-newhome"><strong>Welcome to My List</strong></h1>
-        <h3 class="h3-newhome">The list which allow you to do your shopping faster and easily with locals products</h3>
+        <h3 class="h3-newhome">Simplify your grocery shopping.</h3>
     </div>
     <% if current_user == nil %>
+
       <div class="link">
           <%= link_to "Log in", new_user_session_path, class:"btn-home-signup-width"%>
       </div>
@@ -15,6 +16,7 @@
       <div class="link-home">
           <%= link_to "Continue without sign up", home_path, class:"btn-home" %>
       </div>
+
     <% else %>
       <div class="link">
           <%= link_to "Continue", home_path, class:"btn-home-signup", id:"continue"%>

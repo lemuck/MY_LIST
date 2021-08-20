@@ -28,11 +28,6 @@ bobby.save
 ########## Ingredients
 
 ### dry
-file = URI.open('https://images.pexels.com/photos/4791265/pexels-photo-4791265.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940')
-choco = Ingredient.new(name: 'chocolate', unit: 'g', unit_price: 0.014, category: "dry")
-choco.photo.attach(io: file, filename: 'choco.jpeg', content_type: 'image/jpeg')
-choco.save
-p choco.name
 
 file = URI.open('https://images.pexels.com/photos/5765/flour-powder-wheat-jar.jpg?auto=compress&cs=tinysrgb&dpr=1&w=500')
 flour = Ingredient.new(name: 'flour', unit: 'g', unit_price: 0.0037, category:"dry")
@@ -140,7 +135,7 @@ beans.save
 p beans.name
 
 file = URI.open('https://images.pexels.com/photos/128536/pexels-photo-128536.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500')
-bell_pepper = Ingredient.new(name: "bell pepper", unit:"pc", unit_price: 0.9, category: "vegetables")
+bell_pepper = Ingredient.new(name: "sweet pepper", unit:"pc", unit_price: 0.9, category: "vegetables")
 bell_pepper.photo.attach(io: file, filename: 'bell.jpeg', content_type: 'image/jpeg')
 bell_pepper.save
 p bell_pepper.name
@@ -245,18 +240,14 @@ worcestershire.photo.attach(io: file, filename: 'worstershire.jpg', content_type
 worcestershire.save
 p worcestershire.name
 
-#### sauce
-
 file = URI.open('https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Fresh_Tomato_Sauce_%28Unsplash%29.jpg/375px-Fresh_Tomato_Sauce_%28Unsplash%29.jpg')
-tomato_sauce = Ingredient.new(name: "tomato sauce", unit:"g", unit_price: 0.004, category: "sauce")
+tomato_sauce = Ingredient.new(name: "tomato sauce", unit:"g", unit_price: 0.004, category: "condiment")
 tomato_sauce.photo.attach(io: file, filename: 'tomatosauce.jpg', content_type: 'image/jpg')
 tomato_sauce.save
 p tomato_sauce.name
 
-#### spice
-
 file = URI.open('https://images.pexels.com/photos/1087902/pexels-photo-1087902.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940')
-basil = Ingredient.new(name: "Basil", unit:"leaves", unit_price: 0.08, category: "spices")
+basil = Ingredient.new(name: "Basil", unit:"leaves", unit_price: 0.08, category: "condiment")
 basil.photo.attach(io: file, filename: 'basil.jpeg', content_type: 'image/jpeg')
 basil.save
 p basil.name
@@ -304,6 +295,15 @@ blue_bull = Ingredient.new(name: "Blue Bull Energy Drink 0.35", unit:"L", unit_p
 blue_bull.photo.attach(io: file, filename: 'blue.jpg', content_type: 'image/jpg')
 blue_bull.save
 p blue_bull.name
+
+######### Pastry
+
+file = URI.open('https://images.pexels.com/photos/4791265/pexels-photo-4791265.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940')
+choco = Ingredient.new(name: 'chocolate', unit: 'g', unit_price: 0.014, category: "pastry")
+choco.photo.attach(io: file, filename: 'choco.jpeg', content_type: 'image/jpeg')
+choco.save
+p choco.name
+
 
 ###### Chocolate cake
 file = URI.open('https://images.pexels.com/photos/3740196/pexels-photo-3740196.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940')

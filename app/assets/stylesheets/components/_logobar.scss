@@ -11,5 +11,11 @@
   z-index: 10;
   box-shadow: 0px 0px 20px #2C2825;
   font-size: 25px;
-  font-weight: 900;
+  font-weight: 700;
+}
+
+.logobar-logo-items{
+  width: 30%;
+  display: flex;
+  justify-content: space-between;
 }

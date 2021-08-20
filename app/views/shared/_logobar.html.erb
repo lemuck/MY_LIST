@@ -1,4 +1,8 @@
 <div id="logobar">
-  <%= link_to 'MyList', root_path, class:"text-decoration-none text-white" %>
+  <div class="logobar-logo-items">
+    <%= link_to '<i class="fas fa-clipboard-list text-decoration-none text-white"></i>'.html_safe, root_path %>
+    <%= link_to 'MyList', root_path, class:"text-decoration-none text-white" %>
+  </div>
+
   <%# <%= image_tag("icons/MyList_logo.jpg") %> 
 </div>

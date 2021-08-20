@@ -620,3 +620,19 @@ IngredientRecipe.new(recipe_id: couscous.id, ingredient_id: carotte.id, ingredie
 IngredientRecipe.new(recipe_id: couscous.id, ingredient_id: courgette.id, ingredient_quantity: 1).save
 IngredientRecipe.new(recipe_id: couscous.id, ingredient_id: semoule.id, ingredient_quantity: 300).save
 p couscous.name
+
+#### recette bidon
+
+file = URI.open('https://images.pexels.com/photos/4194622/pexels-photo-4194622.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=500')
+ragout = Recipe.new(name: "Ragout with Salad", description: "Cook the ragout. Serve with salad")
+ragout.photo.attach(io: file, filename: 'ragout.jpeg', content_type: 'image/jpeg')
+ragout.save
+IngredientRecipe.new(recipe_id: ragout.id, ingredient_id: carotte.id, ingredient_quantity: 1).save
+p ragout.name
+
+file = URI.open('https://images.pexels.com/photos/5718104/pexels-photo-5718104.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=500')
+turkey_t = Recipe.new(name: "Turkey", description: "Cook the Turkey. Serve with salad")
+turkey_t.photo.attach(io: file, filename: 'turkey_t.jpeg', content_type: 'image/jpeg')
+turkey_t.save
+IngredientRecipe.new(recipe_id: turkey_t.id, ingredient_id: chicken.id, ingredient_quantity: 1).save
+p turkey_t.name

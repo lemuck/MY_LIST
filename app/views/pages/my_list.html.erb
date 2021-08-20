@@ -1,5 +1,8 @@
 <div class="container">
   <h1 class="title-recipe-index">-Your List-</h1>
+  <div>
+    <h4 class="my-list-desc mylist-opacity">Fill your profile page & we'll <span class="orange">suggest</span> a list according to <span class="orange">your preferences</span> and <span class="orange">habits</span> </h4>
+  </div>
   <div class="my-list">
 
 <!--     <div class="btn-add-an-ingredient">
@@ -59,9 +62,9 @@
 
           <div class="qty-price-amt">
             <p><%= detail[:quantity].round(1) %> <%= detail[:unit] %></p>
-            <p><%= detail[:price] %> $/ <%= detail[:unit] %> </p>
+            <p><%= detail[:price] %> €/ <%= detail[:unit] %> </p>
             <p><%= (detail[:quantity] || 0 * detail[:price]).round(2) %>
-            <% amt += (detail[:quantity] || 0 * detail[:price]).round(2) %> $
+            <% amt += (detail[:quantity] || 0 * detail[:price]).round(2) %> €
             </p>
           </div>
         </div>
@@ -74,7 +77,7 @@
         <strong><p>SubTotal</p></strong>
       </div>
       <div class="qty-price-amt">
-        <strong><h5><%= amt %> $ </h5></strong>
+        <strong><h5><%= amt %> € </h5></strong>
       </div>
     </div>
 

@@ -47,14 +47,14 @@ yeast.save
 p yeast.name
 
 file = URI.open('https://images.pexels.com/photos/6605303/pexels-photo-6605303.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940')
-pate_a_tarte = Ingredient.create(name: "pate à tarte", unit: "pc", unit_price: 1.46, category: "dry")
+pate_a_tarte = Ingredient.create(name: "pie dough", unit: "pc", unit_price: 1.46, category: "dry")
 pate_a_tarte.photo.attach(io: file, filename: 'tarte.jpeg', content_type: 'image/jpeg')
 pate_a_tarte.save
 p pate_a_tarte.name
 
 
 file = URI.open('https://resize-elle.ladmedia.fr/r/300,386,center-middle,forcey,ffffff/img/var/plain_site/storage/images/elle-a-table/recettes-de-cuisine/nikitouche-2066718/21651242-2-fre-FR/Nikitouche.jpg')
-semoule = Ingredient.create(name: "semoule", unit: "g", unit_price: 0.0029, category: "dry")
+semoule = Ingredient.create(name: "semolina", unit: "g", unit_price: 0.0029, category: "dry")
 semoule.photo.attach(io: file, filename: 'semoule.jpeg', content_type: 'image/jpeg')
 semoule.save
 p semoule.name
@@ -72,13 +72,13 @@ sugar.save
 p sugar.name
 
 file = URI.open('https://happy-vrac.be/wp-content/uploads/2020/02/Happy-vrac-feuilles-de-lasagne.png')
-lasagne = Ingredient.new(name: "lasagne", unit:"pc", unit_price: 0.08, category: "dry")
+lasagne = Ingredient.new(name: "lasagna", unit:"pc", unit_price: 0.08, category: "dry")
 lasagne.photo.attach(io: file, filename: 'lasagne.png', content_type: 'image/png')
 lasagne.save
 p lasagne.name
 
 file = URI.open('https://images.pexels.com/photos/6287348/pexels-photo-6287348.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500')
-pasta = Ingredient.new(name: "Pasta", unit:"g", unit_price: 0.0017, category: "dry")
+pasta = Ingredient.new(name: "pasta", unit:"g", unit_price: 0.0017, category: "dry")
 pasta.photo.attach(io: file, filename: 'pasta.jpeg', content_type: 'image/jpeg')
 pasta.save
 p pasta.name
@@ -98,7 +98,7 @@ p tortilla.name
 ### vegetables
 
 file = URI.open('https://images.pexels.com/photos/143133/pexels-photo-143133.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500')
-carotte = Ingredient.create(name: "carotte", unit: "kg", unit_price: 1.8, category: "vegetables")
+carotte = Ingredient.create(name: "carot", unit: "kg", unit_price: 1.8, category: "vegetables")
 carotte.photo.attach(io: file, filename: 'carotte.jpeg', content_type: 'image/jpeg')
 carotte.save
 p carotte.name
@@ -116,7 +116,7 @@ tomato.save
 p tomato.name
 
 file = URI.open('https://images.pexels.com/photos/128420/pexels-photo-128420.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940')
-courgette = Ingredient.new(name: "courgette", unit:"pc", unit_price: 0.8, category: "vegetables")
+courgette = Ingredient.new(name: "zucchini", unit:"pc", unit_price: 0.8, category: "vegetables")
 courgette.photo.attach(io: file, filename: 'courgette.jpeg', content_type: 'image/jpeg')
 courgette.save
 p courgette.name
@@ -319,7 +319,7 @@ p choco_cake.name
 
 ##### Mimosa egg
 file = URI.open('https://media.foodnetwork.ca/recipetracker/dmm/M/I/Mimosa_Eggs_001.jpg')
-mimosa_egg = Recipe.new(name: 'Mimosa Egg', description: "Cook the eggs for 10 minutes in boiling water, then put them in cold water to stop the cooking process. Make a mayonnaise with 1 egg yolk, 1 teaspoon of mustard, 1/4 l of oil and lemon juice (optional), or use a ready-made mayonnaise sold in shops. Add the lemon juice at the last moment.Shell the eggs, cut them lengthwise, separate the whites from the yolks.In a soup plate, crumble the yolks with a fork, mix half of the crumbled yolks with the mayonnaise and reserve the rest.Fill the half-eggs with this preparation, then sprinkle each half-egg with the rest of the crumbled yolks (which makes the mimosa!!).")
+mimosa_egg = Recipe.new(name: 'Mimosa Eggs', description: "Cook the eggs for 10 minutes in boiling water, then put them in cold water to stop the cooking process. Make a mayonnaise with 1 egg yolk, 1 teaspoon of mustard, 1/4 l of oil and lemon juice (optional), or use a ready-made mayonnaise sold in shops. Add the lemon juice at the last moment.Shell the eggs, cut them lengthwise, separate the whites from the yolks.In a soup plate, crumble the yolks with a fork, mix half of the crumbled yolks with the mayonnaise and reserve the rest.Fill the half-eggs with this preparation, then sprinkle each half-egg with the rest of the crumbled yolks (which makes the mimosa!!).")
 mimosa_egg.photo.attach(io: file, filename: 'mimosa_egg.jpg', content_type: 'image/jpg')
 mimosa_egg.save
 IngredientRecipe.new(recipe_id: mimosa_egg.id, ingredient_id: olive_oil.id, ingredient_quantity: 62.5).save
@@ -329,7 +329,7 @@ p mimosa_egg.name
 
 ##### Lasagne veg
 file = URI.open('https://images.pexels.com/photos/2765875/pexels-photo-2765875.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500')
-lasagne_veg = Recipe.new(name: 'Lasagne vegetarian', description: "If you are using onions, fry them in a pan or wok until they melt.Chop the tomatoes, add them to the onions, then simmer with herbs de Provence (don't hesitate!), salt and pepper.Slice the courgettes and add them to the mixture.Add tomato sauce (or tomato purée, if you don't have one), and 1 teaspoon of caster sugar (more in winter, when the tomatoes are blander). Once the mixture is ready, pile it in a large dish: 1 layer of lasagne, 1 layer of preparation, 1 layer of béchamel sauce, 1 layer of Gruyère cheese, and so on (adding a little salt each time), putting a lot of Gruyère cheese on the last layer. Bake in a hot oven (thermostat 7-200°C) for 35 minutes.")
+lasagne_veg = Recipe.new(name: 'Vegetarian Lasagna', description: "If you are using onions, fry them in a pan or wok until they melt.Chop the tomatoes, add them to the onions, then simmer with herbs de Provence (don't hesitate!), salt and pepper.Slice the courgettes and add them to the mixture.Add tomato sauce (or tomato purée, if you don't have one), and 1 teaspoon of caster sugar (more in winter, when the tomatoes are blander). Once the mixture is ready, pile it in a large dish: 1 layer of lasagne, 1 layer of preparation, 1 layer of béchamel sauce, 1 layer of Gruyère cheese, and so on (adding a little salt each time), putting a lot of Gruyère cheese on the last layer. Bake in a hot oven (thermostat 7-200°C) for 35 minutes.")
 lasagne_veg.photo.attach(io: file, filename: 'lasagne.jpeg', content_type: 'image/jpeg')
 lasagne_veg.save
 IngredientRecipe.new(recipe_id: lasagne_veg.id, ingredient_id: lasagne.id, ingredient_quantity: 3).save
@@ -374,7 +374,7 @@ p egg_fried_rice.name
 
 ##### Tarte au carottes
 file = URI.open('https://images.pexels.com/photos/4993114/pexels-photo-4993114.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500')
-tarte_aux_carottes = Recipe.new(name: "Carrot Tart", person_number: 4, description: "Mettez les carottes dans la pate à tarte. Cuisinez au fours pour 60min á 180. Mangez le truc.")
+tarte_aux_carottes = Recipe.new(name: "Carrot pie", person_number: 4, description: "Mettez les carottes dans la pate à tarte. Cuisinez au fours pour 60min á 180. Mangez le truc.")
 tarte_aux_carottes.photo.attach(io: file, filename: 'tarte.jpeg', content_type: 'image/jpeg')
 tarte_aux_carottes.save
 IngredientRecipe.new(recipe_id: tarte_aux_carottes.id, ingredient_id: carotte.id, ingredient_quantity: 0.7).save
@@ -410,7 +410,7 @@ p hamburger.name
 
 ##### pizza pepperoni
 file = URI.open('https://images.pexels.com/photos/3682837/pexels-photo-3682837.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=500&w=500')
-pizza_pepperoni = Recipe.new(name: "Pizza Pepperoni", person_number: 2, description: "For sauce: Combine all sauce ingredients with 1/2 cup water in a medium bowl; set aside for flavors to develop while making crust. Freeze remaining paste.
+pizza_pepperoni = Recipe.new(name: "Pepperoni pizza", person_number: 2, description: "For sauce: Combine all sauce ingredients with 1/2 cup water in a medium bowl; set aside for flavors to develop while making crust. Freeze remaining paste.
 For crusts: Combine 2 cups of flour with the dry yeast, sugar and salt. Add the water and oil and mix until well blended (about 1 minute). Gradually add enough remaining flour slowly, until a soft, sticky dough ball is formed. Knead for about 4 minutes, on a floured surface, until dough is smooth and elastic. Add more flour, if needed. (If using RapidRise® Yeast, let dough rest, covered, for 10 minutes.)
 Divide dough in half. Pat each half (with floured hands) into a 12-inch greased pizza pan OR roll dough to fit pans. For pizzas: Preheat oven to 425 degrees F. Top crusts with sauce, pepperoni and cheese. Bake for 18 to 20 minutes until crusts are browned and cheese is bubbly. For best results, rotate pizza pans between top and bottom oven racks halfway through baking.")
 pizza_pepperoni.photo.attach(io: file, filename: 'pizza_pepperoni.jpeg', content_type: 'image/jpeg')
@@ -425,7 +425,7 @@ p pizza_pepperoni.name
 
 ##### pizza margherita
 file = URI.open('https://images.pexels.com/photos/7912401/pexels-photo-7912401.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=500')
-pizza_margherita = Recipe.new(name: "Pizza Margherita", person_number: 1, description: "For sauce: Combine all sauce ingredients with 1/2 cup water in a medium bowl; set aside for flavors to develop while making crust. Freeze remaining paste. For crusts: Combine 2 cups of flour with the dry yeast, sugar and salt. Add the water and oil and mix until well blended (about 1 minute). Gradually add enough remaining flour slowly, until a soft, sticky dough ball is formed.
+pizza_margherita = Recipe.new(name: "Margherita pizza", person_number: 1, description: "For sauce: Combine all sauce ingredients with 1/2 cup water in a medium bowl; set aside for flavors to develop while making crust. Freeze remaining paste. For crusts: Combine 2 cups of flour with the dry yeast, sugar and salt. Add the water and oil and mix until well blended (about 1 minute). Gradually add enough remaining flour slowly, until a soft, sticky dough ball is formed.
 Knead for about 4 minutes, on a floured surface, until dough is smooth and elastic. Add more flour, if needed. Divide dough in half. Pat each half (with floured hands) into a 12-inch greased pizza pan OR roll dough to fit pans. For pizzas: Preheat oven to 425 degrees F. Top crusts with sauce and cheese.
 Bake for 18 to 20 minutes until crusts are browned and cheese is bubbly. For best results, rotate pizza pans between top and bottom oven racks halfway through baking.")
 pizza_margherita.photo.attach(io: file, filename: 'pizza_margherita.jpeg', content_type: 'image/jpeg')
@@ -454,7 +454,7 @@ p carrot_cake.name
 
 ##### Tarte au pommes
 file = URI.open('https://images.pexels.com/photos/4993114/pexels-photo-4993114.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500')
-tarte_aux_pommes = Recipe.new(name: "Apple Tart", person_number: 4, description: "Mettez les pommes dans la pate à tarte. Cuisinez au fours pour 60min á 180. Mangez le truc.")
+tarte_aux_pommes = Recipe.new(name: "Apple pie", person_number: 4, description: "Mettez les pommes dans la pate à tarte. Cuisinez au fours pour 60min á 180. Mangez le truc.")
 tarte_aux_pommes.photo.attach(io: file, filename: 'tarte_pommes.jpeg', content_type: 'image/jpeg')
 tarte_aux_pommes.save
 IngredientRecipe.new(recipe_id: tarte_aux_pommes.id, ingredient_id: apple.id, ingredient_quantity: 1).save
@@ -464,7 +464,7 @@ p tarte_aux_pommes.name
 
 ##### Tacos Veg
 file = URI.open('https://images.pexels.com/photos/8448331/pexels-photo-8448331.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=500')
-tacos_veg = Recipe.new(name: "Tacos Veg", person_number: 1, description: "Heat olive oil in a skillet over medium-high heat. Add mushrooms and red bell peppers; saute until mushrooms are soft and meaty, about 20 minutes. Add pinto beans, taco seasoning mix, green onions, and water. Stir well; continue to cook until all liquid is evaporated, about 5 minutes more. Divide mushroom filling evenly between tortillas. Add your favorite taco toppings.")
+tacos_veg = Recipe.new(name: "Veg Tacos", person_number: 1, description: "Heat olive oil in a skillet over medium-high heat. Add mushrooms and red bell peppers; saute until mushrooms are soft and meaty, about 20 minutes. Add pinto beans, taco seasoning mix, green onions, and water. Stir well; continue to cook until all liquid is evaporated, about 5 minutes more. Divide mushroom filling evenly between tortillas. Add your favorite taco toppings.")
 tacos_veg.photo.attach(io: file, filename: 'tacos_veg.jpeg', content_type: 'image/jpeg')
 tacos_veg.save
 IngredientRecipe.new(recipe_id: tacos_veg.id, ingredient_id: olive_oil.id, ingredient_quantity: 10).save
@@ -477,7 +477,7 @@ p tacos_veg.name
 
 ##### Tacos Meat
 file = URI.open('https://images.pexels.com/photos/7613568/pexels-photo-7613568.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=500&w=500')
-tacos_beef = Recipe.new(name: "Tacos Beef", person_number: 1, description: "Heat olive oil in a skillet over medium-high heat. Add the ground beef, mushrooms and red bell peppers; saute until mushrooms are soft and meaty and  the ground beef is cooked, about 20 minutes. Add pinto beans, taco seasoning mix, green onions, and water. Stir well; continue to cook until all liquid is evaporated, about 5 minutes more. Divide beef filling evenly between tortillas. Add your favorite taco toppings.")
+tacos_beef = Recipe.new(name: "Beef Tacos", person_number: 1, description: "Heat olive oil in a skillet over medium-high heat. Add the ground beef, mushrooms and red bell peppers; saute until mushrooms are soft and meaty and  the ground beef is cooked, about 20 minutes. Add pinto beans, taco seasoning mix, green onions, and water. Stir well; continue to cook until all liquid is evaporated, about 5 minutes more. Divide beef filling evenly between tortillas. Add your favorite taco toppings.")
 tacos_beef.photo.attach(io: file, filename: 'tacos_meat.jpeg', content_type: 'image/jpeg')
 tacos_beef.save
 IngredientRecipe.new(recipe_id: tacos_beef.id, ingredient_id: olive_oil.id, ingredient_quantity: 10).save
@@ -491,7 +491,7 @@ p tacos_beef.name
 
 ##### Tacos Chicken
 file = URI.open('https://images.pexels.com/photos/8448324/pexels-photo-8448324.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500')
-tacos_chicken = Recipe.new(name: "Tacos Chicken", person_number: 1, description: "Heat olive oil in a skillet over medium-high heat. Add the diced chicken, mushrooms and red bell peppers; saute until mushrooms are soft and the chicken is cooked, about 20 minutes. Add pinto beans, taco seasoning mix, green onions, and water. Stir well; continue to cook until all liquid is evaporated, about 5 minutes more. Divide chicken filling evenly between tortillas. Add your favorite taco toppings.")
+tacos_chicken = Recipe.new(name: "Chicken Tacos", person_number: 1, description: "Heat olive oil in a skillet over medium-high heat. Add the diced chicken, mushrooms and red bell peppers; saute until mushrooms are soft and the chicken is cooked, about 20 minutes. Add pinto beans, taco seasoning mix, green onions, and water. Stir well; continue to cook until all liquid is evaporated, about 5 minutes more. Divide chicken filling evenly between tortillas. Add your favorite taco toppings.")
 tacos_chicken.photo.attach(io: file, filename: 'tacos_chicken.jpeg', content_type: 'image/jpeg')
 tacos_chicken.save
 IngredientRecipe.new(recipe_id: tacos_chicken.id, ingredient_id: olive_oil.id, ingredient_quantity: 10).save

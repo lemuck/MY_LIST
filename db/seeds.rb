@@ -362,10 +362,10 @@ croissant.save
 p croissant.name
 
 file = URI.open('https://images.pexels.com/photos/5978248/pexels-photo-5978248.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=500')
-eclaire = Ingredient.new(name: 'éclaire au chocolat', unit: 'pc', unit_price: 1.0, category: "pastry")
-eclaire.photo.attach(io: file, filename: 'eclaire.jpeg', content_type: 'image/jpeg')
-eclaire.save
-p eclaire.name
+eclair = Ingredient.new(name: 'eclair au chocolat', unit: 'pc', unit_price: 1.0, category: "pastry")
+eclair.photo.attach(io: file, filename: 'eclair.jpeg', content_type: 'image/jpeg')
+eclair.save
+p eclair.name
 
 file = URI.open('https://tatyanaseverydayfood.com/wp-content/uploads/2016/08/Chocolate-Raspberry-Swiss-Roll-3.jpg')
 swissroll = Ingredient.new(name: 'swissroll', unit: 'pc', unit_price: 1.1, category: "pastry")

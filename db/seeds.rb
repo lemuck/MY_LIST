@@ -267,7 +267,7 @@ p fresh_cream.name
 file = URI.open('https://images.pexels.com/photos/8504692/pexels-photo-8504692.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500')
 olive_oil = Ingredient.new(name: "olive oil", unit:"ml", unit_price: 0.008, category: "condiment")
 olive_oil.photo.attach(io: file, filename: 'olive.jpeg', content_type: 'image/jpeg')
-.save
+olive_oil.save
 p olive_oil.name
 
 file = URI.open('https://images.pexels.com/photos/1435901/pexels-photo-1435901.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500')

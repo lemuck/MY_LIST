@@ -39,7 +39,7 @@
   </div>
 
   <div class='container-scroll'>
-    <% @recipes.sample(5).each do |recipe|  %>
+    <% @recipes.sample(10).each do |recipe|  %>
       <div class='row'>
         <div class='col'>
           <%= link_to recipe_path(recipe), class:"text-decoration-none" do %>
@@ -47,6 +47,11 @@
               <%= cl_image_tag recipe.photo.key, crop: :fill,  class: "recipe-image-home"%>
               <div>
                 <h5 class="card-title-best-recipe color-white" id="body-scroll"><%= recipe.name %></h5>
+              </div>
+
+              <div class="d-flex justify-content-center">
+                <div class="small-line-under">
+                </div>
               </div>
             </div>
           <% end %>

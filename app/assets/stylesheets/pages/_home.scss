@@ -59,10 +59,10 @@
 }
 
 .text-shadow-white{
-  text-shadow: 0px 0px 10px white;
+  text-shadow: 0px 0px 20px white;
 }
 .text-shadow-black{
-  text-shadow: 0px 0px 10px black;
+  text-shadow: 0px 0px 20px black;
 }  
 
 .card {
@@ -79,6 +79,10 @@
 
 .card-title-best-recipe {
   height: 8vh;
+  border-top: solid $vert-fonce;
+  text-align: center;
+  // padding: 12px;
+  margin: auto;
 }
 
 .recipe-image-home {
@@ -86,4 +90,10 @@
   height: 70%;
   object-fit: cover;
   border-radius: 10px 10px 0px 0px;
+}
+
+.small-line-under {
+  align: center;
+  width: 60%;
+  border-bottom: solid rgba(232, 232, 232, 0.5);
 }

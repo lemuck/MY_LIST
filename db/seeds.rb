@@ -93,7 +93,7 @@ p tortilla.name
 ### vegetables
 
 file = URI.open('https://images.pexels.com/photos/143133/pexels-photo-143133.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500')
-carotte = Ingredient.create(name: "carot", unit: "kg", unit_price: 1.8, category: "vegetables")
+carotte = Ingredient.create(name: "carrot", unit: "kg", unit_price: 1.8, category: "vegetables")
 carotte.photo.attach(io: file, filename: 'carotte.jpeg', content_type: 'image/jpeg')
 carotte.save
 p carotte.name
@@ -135,7 +135,7 @@ beans.save
 p beans.name
 
 file = URI.open('https://images.pexels.com/photos/128536/pexels-photo-128536.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500')
-bell_pepper = Ingredient.new(name: "sweet pepper", unit:"pc", unit_price: 0.9, category: "vegetables")
+bell_pepper = Ingredient.new(name: "bell pepper", unit:"pc", unit_price: 0.9, category: "vegetables")
 bell_pepper.photo.attach(io: file, filename: 'bell.jpeg', content_type: 'image/jpeg')
 bell_pepper.save
 p bell_pepper.name
@@ -267,7 +267,7 @@ p fresh_cream.name
 file = URI.open('https://images.pexels.com/photos/8504692/pexels-photo-8504692.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500')
 olive_oil = Ingredient.new(name: "olive oil", unit:"ml", unit_price: 0.008, category: "condiment")
 olive_oil.photo.attach(io: file, filename: 'olive.jpeg', content_type: 'image/jpeg')
-.save
+olive.save
 p olive_oil.name
 
 file = URI.open('https://images.pexels.com/photos/1435901/pexels-photo-1435901.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500')
@@ -476,7 +476,7 @@ Heat a large frying pan over a medium-low heat and add a glug of oil. Fry 2-3 pi
 Put the chicken pieces in the oven until the coating is crunchy rather than crisp (up to 15 minutes).Serve in a basket.")
 fried_chicken.photo.attach(io: file, filename: 'fried_chicken.jpeg', content_type: 'image/jpeg')
 fried_chicken.save
-IngredientRecipe.new(recipe_id: fried_chicken.id, ingredient_id: chicken.id, ingredient_quantity: 1).save
+IngredientRecipe.new(recipe_id: fried_chicken.id, ingredient_id: chicken.id, ingredient_quantity: 0.5).save
 IngredientRecipe.new(recipe_id: fried_chicken.id, ingredient_id: flour.id, ingredient_quantity: 200).save
 IngredientRecipe.new(recipe_id: fried_chicken.id, ingredient_id: buttermilk.id, ingredient_quantity: 100).save
 p fried_chicken.name
@@ -623,6 +623,7 @@ p couscous.name
 
 #### recette bidon
 
+# Ragout with Salad
 file = URI.open('https://images.pexels.com/photos/4194622/pexels-photo-4194622.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=500')
 ragout = Recipe.new(name: "Ragout with Salad", description: "Cook the ragout. Serve with salad")
 ragout.photo.attach(io: file, filename: 'ragout.jpeg', content_type: 'image/jpeg')
@@ -630,9 +631,56 @@ ragout.save
 IngredientRecipe.new(recipe_id: ragout.id, ingredient_id: carotte.id, ingredient_quantity: 1).save
 p ragout.name
 
+# Turkey
 file = URI.open('https://images.pexels.com/photos/5718104/pexels-photo-5718104.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=500')
 turkey_t = Recipe.new(name: "Turkey", description: "Cook the Turkey. Serve with salad")
 turkey_t.photo.attach(io: file, filename: 'turkey_t.jpeg', content_type: 'image/jpeg')
 turkey_t.save
 IngredientRecipe.new(recipe_id: turkey_t.id, ingredient_id: chicken.id, ingredient_quantity: 1).save
 p turkey_t.name
+
+# Sushi
+file = URI.open('https://images.pexels.com/photos/357756/pexels-photo-357756.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=500')
+sushi = Recipe.new(name: "Sushi", description: "Cook the rice. Serve with fish and carrot.")
+sushi.photo.attach(io: file, filename: 'sushi.jpeg', content_type: 'image/jpeg')
+sushi.save
+IngredientRecipe.new(recipe_id: sushi.id, ingredient_id: rice.id, ingredient_quantity: 100).save
+IngredientRecipe.new(recipe_id: sushi.id, ingredient_id: fish.id, ingredient_quantity: 1).save
+IngredientRecipe.new(recipe_id: sushi.id, ingredient_id: carotte.id, ingredient_quantity: 0.1).save
+p sushi.name
+
+# Meat Ramen
+file = URI.open('https://images.pexels.com/photos/2664216/pexels-photo-2664216.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=500')
+meat_ramen = Recipe.new(name: "Meat Ramen", description: "Cook the ramen. Serve with meat")
+meat_ramen.photo.attach(io: file, filename: 'meat_ramen.jpeg', content_type: 'image/jpeg')
+meat_ramen.save
+IngredientRecipe.new(recipe_id: meat_ramen.id, ingredient_id: pasta.id, ingredient_quantity: 1).save
+IngredientRecipe.new(recipe_id: meat_ramen.id, ingredient_id: chicken.id, ingredient_quantity: 1).save
+p meat_ramen.name
+
+# Shrimp Ramen
+file = URI.open('https://images.pexels.com/photos/699953/pexels-photo-699953.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=500')
+shrimp_ramen = Recipe.new(name: "Shrimp Ramen", description: "Cook the ramen. Serve with shrimp")
+shrimp_ramen.photo.attach(io: file, filename: 'shrimp_ramen.jpeg', content_type: 'image/jpeg')
+shrimp_ramen.save
+IngredientRecipe.new(recipe_id: shrimp_ramen.id, ingredient_id: pasta.id, ingredient_quantity: 1).save
+IngredientRecipe.new(recipe_id: shrimp_ramen.id, ingredient_id: shrimp.id, ingredient_quantity: 100).save
+p shrimp_ramen.name
+
+# Sandwich Egg
+file = URI.open('https://images.pexels.com/photos/6529599/pexels-photo-6529599.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=500')
+sandwich_egg_bacon = Recipe.new(name: "Bacon Egg Sandwich", description: "Cook egg. Put bacon and egg on sliced bun. Serve.")
+sandwich_egg_bacon.photo.attach(io: file, filename: 'sandwich_egg_bacon.jpeg', content_type: 'image/jpeg')
+sandwich_egg_bacon.save
+IngredientRecipe.new(recipe_id: sandwich_egg_bacon.id, ingredient_id: bun.id, ingredient_quantity: 1).save
+IngredientRecipe.new(recipe_id: sandwich_egg_bacon.id, ingredient_id: egg.id, ingredient_quantity: 2).save
+p sandwich_egg_bacon.name
+
+# Sandwich Sausage
+file = URI.open('https://images.pexels.com/photos/6529866/pexels-photo-6529866.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=500')
+sandwich_sausage = Recipe.new(name: "Sausage Sandwich", description: "Cook sausage. Put sausage on sliced bun. Serve.")
+sandwich_sausage.photo.attach(io: file, filename: 'sandwich_sausage.jpeg', content_type: 'image/jpeg')
+sandwich_sausage.save
+IngredientRecipe.new(recipe_id: sandwich_sausage.id, ingredient_id: bun.id, ingredient_quantity: 1).save
+IngredientRecipe.new(recipe_id: sandwich_sausage.id, ingredient_id: italian_sausage.id, ingredient_quantity: 100).save
+p sandwich_sausage.name

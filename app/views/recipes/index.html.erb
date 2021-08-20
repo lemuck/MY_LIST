@@ -26,7 +26,12 @@
           <%= link_to recipe_path(recipe), class:'text-decoration-none' do %>
             <div class="card-recipe">
               <div class="recipe-info">
+
                 <h4 id="police-size"> <%= recipe.name %> </h4>
+                <div class="small-line-under line-under-recipe-index">
+                  
+                </div>
+
               </div>
               <%= cl_image_tag recipe.photo.key, height: 300, width: 400, crop: :fill,  class: "recipe-image"%>
             </div>

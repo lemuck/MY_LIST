@@ -9,17 +9,18 @@
 
 }
 
-  .recipe-info {
-    padding: 5px;
-    color: $blanc-casse;
-    padding-left: 20px;
+.recipe-info {
+  padding: 5px;
+  color: $blanc-casse;
+  padding-left: 20px;
   padding-top: 15px;
-  }
+}
 
-  .recipe-image {
-    width: 50%;
-    object-fit: cover;
-  }
+.recipe-image {
+  width: 50%;
+  object-fit: cover;
+  border-left: solid $vert-fonce;
+}
 
 .card-recette {
   position: relative;
@@ -28,4 +29,8 @@
 .title-recipe-index {
   margin-top: 10vh;
   margin-bottom: 2vh;
+}
+
+.line-under-recipe-index {
+
 }

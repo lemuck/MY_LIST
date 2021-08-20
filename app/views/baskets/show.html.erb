@@ -38,8 +38,8 @@
           <div class="qty-price-amt">
             <p><%= detail[:quantity].round(1) %> <%= detail[:unit] %></p>
             <p><%= detail[:price] %> €/ <%= detail[:unit] %> </p>
-            <p><%= (detail[:quantity] || 0 * detail[:price]).round(2) %>
-            <% amt += (detail[:quantity] || 0 * detail[:price]).round(2) %> €
+            <p><%= (detail[:quantity] * detail[:unit_price]).round(4) %>
+            <% amt += (detail[:quantity] * detail[:unit_price]).round(4) %> €
             </p>
           </div>
         </div>
@@ -52,7 +52,7 @@
         <strong><p>SubTotal</p></strong>
       </div>
       <div class="qty-price-amt">
-        <strong><h5><%= amt %> € </h5></strong>
+        <strong><h5><%= amt.round(2) %> € </h5></strong>
       </div>
     </div>
 

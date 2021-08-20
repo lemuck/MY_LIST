@@ -2,11 +2,11 @@
   <h1 class="title-recipe-index">-Your List-</h1>
   <div class="my-list">
 
-<!--     <div class="btn-add-an-ingredient">
-      <%#= link_to ingredients_path do %>
-        <h4 class="btn-show color-white"><i class="fas fa-search"></i></h4>
-      <%# end %>
-    </div> -->
+    <div class="btn-add-an-ingredient">
+      <%= link_to category_path do %>
+        <h4 class="btn-add"><i class="fas fa-plus"></i></h4>
+      <% end %>
+    </div>
     
 
   <div class="alert ugo" role="alert">
@@ -14,7 +14,7 @@
     <div class="my-list-pop-up">
       <h4>LET'S TRY <span class="your-list">YOUR LIST</span> !</h4> <br>
       <h3><span class="simple">SIMPLE</span>, <br><span class="fast">FAST</span> <br>& <span class="easy">EASY</span> ! </h3> <br><br><br>
-      <h4 class="my-list-desc">Fill your profile page & we'll <span>suggest</span> a list according to <span>your preferences</span> and <span>habits</span> </h4>
+      <h4 class="my-list-desc">Get <span>suggestions</span> according to <span>your preferences</span> & <span>habits</span> </h4>
     </div>
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
 <!--       <h2 class="try-it"> try it !</h2> -->
@@ -60,8 +60,8 @@
           <div class="qty-price-amt">
             <p><%= detail[:quantity].round(1) %> <%= detail[:unit] %></p>
             <p><%= detail[:price] %> $/ <%= detail[:unit] %> </p>
-            <p><%= (detail[:quantity] || 0 * detail[:price]).round(2) %>
-            <% amt += (detail[:quantity] || 0 * detail[:price]).round(2) %> $
+            <p><%= (detail[:quantity] * detail[:unit_price]).round(4) %>
+            <% amt += (detail[:quantity] * detail[:unit_price]).round(4) %> $
             </p>
           </div>
         </div>
@@ -74,7 +74,7 @@
         <strong><p>SubTotal</p></strong>
       </div>
       <div class="qty-price-amt">
-        <strong><h5><%= amt %> $ </h5></strong>
+        <strong><h5><%= amt.round(2) %> $ </h5></strong>
       </div>
     </div>
 

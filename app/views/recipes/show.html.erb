@@ -7,7 +7,7 @@
     <i class="far fa-heart"></i>
     <%# a mettre plus gros, en rose, position absolute %>
   </div>
-  <h1 class="title-show"><%= @recipe.name %></h1>
+  <h1 class="title-show"> <span>-</span> <%= @recipe.name %> <span>-</span> </h1>
   <% if @user %>
     <% if @user.moderator %>
       <%= link_to edit_recipe_path(id:@recipe.id) do %>
@@ -42,12 +42,21 @@
           </li>
         <% end %>
         <br>
+        <div class="d-flex justify-content-center">
+          <div class="small-line-under line-recipe-show"></div>
+        </div>
+        <br>
+
         <strong><p id="titre">Recipe :</p></strong>
         <div class="etape">
           <ol>
           <% @recipe.description.split(".").each do |step| %>
             <div class="container">
               <li class="text-justify"><%= step %></li>
+              <br>
+              <div class="d-flex justify-content-center">
+                <div class="small-line-under line-recipe-show"></div>
+              </div>
               <br>
             </div>
           <% end %>

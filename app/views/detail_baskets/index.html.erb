@@ -29,7 +29,7 @@
             </div>
 
             <div class="recipe-img">
-              <%= image_tag "recipe.jpg" %>
+              <%= cl_image_tag detail.ingredient_recipe.recipe.photo.key, crop: :fill,  class: "recipe-image"%>
             </div>
           </div>
         <% end %>

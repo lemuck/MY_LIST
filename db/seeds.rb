@@ -54,7 +54,7 @@ semoule.photo.attach(io: file, filename: 'semoule.jpeg', content_type: 'image/jp
 semoule.save
 p semoule.name
 
-file = URI.open('https://images.pexels.com/photos/7421207/pexels-photo-7421207.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500')
+file = URI.open('https://images.pexels.com/photos/4224258/pexels-photo-4224258.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500')
 rice = Ingredient.create(name: "rice", unit: "g", unit_price: 0.0023, category: "dry")
 rice.photo.attach(io: file, filename: 'rice.jpeg', content_type: 'image/jpeg')
 rice.save
@@ -218,6 +218,18 @@ fish.photo.attach(io: file, filename: 'fish.jpeg', content_type: 'image/jpeg')
 fish.save
 p fish.name
 
+file = URI.open('https://images.pexels.com/photos/4846386/pexels-photo-4846386.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=500')
+octopus = Ingredient.create(name: "octopus", unit: "pc", unit_price: 19, category: "seafood")
+octopus.photo.attach(io: file, filename: 'octopus.jpeg', content_type: 'image/jpeg')
+octopus.save
+p octopus.name
+
+file = URI.open('https://images.pexels.com/photos/2252617/pexels-photo-2252617.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500')
+crab = Ingredient.create(name: "crab", unit: "pc", unit_price: 9, category: "seafood")
+crab.photo.attach(io: file, filename: 'crab.jpeg', content_type: 'image/jpeg')
+crab.save
+p crab.name
+
 ## dairy milk
 
 file = URI.open('https://images.pexels.com/photos/6294256/pexels-photo-6294256.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500')
@@ -264,17 +276,18 @@ mustard.photo.attach(io: file, filename: 'choco.jpeg', content_type: 'image/jpeg
 mustard.save
 p mustard.name
 
-file = URI.open('https://produits.bienmanger.com/14077-0w0h0_The_Original_Worcestershire_Sauce.jpg')
-worcestershire = Ingredient.new(name: "sauce worcestershire", unit:"ml", unit_price: 0.012, category: "condiment")
-worcestershire.photo.attach(io: file, filename: 'worstershire.jpg', content_type: 'image/jpg')
-worcestershire.save
-p worcestershire.name
 
 file = URI.open('https://m.media-amazon.com/images/I/71b0CQV4SFS._SX425_.jpg')
 ketchup = Ingredient.new(name: "ketchup", unit:"ml", unit_price: 0.004, category: "condiment")
 ketchup.photo.attach(io: file, filename: 'ketchup.jpg', content_type: 'image/jpg')
 ketchup.save
 p ketchup.name
+
+file = URI.open('https://produits.bienmanger.com/14077-0w0h0_The_Original_Worcestershire_Sauce.jpg')
+worcestershire = Ingredient.new(name: "sauce worstershire", unit:"ml", unit_price: 0.012, category: "condiment")
+worcestershire.photo.attach(io: file, filename: 'worstershire.jpg', content_type: 'image/jpg')
+worcestershire.save
+p worcestershire.name
 
 file = URI.open('https://images.pexels.com/photos/6941017/pexels-photo-6941017.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=500')
 chili_sauce = Ingredient.new(name: "chili sauce", unit:"ml", unit_price: 0.004, category: "condiment")
@@ -299,48 +312,78 @@ p basil.name
 #### drinks
 
 file = URI.open('https://images.pexels.com/photos/416528/pexels-photo-416528.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500')
-water_half = Ingredient.new(name: "Water 0.5L", unit:"L", unit_price: 0.27, category: "drinks")
+water_half = Ingredient.new(name: "Water 0.5L", unit:"bottle", unit_price: 0.27, category: "drinks")
 water_half.photo.attach(io: file, filename: 'water.jpeg', content_type: 'image/jpeg')
 water_half.save
 p water_half.name
 
 file = URI.open('https://images.pexels.com/photos/416528/pexels-photo-416528.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500')
-water_one = Ingredient.new(name: "Water 1L", unit:"L", unit_price: 0.37, category: "drinks")
+water_one = Ingredient.new(name: "Water 1L", unit:"bottle", unit_price: 0.37, category: "drinks")
 water_one.photo.attach(io: file, filename: 'water.jpeg', content_type: 'image/jpeg')
 water_one.save
 p water_one.name
 
 file = URI.open('https://phoenixbev.mu/userimages/productdetails_451_1537337013.jpg')
-sparkling_water = Ingredient.new(name: "Sparkling Water 1L", unit:"L", unit_price: 0.59, category: "drinks")
+sparkling_water = Ingredient.new(name: "Sparkling Water 1L", unit:"bottle", unit_price: 0.59, category: "drinks")
 sparkling_water.photo.attach(io: file, filename: 'sparkling.jpg', content_type: 'image/jpg')
 sparkling_water.save
 p sparkling_water.name
 
 file = URI.open('https://halalfs.com/1-large_default/coca-cola-24-x-33-cl.jpg')
-cola_half = Ingredient.new(name: "Cola 0.5L", unit:"L", unit_price: 0.75, category: "drinks")
+cola_half = Ingredient.new(name: "Cola 0.33L", unit:"can", unit_price: 0.75, category: "drinks")
 cola_half.photo.attach(io: file, filename: 'cola.jpg', content_type: 'image/jpg')
 cola_half.save
 p cola_half.name
 
-file = URI.open('https://halalfs.com/1-large_default/coca-cola-24-x-33-cl.jpg')
-cola_one = Ingredient.new(name: "Cola 1L", unit:"L", unit_price: 1.23, category: "drinks")
+file = URI.open('https://images.pexels.com/photos/4389674/pexels-photo-4389674.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=500')
+cola_one = Ingredient.new(name: "Cola 1L", unit:"bottle", unit_price: 1.23, category: "drinks")
 cola_one.photo.attach(io: file, filename: 'cola.jpg', content_type: 'image/jpg')
 cola_one.save
 p cola_one.name
 
 file = URI.open('https://www.indianhealthyrecipes.com/wp-content/uploads/2017/03/homemade-apple-juice-recipe-500x447.jpg')
-juice_apple = Ingredient.new(name: "Apple Juice 1.5L", unit:"L", unit_price: 1.4, category: "drinks")
+juice_apple = Ingredient.new(name: "Apple Juice 1.5L", unit:"pc", unit_price: 1.4, category: "drinks")
 juice_apple.photo.attach(io: file, filename: 'applejuice.jpg', content_type: 'image/jpg')
 juice_apple.save
 p juice_apple.name
 
 file = URI.open('https://m.media-amazon.com/images/I/519Lte818hS._AC_SY580_.jpg')
-blue_bull = Ingredient.new(name: "Blue Bull Energy Drink 0.35", unit:"L", unit_price: 3.85, category: "drinks")
+blue_bull = Ingredient.new(name: "Blue Bull Energy Drink 0.35", unit:"can", unit_price: 3.85, category: "drinks")
 blue_bull.photo.attach(io: file, filename: 'blue.jpg', content_type: 'image/jpg')
 blue_bull.save
 p blue_bull.name
 
 ######### Pastry
+
+file = URI.open('https://images.pexels.com/photos/2135/food-france-morning-breakfast.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=500')
+croissant = Ingredient.new(name: 'croissant', unit: 'pc', unit_price: 0.8, category: "pastry")
+croissant.photo.attach(io: file, filename: 'croissant.jpeg', content_type: 'image/jpeg')
+croissant.save
+p croissant.name
+
+file = URI.open('https://images.pexels.com/photos/5978248/pexels-photo-5978248.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=500')
+eclaire = Ingredient.new(name: 'éclaire au chocolat', unit: 'pc', unit_price: 1.0, category: "pastry")
+eclaire.photo.attach(io: file, filename: 'eclaire.jpeg', content_type: 'image/jpeg')
+eclaire.save
+p eclaire.name
+
+file = URI.open('https://tatyanaseverydayfood.com/wp-content/uploads/2016/08/Chocolate-Raspberry-Swiss-Roll-3.jpg')
+swissroll = Ingredient.new(name: 'swissroll', unit: 'pc', unit_price: 1.1, category: "pastry")
+swissroll.photo.attach(io: file, filename: 'swissroll.jpeg', content_type: 'image/jpeg')
+swissroll.save
+p swissroll.name
+
+file = URI.open('https://images.pexels.com/photos/6747/food-dessert-sweet-color.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=500')
+macaron = Ingredient.new(name: 'macaron', unit: 'pc', unit_price: 1.4, category: "pastry")
+macaron.photo.attach(io: file, filename: 'macaron.jpeg', content_type: 'image/jpeg')
+macaron.save
+p macaron.name
+
+file = URI.open('https://images.pexels.com/photos/4542844/pexels-photo-4542844.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500')
+pretzel = Ingredient.new(name: 'pretzel', unit: 'pc', unit_price: 1.4, category: "pastry")
+pretzel.photo.attach(io: file, filename: 'pretzel.jpeg', content_type: 'image/jpeg')
+pretzel.save
+p pretzel.name
 
 file = URI.open('https://images.pexels.com/photos/4791265/pexels-photo-4791265.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940')
 choco = Ingredient.new(name: 'chocolate', unit: 'g', unit_price: 0.014, category: "pastry")

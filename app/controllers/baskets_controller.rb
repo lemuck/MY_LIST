@@ -24,10 +24,10 @@ class BasketsController < ApplicationController
                              quantity:   ingredient.quantity
                          }
         @final_basket << final_ingredient
-      end  
-    end  
+      end
+    end
   end
-  
+
   private
 
   def set_basket

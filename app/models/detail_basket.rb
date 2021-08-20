@@ -9,7 +9,8 @@ class DetailBasket < ApplicationRecord
   # end
 
   def quantity
-    ingredient_id.nil? ? ingredient_recipe.ingredient_quantity : ingredient_quantity
+    ingredient_quantity
+    #ingredient_id.nil? ? ingredient_recipe.ingredient_quantity : ingredient_quantity
   end
 
   def name

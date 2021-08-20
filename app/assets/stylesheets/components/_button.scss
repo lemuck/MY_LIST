@@ -49,21 +49,25 @@
   margin-left: 10px !important;
 }
 
-// .btn-add-an-ingredient {
-//   position: fixed;
-//   top: 18%;
-//   right: 4vh;
-//   box-shadow: 1px 1px 3px;
-//   width: 30px;
-//   height: 30px;
-//   border-radius: 10px;
-//   i {
-//     position: absolute;
-//     width: 30px;
-//     height: 30px;
-//     margin: 0px;
-//   }
-// }
+.btn-add-an-ingredient {
+  position: fixed;
+  top: 15%;
+  right: 4vh;
+  width: 0vh;
+  .btn-add {
+    width: 7vh;
+    background-color: white;
+    width: 50px;
+    height: 27px;
+    color: $vert-fonce;
+    box-shadow: 1px 1px 3px black;
+    margin-left: -1vh;
+    text-align: center;
+    border-radius: 12px;
+  }
+}
+
+
 
 // TWITTER HEART
 .heart {

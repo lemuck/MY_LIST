@@ -5,6 +5,14 @@
   <div class="text-align-center">
     <h2><%= current_user.name %></h2>
   </div>
+  
+  <% if current_user.moderator %>
+  <div class="d-flex">
+    <div class="btn-add-recipe">
+      <%= link_to "add a recipe", new_recipe_path %>
+    </div>
+  </div>
+  <% end %>
 
   <div class="card-address-profile">
     <p>Email: <%= current_user.email %></p>

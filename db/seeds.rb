@@ -3,11 +3,11 @@ User.destroy_all
 Basket.destroy_all
 DetailBasket.destroy_all
 IngredientRecipe.destroy_all
-Ingredient.destroy_all
+#Ingredient.destroy_all
 Recipe.destroy_all
 
 ########## Users
-bob = User.new(name: "Bobby", email: "bobby@bob.com", password: "azerty")
+bob = User.new(name: "Bobby", email: "bobby@bob.com", password: "azerty", moderator: true)
 bob.save
 p bob.name
 
@@ -684,3 +684,10 @@ sandwich_sausage.save
 IngredientRecipe.new(recipe_id: sandwich_sausage.id, ingredient_id: bun.id, ingredient_quantity: 1).save
 IngredientRecipe.new(recipe_id: sandwich_sausage.id, ingredient_id: italian_sausage.id, ingredient_quantity: 100).save
 p sandwich_sausage.name
+
+
+
+
+
+
+

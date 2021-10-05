@@ -1,9 +1,9 @@
 <% content_for :meta_title, "#{@recipe.name} - #{DEFAULT_META["meta_product_name"]}" %>
 <% content_for :meta_description, @recipe.description %>
-<% content_for :meta_image, cl_image_path(@recipe.photo.key) %>
+<%# content_for :meta_image, cl_image_path(@recipe.photo.key) %>
 <div class="container">
   <div>
-    <%= cl_image_tag @recipe.photo.key, height: 300, width: 400, crop: :fill,  class: "image-show"%>
+    <%#= cl_image_tag @recipe.photo.key, height: 300, width: 400, crop: :fill,  class: "image-show"%>
 
     <div class="stage coeur-show">
       <div class="heart"></div>
